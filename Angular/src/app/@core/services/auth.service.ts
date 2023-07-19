@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
-import { of } from "rxjs";
+import { Observable, map, of } from "rxjs";
 import { LoginDTO, RegisterDTO, User } from "src/app/models/user";
 
 @Injectable({
@@ -15,36 +15,29 @@ export class AuthService {
 
   login(loginData: LoginDTO) {
     console.log('auth service.ts', loginData);
-    this.router.navigateByUrl("/login");
-
-    /*
-    const user: Partial<User> = {
-      username: "AdminAtene",
-      password: "Pericle",
-    }*/
-
+    this.router.navigateByUrl("/login");  
+ 
     return this.http.post<LoginDTO>(`${this.springBootUrl}/login`, loginData);
+
+    //const user: User = {
+    //name: 'Paolino',
+    //surname: 'Paperino',
+    //username: 'papero123'
+    //}
 
     // Passare username e password
     // return this.http.get(`${this.springBootUrl}/api/user`);
-
     // Stub prima di implementare l'API
-
-    //const user: User = {
-      //name: 'Paolino',
-      //surname: 'Paperino',
-      //username: 'papero123'
-    //}
 
     //return of(user);
     // Fine stub
   }
 
   register(registerData: RegisterDTO) {
-    // TODO Chiamare il servizio per la registrazione e redirigere l'utente alla root per il login
+  // TODO Chiamare il servizio per la registrazione e redirigere l'utente alla root per il login
    //this.router.navigateByUrl("/");
    this.router.navigateByUrl("/register");
-
+   return this.http.post<RegisterDTO>(`${this.springBootUrl}/register`, registerData);
   }
 
   logout() {
@@ -59,4 +52,5 @@ export class AuthService {
     const user = JSON.parse(localStorage.getItem("user") || '') as User;
     return user;
   }
+  
 }

@@ -9,6 +9,7 @@ export interface User {
 export interface LoginDTO {
   username: string; //nel caso usare email se si sceglie security via mail
   password: string;
+  //isLogged?: string; 
 }
 
 export interface RegisterDTO {
