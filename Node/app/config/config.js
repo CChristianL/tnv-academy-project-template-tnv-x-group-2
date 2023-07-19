@@ -7,6 +7,6 @@ const db = new Sequelize({
   host: "localhost",
   port: 8889,
   dialect: "mysql",
-});
+}); 
 
 export default db;
