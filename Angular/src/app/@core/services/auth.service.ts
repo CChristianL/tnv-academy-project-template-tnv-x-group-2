@@ -18,12 +18,12 @@ export class AuthService {
     this.router.navigateByUrl("/login");  
  
     return this.http.post<LoginDTO>(`${this.springBootUrl}/login`, loginData);
-
-    //const user: User = {
-    //name: 'Paolino',
-    //surname: 'Paperino',
-    //username: 'papero123'
-    //}
+    /*
+    const user: User = {
+          name: 'Paolino',
+          surname: 'Paperino',
+          username: 'papero123'
+    }
 
     // Passare username e password
     // return this.http.get(`${this.springBootUrl}/api/user`);
@@ -31,14 +31,17 @@ export class AuthService {
 
     //return of(user);
     // Fine stub
-  }
+    */
+}
 
   register(registerData: RegisterDTO) {
-  // TODO Chiamare il servizio per la registrazione e redirigere l'utente alla root per il login
-   //this.router.navigateByUrl("/");
-   this.router.navigateByUrl("/register");
+  
+   
    return this.http.post<RegisterDTO>(`${this.springBootUrl}/register`, registerData);
   }
+//this.router.navigateByUrl("/register");
+  // TODO Chiamare il servizio per la registrazione e redirigere l'utente alla root per il login
+   //this.router.navigateByUrl("/");
 
   logout() {
     localStorage.removeItem("user");

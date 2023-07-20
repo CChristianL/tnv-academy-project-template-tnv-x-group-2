@@ -7,9 +7,8 @@ export interface User {
 }
 
 export interface LoginDTO {
-  username: string; //nel caso usare email se si sceglie security via mail
+  username: string; 
   password: string;
-  //isLogged?: string; 
 }
 
 export interface RegisterDTO {

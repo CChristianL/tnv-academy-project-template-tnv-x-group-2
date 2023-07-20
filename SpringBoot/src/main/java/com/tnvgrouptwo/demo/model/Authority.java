@@ -9,22 +9,22 @@ import jakarta.persistence.*;
 public class Authority {
     @Id
     @Column(length = 50)
-    private String email;
+    private String username;
     @Id
     private String authority;
 
     @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "email", referencedColumnName = "email", insertable = false, updatable = false,
+    @JoinColumn(name = "username", referencedColumnName = "username", insertable = false, updatable = false,
                 nullable = false)
     private User user;
 
-    public String getEmail() {
-        return email;
+    public String getUsername() {
+        return username;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getAuthority() {

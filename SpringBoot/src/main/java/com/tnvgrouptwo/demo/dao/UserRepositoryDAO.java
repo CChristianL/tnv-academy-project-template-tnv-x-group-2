@@ -14,5 +14,4 @@ public interface UserRepositoryDAO extends CrudRepository<User, Integer> {
     public User findByUsername(String username);
     public User saveAndFlush(User user);
     public Iterable<User> findByTeam(String team);
-    User findByEmail(String email);
 }

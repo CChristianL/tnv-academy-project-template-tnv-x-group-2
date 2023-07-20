@@ -3,19 +3,19 @@ package com.tnvgrouptwo.demo.model;
 import java.io.Serializable;
 
 public class AuthorityId implements Serializable {
-    private String email;
+    private String username;
 
     private String authority;
 
     public AuthorityId() {
     }
 
-    public String getEmail() {
-        return email;
+    public String getUsername() {
+        return username;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getAuthority() {
