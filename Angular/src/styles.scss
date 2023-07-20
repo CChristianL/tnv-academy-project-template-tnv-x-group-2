@@ -27,8 +27,8 @@ $tnv-project-template-theme: mat.define-light-theme((
 // ---
 // BOOTSTRAP Theme
 // ---
-$primary: map-get($primary-palette, 700);
-$secondary: map-get($secondary-palette, 300);
+//$primary: map-get($primary-palette, 700);
+//$secondary: map-get($secondary-palette, 300);
 $font-family-sans-serif: 'Roboto', sans-serif;
 
 @import "bootstrap/scss/bootstrap";
@@ -39,12 +39,22 @@ $font-family-sans-serif: 'Roboto', sans-serif;
 label {
   text-transform: uppercase;
   font-size: small;
-  font-weight: bold;
+  font-weight: bold;  
 }
 
 ngb-rating {
   color: $primary;
 }
 
-html, body { height: 100%; }
+html, body { height: 100%;
+//background-image: url(assets/images/white-smoke-fragments-black-background.jpg);
+//background-size: cover;
+//background-repeat: no-repeat;
+background-color: #030406;
+
+}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+#navbar a {
+  color: white;
+}
+

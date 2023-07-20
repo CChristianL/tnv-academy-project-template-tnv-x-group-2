@@ -1,13 +1,15 @@
 
 .login-card {
+  color: white;
   width: 800px;
 }
 
 .img {
-  background-image: url('/assets/images/login-screen.jpg');
-  background-size: cover;
+  background-image: url("/assets/images/2warriorv2.png");
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
+  
 }
 
 .wrap {
@@ -25,5 +27,13 @@
     height: 200px;
   }
 }
-
-
+#button-login {
+  background-color: #e9b231;
+   
+}
+a {
+  color: #e9b231;
+}
+a:hover {
+  color: #d6b80fab;  
+}
