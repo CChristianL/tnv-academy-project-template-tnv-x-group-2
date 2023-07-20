@@ -1,15 +1,24 @@
 package com.tnvgrouptwo.demo.model;
 
 public class UserLogin {
-    private String email;
+    private String username;
     private String password;
-
-    public String getEmail() {
-        return email;
+   // private String isLogged;
+/*
+    public String getIsLogged() {
+        return isLogged;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setIsLogged(String isLogged) {
+        this.isLogged = isLogged;
+    }
+*/
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {

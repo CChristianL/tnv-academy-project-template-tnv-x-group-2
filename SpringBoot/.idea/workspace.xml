@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="63a14768-5f6b-48fd-9cd6-9ba6157ed6a9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Angular/src/app/@core/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/app/@core/services/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/app/@shared/components/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/app/@shared/components/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/app/@shared/components/register/register.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/app/@shared/components/register/register.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/app/@shared/components/register/register.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/app/@shared/components/register/register.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/app/models/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/app/models/user.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2SpYyA9vv4yKge3HPBReM2UsAvx" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/chris/GIT/tnv-academy-project-template-tnv-x-group-2/SpringBoot"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="SpringBoot" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="SpringBoot" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="63a14768-5f6b-48fd-9cd6-9ba6157ed6a9" name="Changes" comment="" />
+      <created>1689845240456</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1689845240456</updated>
+    </task>
+    <servers />
+  </component>
+</project>

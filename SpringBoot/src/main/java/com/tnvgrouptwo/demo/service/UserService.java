@@ -4,6 +4,8 @@ import com.tnvgrouptwo.demo.dao.UserRepositoryDAO;
 import com.tnvgrouptwo.demo.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -34,7 +36,7 @@ public class UserService {
             return "Errore nel salvataggio dell'utente";
         }
     }
-
+/*
     public String registerUser(UserRegister user) {
 
             if (userDAO.existsByUsername(user.getUsername())){
@@ -55,7 +57,7 @@ public class UserService {
 
             userStillNotRegistereAuthorities.setUser(userStillNotRegistred);
             //Setting delle autorizzazioni del nuovo user
-            userStillNotRegistereAuthorities.setEmail(user.getEmail());
+            userStillNotRegistereAuthorities.setUsername(user.getUsername());
             userStillNotRegistereAuthorities.setAuthority("ROLE_USER");
 
             userStillNotRegistred.setAuthorities(Collections.singleton(userStillNotRegistereAuthorities));
@@ -66,6 +68,39 @@ public class UserService {
             userDAO.save(userStillNotRegistred);
             return "Utente registrato correttamente";
         }
+*/
+
+    public User registerUser(UserRegister user) {
+
+        if (userDAO.existsByUsername(user.getUsername())){
+            return null;
+        }
+
+        User userStillNotRegistred = new User(); //User da costruire per la registrazione.
+
+        userStillNotRegistred.setTeam(user.getTeam());
+        userStillNotRegistred.setUsername(user.getUsername());
+        //Setting del nuovo User basato sui dati in ingresso
+        userStillNotRegistred.setEmail(user.getEmail());
+        userStillNotRegistred.setPassword(passwordEncoder.encode(user.getPassword()));
+        userStillNotRegistred.setEnabled(true);
+
+        Authority userStillNotRegistereAuthorities = new Authority();
+        //Autorizzazioni da costruire per lo user da registrare
+
+        userStillNotRegistereAuthorities.setUser(userStillNotRegistred);
+        //Setting delle autorizzazioni del nuovo user
+        userStillNotRegistereAuthorities.setUsername(user.getUsername());
+        userStillNotRegistereAuthorities.setAuthority("ROLE_USER");
+
+        userStillNotRegistred.setAuthorities(Collections.singleton(userStillNotRegistereAuthorities));
+        //inserimento delle autorizzazioni nel nuovo user
+        //Ho usato Collections.singleton perché mi permette di creare un set con un unico oggetto.
+        //Considerato che raramente la registrazione consente immediati ruoli da admin ho optato per questa soluzione.
+
+        userDAO.save(userStillNotRegistred);
+        return userStillNotRegistred;
+    }
 
 
     public Optional<User> getUser(int id) {
@@ -84,7 +119,7 @@ public class UserService {
         Optional<User> userId = userDAO.findById(id);
         User user1 = userId.get();
 
-        user1.setUsername(user.getUsername());
+        user1.setEmail(user.getEmail());
         user1.setPassword(user.getPassword());
 
         userDAO.save(user1);
@@ -117,15 +152,48 @@ public class UserService {
     public List<User> searchUserByUsernameAndEmail(String partialUsername, String partialMail) {
         return userDAO.findByUsernameContainsAndEmailContains(partialUsername, partialMail);
     }
-
+/*
     public String loginUser(UserLogin user) {
-        User temp = userDAO.findByEmail(user.getEmail());
-            if (temp != null && passwordEncoder.matches(user.getPassword(), temp.getPassword())){
-                return "Login Completato";
-            }
-        //user.setEnabled(true); residuo di cui ti ho parlato qualche tempo fa
-        return "Login errato";
+        User temp = userDAO.findByUsername(user.getUsername());
+        if (temp != null && passwordEncoder.matches(user.getPassword(), temp.getPassword())){
+          //  System.out.println("Login Completato");
+            return "Login Completato";
+        }
+        //System.out.println("Login Errato");
+        return "Login Errato";
     }
+*/
+/*
+    public UserLogin loginUser(UserLogin user) {
+        User temp = userDAO.findByUsername(user.getUsername());
+        if (temp != null && passwordEncoder.matches(user.getPassword(), temp.getPassword())){
+          //  return new LoginResponse(user.getUsername(), user.getPassword());
+            return user;
+        }
+        return null;
+    }
+    */
+public User loginUser(UserLogin user) {
+    User temp = userDAO.findByUsername(user.getUsername());
+    if (temp != null && passwordEncoder.matches(user.getPassword(), temp.getPassword())) {
+        return temp; // Restituisci l'oggetto User
+    }
+    return null; // Restituisci null per indicare il fallimento del login
+}
+
+
+
+/*
+   public ResponseEntity<String> loginUser(UserLogin user) {
+        User temp = userDAO.findByUsername(user.getUsername());
+        if (temp != null && passwordEncoder.matches(user.getPassword(), temp.getPassword())) {
+            return ResponseEntity.ok("Login Completato");
+        }
+
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Login errato");
+    }
+*/
+
 /*
     public String logoutUser(User user) {
         User temp = userDAO.findByUsername(user.getUsername());

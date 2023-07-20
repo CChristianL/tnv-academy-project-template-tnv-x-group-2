@@ -6,6 +6,8 @@ import com.tnvgrouptwo.demo.model.UserRegister;
 import com.tnvgrouptwo.demo.model.UserUpdate;
 import com.tnvgrouptwo.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,6 +15,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/users")
+@CrossOrigin(origins = "http://localhost:4200/")
 public class UserController {
     private UserService userService;
 
@@ -70,14 +73,49 @@ public class UserController {
 
     //TODO: registration(User user) (~ createUser)
     @PostMapping("/register")
-    public String registerUser(@RequestBody UserRegister user){
-        return userService.registerUser(user);
+    public ResponseEntity<User> registerUser(@RequestBody UserRegister user){
+        User userToRegister = userService.registerUser(user);
+        if (userToRegister != null) {
+            return ResponseEntity.ok(userToRegister); // Login riuscito, restituisci l'oggetto User
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build(); // Login fallito, restituisci 401 Unauthorized
+        }
+       //return userService.registerUser(user);
     }
 
     //TODO: login(String username, String password) -> OK o KO
+
+    /*
     @PostMapping("/login")
-    public String loginUser(@RequestBody UserLogin user){
+    public Boolean loginUser(@RequestBody UserLogin user){ //public UserLogin
         return userService.loginUser(user);
     }
 
+    */
+
+    @PostMapping("/login")
+    public ResponseEntity<User> loginUser(@RequestBody UserLogin user) {
+    User userTolog = userService.loginUser(user);
+        if (userTolog != null) {
+            return ResponseEntity.ok(userTolog); // Login riuscito, restituisci l'oggetto User
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build(); // Login fallito, restituisci 401 Unauthorized
+        }
+    }
+
+    /*
+    @PostMapping("/login")
+    public ResponseEntity<?> loginUser(@RequestBody UserLogin user) {
+        try {
+            User loggedInUser = userService.loginUser(user);
+            if (loggedInUser != null) {
+                return ResponseEntity.ok(loggedInUser); // Restituisce l'oggetto User se il login è avvenuto con successo
+            } else {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Username o password non validi"); // Restituisce un messaggio di errore
+            }
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage()); // Restituisce un messaggio di errore
+        }
+    }
+     */
 }

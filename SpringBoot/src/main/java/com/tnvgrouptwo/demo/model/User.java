@@ -13,10 +13,9 @@ public class User {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "userSequence")
     @SequenceGenerator(name = "userSequence", sequenceName = "users_seq", allocationSize = 1)
     private int id;
-
+    @Column(length = 50)
     private String username;
     private String password;
-    @Column(length = 50)
     private String email;
     private boolean enabled;
     private String team;
