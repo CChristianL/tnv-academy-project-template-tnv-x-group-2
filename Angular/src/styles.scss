@@ -29,7 +29,8 @@ $tnv-project-template-theme: mat.define-light-theme((
 // ---
 //$primary: map-get($primary-palette, 700);
 //$secondary: map-get($secondary-palette, 300);
-$font-family-sans-serif: 'Roboto', sans-serif;
+//$font-family-sans-serif: 'Roboto', sans-serif;
+$font-family-sans-serif: 'Ysabeau Office', sans-serif;
 
 @import "bootstrap/scss/bootstrap";
 
@@ -47,13 +48,16 @@ ngb-rating {
 }
 
 html, body { height: 100%;
-//background-image: url(assets/images/white-smoke-fragments-black-background.jpg);
-//background-size: cover;
-//background-repeat: no-repeat;
-background-color: #030406;
+background-image: url(assets/images/sfondogeneraleApp.png);
+background-size: contain;
+background-repeat: repeat;
+//background-color: #030406;
 
 }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; 
+  //font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: Ysabeau Office, sans-serif;
+ }
 #navbar a {
   color: white;
 }

@@ -16,6 +16,7 @@ import { RankingsComponent } from './components/rankings/rankings.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './@shared/modules/angular-material/angular-material.module';
 import { LandingPageComponent } from './@shared/components/landing-page/landing-page.component';
+import { ContatoreScudoComponent } from './contatore-scudo/contatore-scudo.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { LandingPageComponent } from './@shared/components/landing-page/landing-
     WelcomeComponent,
     ProfileComponent,
     RankingsComponent,
-    LandingPageComponent    
+    LandingPageComponent,
+    ContatoreScudoComponent    
   ],
   imports: [
     BrowserModule,
