@@ -1,9 +1,6 @@
 package com.tnvgrouptwo.demo.controller;
 
-import com.tnvgrouptwo.demo.model.User;
-import com.tnvgrouptwo.demo.model.UserLogin;
-import com.tnvgrouptwo.demo.model.UserRegister;
-import com.tnvgrouptwo.demo.model.UserUpdate;
+import com.tnvgrouptwo.demo.model.*;
 import com.tnvgrouptwo.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -60,8 +57,18 @@ public class UserController {
 
     //updateUser - PUT
     @PutMapping("/{id}")
-    public String updateUser(@PathVariable("id") int id, @RequestBody UserUpdate user) {
-        return userService.updateUser(id, user);
+    public ResponseEntity<User> updateUser(@PathVariable("id") int id, @RequestBody UserUpdate user) {
+        User userToUpdate = userService.updateUser(id, user);
+        if (userToUpdate != null){
+            return ResponseEntity.ok(userToUpdate);
+        } else {
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+    }
+    @GetMapping("/distribution/team/members")
+    public Team teamMembersPercentage() {
+         Team team = userService.teamMembersPercentage();
+        return team;
     }
 
     //deleteUser - DELETE

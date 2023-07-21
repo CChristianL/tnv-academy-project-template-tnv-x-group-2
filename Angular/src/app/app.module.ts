@@ -17,27 +17,27 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './@shared/modules/angular-material/angular-material.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    RegisterComponent,
-    MainPageComponent,
-    LogoutComponent,
-    NavbarComponent,
-    WelcomeComponent,
-    ProfileComponent,
-    RankingsComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    NgbModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    AngularMaterialModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        LoginComponent,
+        RegisterComponent,
+        MainPageComponent,
+        LogoutComponent,
+        NavbarComponent,
+        WelcomeComponent,
+        ProfileComponent,
+        RankingsComponent
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        NgbModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        AngularMaterialModule
+    ]
 })
 export class AppModule { }

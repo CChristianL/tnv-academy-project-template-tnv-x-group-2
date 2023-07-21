@@ -11,9 +11,21 @@ export interface LoginDTO {
   password: string;
 }
 
+export interface UpdateDTO {
+  email?: string; 
+  password?: string;
+}
+
 export interface RegisterDTO {
   username: string;
   email: string;
   password: string;
   team: string;
+}
+
+export interface DistributionDTO {
+  red: number;
+  blu: number;
+  rEnabled: boolean;
+  bEnabled: boolean;
 }

@@ -1,7 +1,4 @@
-<div
-  class="d-flex align-items-center justify-content-center"
-  style="height: 100vh"
->
+<div class="d-flex align-items-center justify-content-center" style="height: 100vh">
   <div class="register-card">
     <div class="wrap d-md-flex">
       <div class="img col-12 col-md-6"></div>
@@ -14,97 +11,73 @@
         <form #f="ngForm" (ngSubmit)="register(f)">
           <div class="form-group">
             <label class="label" for="username">Username</label>
-            <input
-              [ngModel]
-              name="username"
-              type="text"
-              class="form-control"
-              placeholder="Nome"
-              required
-              id="name"
-              #name="ngModel"
-            />
-            <small
-              [style.visibility]="
+            <input [ngModel] name="username" type="text" class="form-control" placeholder="Nome" required id="name"
+              #name="ngModel" />
+            <small [style.visibility]="
                 name.invalid && (name.dirty || name.touched)
                   ? 'visible'
                   : 'hidden'
-              "
-              class="form-text text-danger"
-              >Campo obbligatorio</small
-            >
+              " class="form-text text-danger">Campo obbligatorio</small>
           </div>
           <div class="form-group">
             <label class="label" for="email">eMail</label>
-            <input
-              [ngModel]
-              name="email"
-              type="text"
-              class="form-control"
-              placeholder="eMail"
-              required
-              id="surname"
-              #surname="ngModel"
-            />
-            <small
-              [style.visibility]="
+            <input [ngModel] name="email" type="text" class="form-control" placeholder="eMail" required id="surname"
+              #surname="ngModel" />
+            <small [style.visibility]="
                 surname.invalid && (surname.dirty || surname.touched)
                   ? 'visible'
                   : 'hidden'
-              "
-              class="form-text text-danger"
-              >Campo obbligatorio</small
-            >
+              " class="form-text text-danger">Campo obbligatorio</small>
           </div>
+
+          
           <div class="form-group">
-            <label class="label" for="team">Team</label>
-            <input
-              [ngModel]
-              name="team"
-              type="text"
-              class="form-control"
-              placeholder="team"
-              required
-              id="username"
-              #username="ngModel"
-            />
-            <small
-              [style.visibility]="
-                username.invalid && (username.dirty || username.touched)
-                  ? 'visible'
-                  : 'hidden'
-              "
-              class="form-text text-danger"
-              >Campo obbligatorio</small
-            >
+            <label class="label" for="fazione">Fazione</label>
+            <select name="team" id="fazione"  *ngIf="bEnabled || rEnabled" [ngModel] class="form-control" required>
+              <option value="Atene" *ngIf="bEnabled"> Atene </option>
+              <option value="Sparta" *ngIf="rEnabled"> Sparta </option>
+            </select>
+          <div>
+            <div>
+              <div *ngIf="bEnabled && !rEnabled" >Atene ha bisogno di te!</div>
+              <div *ngIf="rEnabled && !bEnabled ">Sparta ha bisogno di te!</div>
+            </div>
+              
+            </div>
           </div>
+
+
+
+
+          <!--
+
+  <div ngbDropdownMenu aria-labelledby="dropdownBasic1" >
+				<button ngbDropdownItem
+        *ngFor="let city of cities">{{ city }}</button>
+      </div>
+
+          <div class="form-group"> innestare component per la logica del 10%, farò poi una select
+            <label class="label" for="team">Team</label>
+            <input [ngModel] name="team" type="select" class="form-control" placeholder="team" required id="username"
+              #username="ngModel" />
+            <small [style.visibility]="
+      username.invalid && (username.dirty || username.touched)
+        ? 'visible'
+        : 'hidden'
+    " class="form-text text-danger">Campo obbligatorio</small>
+          </div> -->
           <div class="form-group">
             <label class="label" for="password">Password</label>
-            <input
-              [ngModel]
-              required
-              name="password"
-              type="password"
-              class="form-control"
-              id="password"
-              placeholder="Password"
-              #password="ngModel"
-            />
-            <small
-              [style.visibility]="
+            <input [ngModel] required name="password" type="password" class="form-control" id="password"
+              placeholder="Password" #password="ngModel" />
+            <small [style.visibility]="
                 password.invalid && (password.dirty || password.touched)
                   ? 'visible'
                   : 'hidden'
-              "
-              class="form-text text-danger"
-              >Campo obbligatorio</small
-            >
+              " class="form-text text-danger">Campo obbligatorio</small>
           </div>
           <div class="form-group">
-            <button
-              type="submit"
-              class="form-control btn btn-primary rounded submit px-3 mt-2"
-            >
+            <button type="submit" class="form-control btn btn-primary rounded submit px-3 mt-2">
               Registrati <!--manca un onClick emitter-->
             </button>
           </div>

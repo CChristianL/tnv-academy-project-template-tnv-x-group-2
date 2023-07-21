@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.util.Collections;
 import java.util.List;
@@ -111,7 +112,7 @@ public class UserService {
         return userDAO.findAll();
     }
 
-    public String updateUser(int id, UserUpdate user) { //FARE CLASSE USER UPDATE
+    public User updateUser(int id, UserUpdate user) { //FARE CLASSE USER UPDATE
 
 
         user.setPassword(passwordEncoder.encode(user.getPassword()));
@@ -125,9 +126,9 @@ public class UserService {
         userDAO.save(user1);
 
         if (user != null) { //CONTROLLO DA RENDERE PIU PERFORMANTE
-            return "Utente aggiornato correttamente";
+            return user1;
         } else {
-            return "Errore nell'aggiornamento dell'utente";
+            return null;
         }
     }
 
@@ -179,6 +180,43 @@ public User loginUser(UserLogin user) {
         return temp; // Restituisci l'oggetto User
     }
     return null; // Restituisci null per indicare il fallimento del login
+}
+
+public Team teamMembersPercentage() {
+    int red = 0;
+    int blu = 0;
+    Team output = new Team();
+
+    Iterable<User> userIterable = userDAO.findAll();
+
+    for (User user : userIterable) {
+        String team = user.getTeam();
+        if(team != null) {
+            if (team.equalsIgnoreCase("atene")) {
+                blu++;
+            } else if (team.equalsIgnoreCase("sparta")) {
+                red++;
+            }
+        }
+    }
+    output.setBlu(blu);
+    output.setRed(red);
+    int total = blu+red;
+    int tenPercent = total/10;
+
+    if(blu > red ){
+        int dif = blu - red;
+        if(dif > tenPercent){
+            output.setbEnabled(false);
+        }
+    } else{
+        int dif = red -blu;
+        if(dif > tenPercent){
+            output.setrEnabled(false);
+        }
+    }
+
+    return output;
 }
 
 
