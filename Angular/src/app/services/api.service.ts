@@ -8,7 +8,9 @@ import { HttpClient } from '@angular/common/http';
 export class ApiService {
 
   API_ROOT = 'http://localhost:8080/users'; //http://localhost:3306/users
-  //'http://localhost:3306/users'
+  //'http://localhost:3306/users' 
+
+  //Cos'è questo service? Abbiamo usato auth.service.ts e qui non capisco cosa succeda
 
   activeUser: User | undefined | null;
   menu: User[] = [];

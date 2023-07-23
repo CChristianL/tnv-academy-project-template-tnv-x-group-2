@@ -17,6 +17,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './@shared/modules/angular-material/angular-material.module';
 import { LandingPageComponent } from './@shared/components/landing-page/landing-page.component';
 import { ContatoreScudoComponent } from './components/contatore-scudo/contatore-scudo.component';
+import { GameComponent } from './components/game/game.component';
+import { GameItemComponent } from './components/game-item/game-item.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { ContatoreScudoComponent } from './components/contatore-scudo/contatore-
     ProfileComponent,
     RankingsComponent,
     LandingPageComponent,
-    ContatoreScudoComponent
+    ContatoreScudoComponent,
+    GameComponent,
+    GameItemComponent
   ],
   imports: [
     BrowserModule,

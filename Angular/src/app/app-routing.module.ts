@@ -8,6 +8,7 @@ import { WelcomeComponent } from "./components/welcome/welcome.component";
 import { ProfileComponent } from "./components/profile/profile.component";
 import { RankingsComponent } from "./components/rankings/rankings.component";
 import { LandingPageComponent } from "./@shared/components/landing-page/landing-page.component";
+import { GameComponent } from "./components/game/game.component";
 
 const routes: Routes = [
   
@@ -16,6 +17,7 @@ const routes: Routes = [
     component: MainPageComponent,
     canActivate: [AuthGuard],
     children: [
+      { path: "game", component: GameComponent},
       { path: "welcome", component: WelcomeComponent },
       { path: "profile", component: ProfileComponent },
       { path: "rankings", component: RankingsComponent },

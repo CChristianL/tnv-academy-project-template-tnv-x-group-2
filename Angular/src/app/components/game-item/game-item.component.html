@@ -1,0 +1,12 @@
+<p>{{movie?.title}}</p>
+<div class="card shadow" style="background-color: transparent;" >
+    <img [src]="'https://image.tmdb.org/t/p/original' + movie?.poster_path" class="card-img-top" [alt]="movie?.title" />
+    <div class="card-body">
+        <h5 class="card-title">{{ movie?.title | titlecase }}</h5>
+        <p class="card-text">
+            {{ movie?.overview }}
+        </p>
+        <button class="btn btn-danger me-2">Cancella</button>
+        <button class="btn btn-warning">Modifica</button>
+    </div> 
+</div>
