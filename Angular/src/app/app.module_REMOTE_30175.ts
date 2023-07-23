@@ -19,30 +19,6 @@ import { LandingPageComponent } from './@shared/components/landing-page/landing-
 import { ContatoreScudoComponent } from './contatore-scudo/contatore-scudo.component';
 
 @NgModule({
-<<<<<<< HEAD
-    declarations: [
-        AppComponent,
-        LoginComponent,
-        RegisterComponent,
-        MainPageComponent,
-        LogoutComponent,
-        NavbarComponent,
-        WelcomeComponent,
-        ProfileComponent,
-        RankingsComponent
-    ],
-    providers: [],
-    bootstrap: [AppComponent],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FormsModule,
-        NgbModule,
-        HttpClientModule,
-        BrowserAnimationsModule,
-        AngularMaterialModule
-    ]
-=======
   declarations: [
     AppComponent,
     LoginComponent,
@@ -67,6 +43,5 @@ import { ContatoreScudoComponent } from './contatore-scudo/contatore-scudo.compo
   ],
   providers: [],
   bootstrap: [AppComponent]
->>>>>>> 5495b87888c35e5bd6be6c6ad9e2734c43678afa
 })
 export class AppModule { }

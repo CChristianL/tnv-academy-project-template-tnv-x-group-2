@@ -15,11 +15,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { RankingsComponent } from './components/rankings/rankings.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './@shared/modules/angular-material/angular-material.module';
-import { LandingPageComponent } from './@shared/components/landing-page/landing-page.component';
-import { ContatoreScudoComponent } from './contatore-scudo/contatore-scudo.component';
 
 @NgModule({
-<<<<<<< HEAD
     declarations: [
         AppComponent,
         LoginComponent,
@@ -42,31 +39,5 @@ import { ContatoreScudoComponent } from './contatore-scudo/contatore-scudo.compo
         BrowserAnimationsModule,
         AngularMaterialModule
     ]
-=======
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    RegisterComponent,
-    MainPageComponent,
-    LogoutComponent,
-    NavbarComponent,
-    WelcomeComponent,
-    ProfileComponent,
-    RankingsComponent,
-    LandingPageComponent,
-    ContatoreScudoComponent    
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    NgbModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    AngularMaterialModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
->>>>>>> 5495b87888c35e5bd6be6c6ad9e2734c43678afa
 })
 export class AppModule { }

@@ -27,9 +27,10 @@ $tnv-project-template-theme: mat.define-light-theme((
 // ---
 // BOOTSTRAP Theme
 // ---
-$primary: map-get($primary-palette, 700);
-$secondary: map-get($secondary-palette, 300);
-$font-family-sans-serif: 'Roboto', sans-serif;
+//$primary: map-get($primary-palette, 700);
+//$secondary: map-get($secondary-palette, 300);
+//$font-family-sans-serif: 'Roboto', sans-serif;
+$font-family-sans-serif: 'Ysabeau Office', sans-serif;
 
 @import "bootstrap/scss/bootstrap";
 
@@ -39,12 +40,25 @@ $font-family-sans-serif: 'Roboto', sans-serif;
 label {
   text-transform: uppercase;
   font-size: small;
-  font-weight: bold;
+  font-weight: bold;  
 }
 
 ngb-rating {
   color: $primary;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { height: 100%;
+background-image: url(assets/images/sfondogeneraleApp.png);
+background-size: contain;
+background-repeat: repeat;
+//background-color: #030406;
+
+}
+body { margin: 0; 
+  //font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: Ysabeau Office, sans-serif;
+ }
+#navbar a {
+  color: white;
+}
+

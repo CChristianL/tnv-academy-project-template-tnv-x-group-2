@@ -1,0 +1,49 @@
+.login-card {
+    color: white;
+    width: 800px;
+    //padding-top: 50px;
+    //margin-top: auto;
+    
+  }
+  
+  .img {
+    background-image: url("/assets/images/pngwarrior.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center; 
+    position: relative;   
+  }
+  
+  .wrap {
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+    
+  }
+  
+  @media only screen and (max-width: 768px){
+  
+  .login-card {
+    width: 400px;
+  }
+    .img {
+      height: 400px;
+    }
+  }
+  #button-register {
+    
+    background-color: #f0c86a;     
+  }
+  #button-login {
+    background-color: #cf9408;     
+  }
+   
+  h3{
+    text-align: center;
+  }
+  #description {
+    text-align: center;
+    font-style: italic;
+    font-size: 18px;
+  }
+  
