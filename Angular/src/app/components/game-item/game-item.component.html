@@ -1,20 +1,36 @@
+<div class="d-flex justify-content-center" style="height: 100vh;">
+  <div class="login-card">
+    <div class="wrap d-md-flex">
+      <div class="col-12 col-md-6 p-4 p-md-5">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+          <ngb-carousel *ngIf="movies" [interval]="0">
+            <ng-template ngbSlide *ngFor="let movie of movies">
+              <h2 class="pb-2">Film</h2>
+              <div class="card shadow">
+                <img [src]="'https://image.tmdb.org/t/p/original' + movie?.poster_path" alt="{{ movie.title }}">
+                <div class="carousel-caption">
 
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-<ngb-carousel *ngIf="movies" [interval]="0">
-    <ng-template ngbSlide *ngFor="let movie of movies">
-      <div class="card shadow">
-        <img [src]="'https://image.tmdb.org/t/p/original' + movie?.poster_path" alt="{{ movie.title }}">
-        <div class="carousel-caption">
-          <h3>{{ movie.title }}</h3>
-          <p>{{ movie.overview }}</p>
-          <div *ngIf="!rating?.movieId">
-           <tnv-game-comment-rating></tnv-game-comment-rating>
-          </div>
-    </ng-template>
-</ngb-carousel>
-<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-  <span class="visually-hidden">Previous</span>
-</button>
+                </div>
+              </div>
+              <h3>{{ movie.title }}</h3>
+              <p>{{ movie.overview }}</p>
+              <div *ngIf="!rating?.movieId">
+                <tnv-game-comment-rating></tnv-game-comment-rating>
+              </div>
+            </ng-template>
+          </ngb-carousel>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+        </div>
+      </div>
+      <div class="d-flex img col-12 col-md-6">
+        <div class="row">
+          <tnv-contatore-scudo></tnv-contatore-scudo>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-

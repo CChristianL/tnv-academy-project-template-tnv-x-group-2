@@ -1,15 +1,26 @@
 <div class="row mt-3">
-    <div class="col-12">
-      <h5>Come si gioca</h5>
+    <div class="col-12 ">
+      <div class="bottoneHiddenText">
+        <button class="btn" id="button" (click)="toggleVisibilita()">REGOLE DEL GIOCO</button>
+      </div>
+      <div class="instruction" *ngIf="mostraTesto">
+      <h5>Come si Gioca</h5>
       <ol>
-        <li>Qui iniziamo il gioco</li>
+        <li>Guarda la locandina del film messa qua sotto.</li>
+        <li>Se conosci il film pensa a cosa potresti scriverci.</li>
+        <li>Scrivi una recensione della lunghezza massimo di 50 parole.</li>
+        <li>Vota il tuo film con le stelline per il rating!</li>
+        <li>Ricontrolla che i campi che hai scritto siano corretti e che ti piacciano</li>
+        <li>Quando sei sicuro, clicca il bottone con scritto "Valida"</li>
+        <li>RICORDATI, se vai avanti non potrai tornare indietro!</li>
       </ol>
+    </div>
+    
      <!-- <tnv-game-item *ngFor="let movie of movies" [movie]="movie" class="col-12 col-sm-6 col-md-4 py-2"></tnv-game-item> --> 
     
      <div class="container">
       <div class="row">
-        <div class="col-md-12 py-3">
-          <h2 class="pb-2">Film</h2>
+        <div class="col-md-12 py-3">          
           <tnv-game-item [movies]="movies"></tnv-game-item>
         </div>
       </div>

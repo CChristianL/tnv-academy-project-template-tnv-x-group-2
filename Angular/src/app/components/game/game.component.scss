@@ -1,3 +1,25 @@
 .row {
     color: white;
 }
+.instruction {
+    text-align: center;
+}
+h5{
+    font-size: 36px;
+ }
+ ol{    
+    font-size: 24px;
+ }
+ li{
+    list-style-position: inside;
+    list-style-type: lower-greek;
+ }
+ #button {    
+    background-color: #f0c86a;
+    font-size: 24px;
+ }
+ .bottoneHiddenText {
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+ }

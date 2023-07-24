@@ -13,6 +13,7 @@ export class GameComponent implements OnInit {
 
   movies: Movie [] = [];
   ratings: Rating [] = [];
+  mostraTesto = true;
 
   constructor (private http: HttpClient) {
 
@@ -30,4 +31,9 @@ export class GameComponent implements OnInit {
   })
 
 }
+
+toggleVisibilita() {
+  this.mostraTesto = !this.mostraTesto;
+}
+
 }
