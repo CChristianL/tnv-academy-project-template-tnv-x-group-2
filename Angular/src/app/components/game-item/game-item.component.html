@@ -8,10 +8,7 @@
           <h3>{{ movie.title }}</h3>
           <p>{{ movie.overview }}</p>
           <div *ngIf="!rating?.movieId">
-            <!-- Bisogna ancora lavorarci, per far si che il movie id di Rating e di Movie vadano a combaciare -->
-            <!-- Andrebbe rimodellato come componente il text area qui sotto -->
-            <textarea [ngModel]="rating?.comment" class="form-control" rows="3"></textarea>
-            <button> BOTTONE DI INVIO CHE ORA NON FA UN CAZZO </button>
+           <tnv-game-comment-rating></tnv-game-comment-rating>
           </div>
         </div>
       </div>
