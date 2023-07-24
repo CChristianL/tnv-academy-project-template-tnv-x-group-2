@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Movie } from 'src/app/models/movie';
+import { Rating } from 'src/app/models/rating';
 
 
 @Component({
@@ -11,6 +12,7 @@ import { Movie } from 'src/app/models/movie';
 export class GameComponent implements OnInit {
 
   movies: Movie [] = [];
+  ratings: Rating [] = [];
 
   constructor (private http: HttpClient) {
 
