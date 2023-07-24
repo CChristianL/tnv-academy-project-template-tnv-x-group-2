@@ -3,15 +3,14 @@
     <div class="wrap d-md-flex">      
       <div class="col-12 col-md-6 p-4 p-md-5 mt-md-5">
         <div class="d-flex">
+          <div class="content-container">
           <div class="w-100">
-            <h3 class="mb-4">Registrati</h3>
-            <p id="description">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-                  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
-                  enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-                  reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
-                   culpa qui officia deserunt mollit anim id est laborum."</p>
+            <h3 class="mb-2">Registrati</h3>
+            <p id="description">Scegli i tuoi colori, unisciti alla lotta!<br>
+               Unisciti alla saggia <span id="atene">Polis Ateniese</span>
+              o abbraccia la forza della <span id="sparta">Diarchia di Sparta.</span><br>                       
+              Lotta per la vittoria. Raggiungi la gloria!</p>
+          </div>
           </div>
         </div>
         <form #f="ngForm" (ngSubmit)="register(f)">
@@ -97,7 +96,7 @@
           <a data-toggle="tab" routerLink="/login">Accedi</a>
         </p>
       </div>
-      <div class="d-flex img col-12 col-md-6">
+      <div class="img d-flex col-12 col-md-6">
         <div class="row">
           <tnv-contatore-scudo></tnv-contatore-scudo>
         </div>

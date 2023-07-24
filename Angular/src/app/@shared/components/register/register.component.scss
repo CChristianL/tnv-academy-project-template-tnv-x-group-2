@@ -1,8 +1,8 @@
 .register-card {
   color: white;
-  width: 800px;
-  //padding-top: 50px;
-  //margin-top: auto;
+  width: 100%; /* Assicurati che il contenitore sia largo al 100% */
+  max-width: 800px; /* Limita la larghezza massima per schermi più grandi */
+  padding: 20px;
 }
 
 .img {
@@ -45,4 +45,12 @@ a {
 }
 a:hover {
   color: #d6b80fab;  
+}
+#atene {
+  text-shadow: 1px 1px 4px #e9b231;
+  color: blue;
+}
+#sparta {
+  text-shadow: 1px 1px 4px #e9b231;
+  color: red;
 }
