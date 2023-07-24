@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Movie } from 'src/app/models/movie';
+import { Rating } from 'src/app/models/rating';
 
 @Component({
   selector: 'tnv-game-item',
@@ -7,7 +8,24 @@ import { Movie } from 'src/app/models/movie';
   styleUrls: ['./game-item.component.scss']
 })
 export class GameItemComponent {
+
    @Input() movie: Movie | undefined;
-   @Input() movies: Movie [] | undefined;
+   @Input() movies: Movie [] = [];
+   @Input() rating: Rating | undefined;
+   @Input() ratings: Rating [] = [];
+
+   /*
+   Allora, qui dobbiamo fare: un componente che spara il commento, lo emette. 
+   Un metodo che controlli se il movie in questione è già stato commentato, incrociando il suo id con quello di movieId 
+   dentro il model di rating e anche quello del user.id (idealmente salvato in memoria locale) e userId di rating.
+   Lato template, se questo non è stato fatto, allora bisogna visualizzarlo, altrimenti non si visualizza.
+   Ricordare che deve essere non solo commentato, ma anche rateato.
+   Si può pensare di miniaturizzare il componente del box di testo, renderlo tipo game-item-comment.component
+   Serve un metodo che quando salvi il commento, si assicuri che movieId del rating prenda il valore di movie.id.
+   Bisogna implementare un metodo di controllo migliore per quanto riguarda il controllo. Poiché si deve considerare anche
+   se l'utente ha commentato. Quindi se user.id corrente è uguale a userId dentro rating.
+   */
+
+
 }
 
