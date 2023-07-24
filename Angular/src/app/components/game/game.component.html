@@ -4,7 +4,17 @@
       <ol>
         <li>Qui iniziamo il gioco</li>
       </ol>
-      <tnv-game-item *ngFor="let movie of movies" [movie]="movie" class="col-12 col-sm-6 col-md-4 py-2"></tnv-game-item>
+     <!-- <tnv-game-item *ngFor="let movie of movies" [movie]="movie" class="col-12 col-sm-6 col-md-4 py-2"></tnv-game-item> --> 
+    
+     <div class="container">
+      <div class="row">
+        <div class="col-md-12 py-3">
+          <h2 class="pb-2">Film</h2>
+          <tnv-game-item [movies]="movies"></tnv-game-item>
+        </div>
+      </div>
+    </div>
+
     </div>
     
   </div>
