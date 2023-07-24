@@ -19,6 +19,7 @@ import { LandingPageComponent } from './@shared/components/landing-page/landing-
 import { ContatoreScudoComponent } from './components/contatore-scudo/contatore-scudo.component';
 import { GameComponent } from './components/game/game.component';
 import { GameItemComponent } from './components/game-item/game-item.component';
+import { GameCommentRatingComponent } from './components/game-comment-rating/game-comment-rating.component';
 
 @NgModule({
   declarations: [
@@ -34,8 +35,8 @@ import { GameItemComponent } from './components/game-item/game-item.component';
     LandingPageComponent,
     ContatoreScudoComponent,
     GameComponent,
-    GameItemComponent
- 
+    GameItemComponent,
+    GameCommentRatingComponent
   ],
   imports: [
     BrowserModule,

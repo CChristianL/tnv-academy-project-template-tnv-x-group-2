@@ -1,8 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { Movie } from 'src/app/models/movie';
 import { Rating } from 'src/app/models/rating';
+import { ViewEncapsulation } from '@angular/core'
 
 @Component({
+  encapsulation: ViewEncapsulation.None, //Santa lode a stackoverflow https://stackoverflow.com/questions/45788972/how-to-hide-ngb-carousel-indicators-and-prev-next-control
   selector: 'tnv-game-item',
   templateUrl: './game-item.component.html',
   styleUrls: ['./game-item.component.scss']
@@ -25,7 +27,6 @@ export class GameItemComponent {
    Bisogna implementare un metodo di controllo migliore per quanto riguarda il controllo. Poiché si deve considerare anche
    se l'utente ha commentato. Quindi se user.id corrente è uguale a userId dentro rating.
    */
-
 
 }
 
