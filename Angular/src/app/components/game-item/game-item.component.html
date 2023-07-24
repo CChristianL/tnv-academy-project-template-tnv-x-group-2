@@ -1,12 +1,17 @@
-<p>{{movie?.title}}</p>
-<div class="card shadow" style="background-color: transparent;" >
-    <img [src]="'https://image.tmdb.org/t/p/original' + movie?.poster_path" class="card-img-top" [alt]="movie?.title" />
-    <div class="card-body">
-        <h5 class="card-title">{{ movie?.title | titlecase }}</h5>
-        <p class="card-text">
-            {{ movie?.overview }}
-        </p>
-        <button class="btn btn-danger me-2">Cancella</button>
-        <button class="btn btn-warning">Modifica</button>
-    </div> 
-</div>
+<ngb-carousel *ngIf="movies" [interval]="0">
+    <ng-template ngbSlide *ngFor="let movie of movies">
+      <div class="card shadow">
+        <img [src]="'https://image.tmdb.org/t/p/original' + movie?.poster_path" alt="{{ movie.title }}">
+        <div class="carousel-caption">
+          <h3>{{ movie.title }}</h3>
+          <p>{{ movie.overview }}</p>
+          <div *ngIf="!rating?.movieId">
+            <!-- Bisogna ancora lavorarci, per far si che il movie id di Rating e di Movie vadano a combaciare -->
+            <!-- Andrebbe rimodellato come componente il text area qui sotto -->
+            <textarea [ngModel]="rating?.comment" class="form-control" rows="3"></textarea>
+            <button> BOTTONE DI INVIO CHE ORA NON FA UN CAZZO </button>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+</ngb-carousel>
