@@ -1,17 +1,19 @@
 
 .login-card {
   color: white;
-  width: 800px;
-  //padding-top: 50px;
-  //margin-top: auto;
+  width: 1500px;
+  background: transparent;  
 }
 
 .img {
-  background-image: url("/assets/images/pngwarrior.png");
+  background-image: url("/assets/images/giffix.gif");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
-  position: relative;  
+  position: relative;
+  width: 500px;
+  height: 600px;
+  margin: auto;
 }
 
 .wrap {
@@ -20,15 +22,39 @@
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
 }
 
-@media only screen and (max-width: 768px){
-
-.login-card {
-  width: 400px;
-}
-  .img {
-    height: 400px;
+@media screen and (min-width: 992px) and (max-width: 1200px){
+  
+  .login-card {
+    width: auto;
   }
-}
+    .img {
+      height: 500px;
+      width: 500px;
+      margin-left: 0px;
+    }
+  }
+  @media screen and (min-width: 768px) and (max-width: 992px){
+  
+    .login-card {
+      width: auto;
+    }
+      .img {
+        height: 300px;
+        width: 400px;
+        margin-left: auto;
+      }
+    }
+    @media screen and (min-width: 320px) and (max-width: 768px){
+  
+      .login-card {
+        width: 300;
+      }
+        .img {
+          height: 300px;
+          width: 300px;
+          margin-left: auto;
+        }
+      }
 #button-login {
   background-color: #e9b231;
    
@@ -47,4 +73,11 @@ h3{
   font-style: italic;
   font-size: 18px;
 }
-
+#atene {
+  text-shadow: 1px 1px 4px #e9b231;
+  color: blue;
+}
+#sparta {
+  text-shadow: 1px 1px 4px #e9b231;
+  color: red;
+}
