@@ -15,6 +15,7 @@ export class GameItemComponent {
    @Input() movies: Movie [] = [];
    @Input() rating: Rating | undefined;
    @Input() ratings: Rating [] = [];
+   mostraTesto = true;
 
    /*
    Allora, qui dobbiamo fare: un componente che spara il commento, lo emette. 
@@ -30,6 +31,13 @@ export class GameItemComponent {
    Aggiungere un if per quanto riguarda il fatto che, arrivato alla fine del array, non debba più generare altre card
    idealmente, dovrebbe avvisare che il gioco è finito
    */
+   toggleVisibilita() {
+    this.mostraTesto = !this.mostraTesto;
+  }
+  
+  }
 
-}
+  
+
+
 

@@ -39,8 +39,8 @@
           <div class="form-group">
             <label class="label" for="fazione">Fazione</label>
             <select name="team" id="fazione"  *ngIf="bEnabled || rEnabled" [ngModel] class="form-control" required>
-              <option value="Atene" *ngIf="bEnabled"> Atene </option>
-              <option value="Sparta" *ngIf="rEnabled"> Sparta </option>
+              <option value="Atene" *ngIf="bEnabled"><span id="atene"> Atene </span></option>
+              <option value="Sparta" *ngIf="rEnabled"><span id="sparta"> Sparta </span></option>
             </select>
           <div>
             <div>

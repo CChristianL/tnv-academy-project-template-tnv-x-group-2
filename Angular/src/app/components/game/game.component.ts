@@ -13,6 +13,7 @@ export class GameComponent implements OnInit {
 
   movies: Movie [] = [];
   ratings: Rating [] = [];
+  
 
   constructor (private http: HttpClient) {
 

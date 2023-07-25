@@ -1,5 +1,12 @@
- <!-- Bisogna ancora lavorarci, per far si che il movie id di Rating e di Movie vadano a combaciare -->
-            <!-- Andrebbe rimodellato come componente il text area qui sotto -->
-            
-            <textarea [ngModel]="rating?.comment" class="form-control" rows="3"></textarea>
-            <button> BOTTONE DI INVIO CHE ORA NON FA UN CAZZO </button>
+<!-- Bisogna ancora lavorarci, per far si che il movie id di Rating e di Movie vadano a combaciare -->
+<!-- Andrebbe rimodellato come componente il text area qui sotto -->
+
+<textarea [ngModel]="rating?.comment" class="form-control" rows="3"></textarea>
+<div class="container">
+<div class="d-flex flex-row align-items-flex-end">
+    
+    <div class="col-12 mt-3 mb-3">
+        <button class="btn bottoneComment"> Vota! </button>
+    </div>
+</div>
+</div>
