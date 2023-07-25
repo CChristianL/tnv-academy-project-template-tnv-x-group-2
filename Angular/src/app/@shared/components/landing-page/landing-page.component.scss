@@ -1,11 +1,36 @@
+h3{
+  text-align: left;
+  font-size: 56px;
+  text-shadow: #f0c86a 0 0 25px;
+}
+
+.m-2 {
+  margin: 0px !important; 
+}
+
+.invite {
+  font-size: 30px;
+  text-shadow: #f0c86a 0 0 25px;
+  text-align: left;
+}
+
+.d-flex {
+  display: flex;
+}
+
+#description {
+  text-align: justify;
+  font-family: 'Ysabeau Office', sans-serif;
+  font-size: 18px;
+}
+
 .login-card {
     color: white;
     width: 1500px;
     background: transparent;  
-    
   }
  
-  .img {
+.img {
     background-image: url("/assets/images/giffix.gif");
     background-size: contain;
     background-repeat: no-repeat;
@@ -15,24 +40,23 @@
     width: 500px;
     height: 600px;
     margin: auto;
-  }
+ }
   
-  .wrap {
+.wrap {
     overflow: hidden;
     border-radius: 5px;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
-    
-  }
+}
   
-  @media screen and (min-width: 992px) and (max-width: 1200px){
+@media screen and (min-width: 992px) and (max-width: 1200px){
   
-  .login-card {
+.login-card {
     width: auto;
   }
-    .img {
-      height: 500px;
-      width: 500px;
-      margin-left: 0px;
+.img {
+    height: 500px;
+    width: 500px;
+    margin-left: 0px;
     }
   }
   @media screen and (min-width: 768px) and (max-width: 992px){
@@ -45,7 +69,8 @@
         width: 400px;
         margin-left: auto;
       }
-    }
+}
+
     @media screen and (min-width: 320px) and (max-width: 768px){
   
       .login-card {
@@ -57,28 +82,66 @@
           margin-left: auto;
         }
       }
+
+  a {
+    font-size: medium;
+  }
+      
   #button-register {    
-    background-color: #f0c86a;     
+    background-color: #f0c86a; 
+   
   }
   #button-login {
-    background-color: #cf9408;     
+    background-color: #cf9408;   
+    
   }
    
-  h3{
-    text-align: center;
-  }
-
-  #description {
-    text-align: center;
-    font-style: italic;
-    font-size: 18px;
-  }
-  #atene {
-    text-shadow: 1px 1px 4px #e9b231;
-    color: blue;
-  }
   #sparta {
-    text-shadow: 1px 1px 4px #e9b231;
-    color: red;
+    text-shadow: 
+    0 0 5px rgba(150, 0, 0, 0.6), 
+    0 0 10px rgba(150, 0, 0, 0.6), 
+    0 0 15px rgba(150, 0, 0, 0.6),
+    0 0 20px rgba(150, 0, 0, 0.6), 
+    0 0 25px rgba(150, 0, 0, 0.6);
+    color: white;
+    animation: glowAnimation 2s linear infinite;
   }
   
+  @keyframes glowAnimation {
+    0%, 100% {
+      text-shadow: 
+      0 0 5px rgba(150, 0, 0, 0.6), 
+      0 0 10px rgba(150, 0, 0, 0.6), 
+      0 0 15px rgba(150, 0, 0, 0.6),
+      0 0 20px rgba(150, 0, 0, 0.6), 
+      0 0 25px rgba(150, 0, 0, 0.6);
+    }
+    50% {
+      text-shadow: none;
+    }
+  }
+  
+  #atene {
+    text-shadow: 
+    0 0 5px rgba(33, 150, 200, 0.4), 
+    0 0 10px rgba(33, 150, 200, 0.4), 
+    0 0 15px rgba(33, 150, 200, 0.4),
+    0 0 20px rgba(33, 150, 200, 0.4), 
+    0 0 25px rgba(33, 150, 200, 0.4);
+    color: white;
+    animation: glowAnimationAtene 2s linear infinite;
+  }
+  
+  @keyframes glowAnimationAtene {
+    0%, 100% {
+      text-shadow: 
+      0 0 5px rgba(33, 150, 200, 0.4),
+      0 0 10px rgba(33, 150, 200, 0.4),
+      0 0 15px rgba(33, 150, 200, 0.4),
+      0 0 20px rgba(33, 150, 200, 0.4), 
+      0 0 25px rgba(33, 150, 200, 0.4);
+    }
+    50% {
+      text-shadow: none;
+    }
+  }
