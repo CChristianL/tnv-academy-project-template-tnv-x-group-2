@@ -201,6 +201,7 @@ public Team teamMembersPercentage() {
     }
     output.setBlu(blu);
     output.setRed(red);
+
     int total = blu+red;
     int tenPercent = total/10;
 

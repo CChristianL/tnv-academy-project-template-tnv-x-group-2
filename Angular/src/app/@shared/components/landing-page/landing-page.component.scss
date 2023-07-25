@@ -1,11 +1,36 @@
+h3{
+  text-align: left;
+  font-size: 56px;
+  text-shadow: #f0c86a 0 0 25px;
+}
+
+.m-2 {
+  margin: 0px !important; 
+}
+
+.invite {
+  font-size: 30px;
+  text-shadow: #f0c86a 0 0 25px;
+  text-align: left;
+}
+
+.d-flex {
+  display: flex;
+}
+
+#description {
+  text-align: justify;
+  font-family: 'Ysabeau Office', sans-serif;
+  font-size: 18px;
+}
+
 .login-card {
     color: white;
     width: 1500px;
     background: transparent;  
-    
   }
  
-  .img {
+.img {
     background-image: url("/assets/images/giffix.gif");
     background-size: contain;
     background-repeat: no-repeat;
@@ -15,27 +40,27 @@
     width: 500px;
     height: 600px;
     margin: auto;
-  }
+ }
   
-  .wrap {
+.wrap {
     overflow: hidden;
     border-radius: 5px;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
-    
-  }
-  .container{
+   }
+
+.container{
     display: flex;    
   }
   
-  @media screen and (min-width: 992px) and (max-width: 1200px){
+@media screen and (min-width: 992px) and (max-width: 1200px){
   
-  .login-card {
+.login-card {
     width: auto;
   }
-    .img {
-      height: 500px;
-      width: 500px;
-      margin-left: 0px;
+.img {
+    height: 500px;
+    width: 500px;
+    margin-left: 0px;
     }
   }
   @media screen and (min-width: 768px) and (max-width: 992px){
@@ -48,7 +73,8 @@
         width: 400px;
         margin-left: auto;
       }
-    }
+}
+
     @media screen and (min-width: 320px) and (max-width: 768px){
   
       .login-card {
@@ -60,6 +86,7 @@
           margin-left: auto;
         }
       }
+
   #button-login {    
     background-color: transparent; 
     border: 1px solid white; 
@@ -92,13 +119,9 @@
 
   h3{
     text-align: center;
-  }
+    }
+  
 
-  #description {
-    text-align: center;
-    font-style: italic;
-    font-size: 18px;
-  }
   #sparta {
     text-shadow: 
     0 0 5px rgba(150, 0, 0, 0.6), 
@@ -162,3 +185,4 @@
       text-shadow: none;
     }
   }
+
