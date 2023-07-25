@@ -1,8 +1,24 @@
-<div id="scudo1" class="image col-6 p-5 ">
-    <div class="counter" (click)="onClick()"> {{ counter }} </div>
+<div class="glow">
+ <div id="scudo1" class="image col-6 p-5 ">
+    <div class="counter" (click)="onClickR()" routeLink="/preferiti"> {{ rCounter }} </div>
 
-</div>
-<div id="scudo2" class="image col-6 p-5 ">
-    <div class="counter" (click)="onClick()"> {{ counter }} </div>
+ </div>
+ <div id="scudo2" class="image col-6 p-5 ">
+    <div class="counter" (click)="onClickB()" routeLink="/preferiti"> {{ bCounter }} </div>
                   
-</div> 
+ </div> 
+</div>
+<!-- 
+
+Qui devi ingrandire questi bottoni.
+Devi far si che l'onclick sui bottoni sia evidente
+Quindi arrivare con onclick verso l'url di preferiti 
+dove verranno mostrate le liste a carosollo delle fazioni
+Animazione colori sui numeri, assicurandoti che al cambio 
+del numero continui a sussistere un illuminazione dinamica
+
+Inserire un secondo counter, uno è rCounter uno è bCounter
+
+Riguarda la lezione relativa a onChange, onInit etc
+
+-->
