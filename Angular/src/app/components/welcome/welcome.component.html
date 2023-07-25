@@ -1,20 +1,45 @@
-<div class="row mt-3">
-  <div class="col-12">
-    <h5>Come si gioca</h5>
-    <ol>
-      <li> Fate una riunione di team, capite se qualcosa non è chiaro nel progetto e capite come organizzarvi</li>
-      <li> Create un repo di test e fate prove per capire se tutti hanno chiaro come si collabora sul repo usando i branch</li>
-      <li> Se ci sono dubbi chiariamoli subito nell’apposito gruppo</li>
-      <li> Fate un moodboard: partite da una o più foto ed estraete i colori, scegliete la palette, i font, restate minimali e senza fronzoli: meno codice, meno bug.</li>
-      <li> Iniziate a progettare l’interfaccia in modo schematico prima di scrivere una singola riga di codice.</li>
-      <li> Capite i flussi dell’utente: dove atterra dopo il login? Come accede alle sezioni? Quante pagine ci sono?</li>
-      <li> Definite il modello dei dati: che risorse/tabelle ci servono? Quali sono le loro relazioni?</li>
-      <li> Dividetevi i compiti, capendo gli impegni di ognuno e fissando almeno un meeting di allineamento al giorno. </li>
-      <li> Iniziate a sviluppare l’interfaccia angular da subito e create le entità su node/mysql solo quando servono.</li>
-      <li> Potete mockare le response direttamente nei servizi angular per fare i test</li>
-      <li> Ogni volta che sviluppate un pezzetto, integrate su git e testatelo, non facciamo tutto all’ultimo momento!</li>
-      <li>Quando siete bloccati provate a cercare sulla documentazione, su stack overflow, cercate di capire le soluzioni prima di copiaincollarle :) Ma se proprio non riuscite, non restate fermi, chiedete un tutoraggio</li>
-    </ol>
+<tnv-navbar routerLink="/navbar"></tnv-navbar>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Infant:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="welcome.component.scss"> 
+</head>
+<body>
+ <div class="background">
+   <div class="welcome-main">
+      <h1>WarRate</h1>
+      <p>L'Assedio del Cinema</p>
+     <div class="d-flex flex-column ">
+       <div class="text h2">
+         <h2>Scegli i tuoi colori, unisciti alla lotta!</h2>
+       </div>
+       <div class="d-flex justify-content-center ">
+          <div class="text1">
+            <p>Avventurati sul campo di battaglia e sfrutta la tua passione per il cinema per portare la tua fazione alla vittoria! Unisciti alla saggia Polis Ateniese *span di testo ombrato in blu* o abbraccia la forza della Diarchia di Sparta *span ombrato in rosso*.
+              Il tuo scopo è semplice: vota e completa una recensione per il maggior numero di film possibile! Solo così ogni voto assegnato aggiungerà punti preziosi alla tua squadra.
+              Lotta per la vittoria. Raggiungi la gloria!</p>
+              <div class="d-flex justify-content-around">
+                <button type="button" class="btn btn-success btn-circle button1" routerLink="/login">Combatti</button>
+                <button type="button" class="btn btn-success btn-circle button2" routerLink="/register">Arruolati</button>
+              </div>
+          </div>  
+          <div class="p-2">
+            <img src="/Angular/src/assets/images/2warrior.png" alt="Warrate" width="550rem">
+          </div>
+       </div>
+       <div class="d-flex align-items-center justify-content-center p-2">
+         <div class="card card1">
+           <img src="/Angular/src/assets/images/scudoNoSfondo.png" width="150px">
+           <div class="text">11</div>
+          </div>
+         <div class="card card2">
+           <img src="/Angular/src/assets/images/scudoNoSfondo.png" width="150px">
+           <div class="text">10</div>
+         </div>
+        </div> 
+      </div>
+    </div>
   </div>
-  
-</div>
+</body> 
