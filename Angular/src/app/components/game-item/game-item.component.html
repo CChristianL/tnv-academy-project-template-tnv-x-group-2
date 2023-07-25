@@ -1,15 +1,34 @@
-<div class="d-flex justify-content-center" style="height: 100vh;">
-  <div class="login-card">
+<div class="d-flex justify-content-center" style="height: 100vh;">     
     <div class="wrap d-md-flex">
-      <div class="col-12 col-md-6 p-4 p-md-5">
+      <div class="col-12 col-md-6 ">
+        
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+          <div class="row">
+            <h2 class="col-6 mb-3">Film</h2>
+            <div class="col-6 mb-3 bottoneHiddenText">
+              <button class="btn" id="button" (click)="toggleVisibilita()">REGOLE DEL GIOCO</button>
+            </div>              
+          </div>
           <ngb-carousel *ngIf="movies" [interval]="0">
             <ng-template ngbSlide *ngFor="let movie of movies">
-              <h2 class="pb-2">Film</h2>
+              
               <div class="card shadow">
                 <img [src]="'https://image.tmdb.org/t/p/original' + movie?.poster_path" alt="{{ movie.title }}">
-                <div class="carousel-caption">
-
+                <div class="carousel-caption" [hidden]="mostraTesto">
+                  <div class="instruction" >
+                    <h5>Come si Gioca</h5>
+                    <p>Come Giocare:
+                      Combatti nella battaglia del mondo del cinema! 
+                      Osserva la locandina del film e lasciati trascinare 
+                      dai ricordi. Dopo averla vista, scrivi una recensione concisa
+                       di massimo 50 parole e vota il film con gli scudi del rating per 
+                       supportare i tuoi colori!
+                      
+                      Ricorda, sul campo di battaglia la tua scelta è definitiva. 
+                      Una volta saltato un film, non potrai tornare indietro per recensirlo. 
+                      Quando sarai certo del tuo voto e del commento, premi lo scudo dorato 
+                      per confermarli e guidare la tua fazione verso la vittoria!</p>
+                  </div>
                 </div>
               </div>
               <h3>{{ movie.title }}</h3>
@@ -26,11 +45,7 @@
           </button>
         </div>
       </div>
-      <div class="d-flex img col-12 col-md-6">
-        <div class="row">
-          <tnv-contatore-scudo></tnv-contatore-scudo>
-        </div>
-      </div>
+      
     </div>
-  </div>
+  
 </div>

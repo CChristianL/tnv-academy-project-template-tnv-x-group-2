@@ -15,6 +15,7 @@ export class GameItemComponent {
    @Input() movies: Movie [] = [];
    @Input() rating: Rating | undefined;
    @Input() ratings: Rating [] = [];
+   mostraTesto = true;
 
    /*
    Allora, qui dobbiamo fare: un componente che spara il commento, lo emette. 
@@ -27,6 +28,13 @@ export class GameItemComponent {
    Bisogna implementare un metodo di controllo migliore per quanto riguarda il controllo. Poiché si deve considerare anche
    se l'utente ha commentato. Quindi se user.id corrente è uguale a userId dentro rating.
    */
+   toggleVisibilita() {
+    this.mostraTesto = !this.mostraTesto;
+  }
+  
+  }
 
-}
+  
+
+
 
