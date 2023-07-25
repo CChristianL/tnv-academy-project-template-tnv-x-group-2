@@ -1,20 +1,21 @@
-
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-<ngb-carousel *ngIf="movies" [interval]="0">
+  <ngb-carousel *ngIf="movies" [interval]="0">
     <ng-template ngbSlide *ngFor="let movie of movies">
       <div class="card shadow">
-        <img [src]="'https://image.tmdb.org/t/p/original' + movie?.poster_path" alt="{{ movie.title }}">
+         <img [src]="'https://image.tmdb.org/t/p/original' + movie?.poster_path" alt="{{ movie.title }}">
         <div class="carousel-caption">
-          <h3>{{ movie.title }}</h3>
-          <p>{{ movie.overview }}</p>
-          <div *ngIf="!rating?.movieId">
-           <tnv-game-comment-rating></tnv-game-comment-rating>
-          </div>
+           <h3>{{ movie.title }}</h3>
+           <p>{{ movie.overview }}</p>
+           <div *ngIf="!rating?.movieId">
+             <tnv-game-comment-rating></tnv-game-comment-rating>
+           </div>
+        </div>
+      </div>    
     </ng-template>
-</ngb-carousel>
-<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-  <span class="visually-hidden">Previous</span>
-</button>
+  </ngb-carousel>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
 </div>
 
