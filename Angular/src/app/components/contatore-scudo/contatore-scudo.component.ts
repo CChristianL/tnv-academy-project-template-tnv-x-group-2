@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Directive } from '@angular/core';
+import { PunteggioComponent } from './punteggio/punteggio.component';
 
 @Component({
   selector: 'tnv-contatore-scudo',
@@ -7,9 +8,16 @@ import { Component } from '@angular/core';
 })
 export class ContatoreScudoComponent {
 
-constructor () {
+//@Directive({ selector: '[punteggio]'})
+//class punteggioDirective {
+//  constructor(public PunteggioComponent: PunteggioComponent) {
+//    PunteggioComponent.getPunteggio_fazione();
+//  }
+//}
 
-}
+
+
+
 
 rCounter: number = 0;
 bCounter: number = 0;

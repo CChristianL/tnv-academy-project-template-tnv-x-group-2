@@ -20,6 +20,7 @@ import { ContatoreScudoComponent } from './components/contatore-scudo/contatore-
 import { GameComponent } from './components/game/game.component';
 import { GameItemComponent } from './components/game-item/game-item.component';
 import { GameCommentRatingComponent } from './components/game-comment-rating/game-comment-rating.component';
+import { PunteggioComponent } from './components/contatore-scudo/punteggio/punteggio.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { GameCommentRatingComponent } from './components/game-comment-rating/gam
     ContatoreScudoComponent,
     GameComponent,
     GameItemComponent,
-    GameCommentRatingComponent
+    GameCommentRatingComponent,
+    PunteggioComponent
   ],
   imports: [
     BrowserModule,
