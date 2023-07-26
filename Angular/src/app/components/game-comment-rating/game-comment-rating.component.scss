@@ -7,7 +7,7 @@
    display: inline-block; 
    font-size: 22px; 
    transition-duration: 0.4s; 
-   cursor: pointer;   
+   cursor: pointer;
  }
  
  .bottoneComment:hover { 
@@ -16,19 +16,11 @@
    text-shadow: 1px 1px 2px #d9a03e; 
  
  }
- .container {
-   display: flex;
-   justify-content: flex-end;
+ .container {   
    padding: 0;
  }
- .d-flex {
-   display: flex;
- }
- 
- .flex-row {
-   flex-direction: row;   
- }
- 
- .align-items-flex-end {
-   justify-content: flex-end;
- }
+
+ngb-rating {
+  color: #d9a03e;
+  font-size: 36px; /* Imposta la dimensione desiderata */  
+}

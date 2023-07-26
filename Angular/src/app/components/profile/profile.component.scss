@@ -6,7 +6,8 @@ h2 {
     color: white;
 }
 h3 {
-    color: white;
+  text-align: left;
+  color: white;
 }
 
 span {
@@ -27,7 +28,9 @@ p{
     background: transparent;
     height: 600px; 
   }
-
+span{
+  font-size: large;
+}
   .img {
     background-image: url("/assets/images/giffix.gif");
     background-size: contain;
@@ -42,14 +45,17 @@ p{
   
   
   @media screen and (min-width: 992px) and (max-width: 1200px){
-    
+    #container{      
+      display: block !important;
+      justify-content: initial !important;
+    }
     .profile-card {
-      width: auto;
+      width: auto;      
     }
       .img {
-        height: 500px;
+        height: 400px;
         width: 500px;
-        margin-left: 0px;
+        margin-left: 50px;
       }
     }
     @media screen and (min-width: 768px) and (max-width: 992px){
@@ -66,7 +72,7 @@ p{
       @media screen and (min-width: 320px) and (max-width: 768px){
     
         .profile-card {
-          width: 300;
+          width: auto;
         }
           .img {
             height: 300px;
@@ -75,11 +81,7 @@ p{
           }
         }
         
-  .btn {
-    background-color: #d9a03e;     
-    color: black;  
-    text-align: center; 
-    display: inline-block; 
+  .btn {   
     font-size: 22px; 
     transition-duration: 0.4s; 
     cursor: pointer;      
@@ -89,8 +91,13 @@ p{
     box-shadow: 0 0 40px white;
     color: white;
   }
+  .form-control:focus {
+    border-color: #f0c86a;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #f0c86a;
+    outline: 0 none;
+  }
   .form-control{
-    color: white;
+      color: white;
       background: transparent;
   }
   ::placeholder{ /* Chrome */
@@ -104,13 +111,11 @@ p{
     color: white;
   }
   
-  h3 {
-    
+  h3 {    
     text-align: center;
   }
   #description {
-    text-align: center;
-    
+    text-align: center;    
     font-size: 18px;
   }
   a {

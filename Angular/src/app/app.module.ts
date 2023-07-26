@@ -20,6 +20,10 @@ import { ContatoreScudoComponent } from './components/contatore-scudo/contatore-
 import { GameComponent } from './components/game/game.component';
 import { GameItemComponent } from './components/game-item/game-item.component';
 import { GameCommentRatingComponent } from './components/game-comment-rating/game-comment-rating.component';
+import { FavoritesComponent } from './components/favorites/favorites.component';
+import { FavouritesItemComponent } from './components/favourites-item/favourites-item.component';
+import { FavouritesPreloadedCommentComponent } from './components/favourites-preloaded-comment/favourites-preloaded-comment.component';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +40,11 @@ import { GameCommentRatingComponent } from './components/game-comment-rating/gam
     ContatoreScudoComponent,
     GameComponent,
     GameItemComponent,
-    GameCommentRatingComponent
+    GameCommentRatingComponent,
+    FavoritesComponent,
+    FavouritesItemComponent,
+    FavouritesPreloadedCommentComponent
+    
   ],
   imports: [
     BrowserModule,
