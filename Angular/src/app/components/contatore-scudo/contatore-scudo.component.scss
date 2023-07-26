@@ -2,14 +2,17 @@
     background-image: url("/assets/images/scudoNoSfondo.png");
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center center;   
+    background-position: center center;
+    font-size: 450% ;   
     
     
 }
 .counter{
  text-align: center;
- font-size: 400%;
- transition-duration: 0.4s;  
+ text-size-adjust: 300%;
+ transition-duration: 0.4s;
+ position: relative;
+ padding-bottom: 10%;
 
 }
 
@@ -29,7 +32,9 @@
     transition: 0.3s;
     cursor: pointer;
   }
-  .rtext{
+  .btext{
+    font-size: 65%;
+    padding-bottom: 50%;
     text-shadow: 
     0 0 5px rgba(150, 0, 0, 0.6), 
     0 0 10px rgba(150, 0, 0, 0.6), 
@@ -40,10 +45,10 @@
     0 0 40px rgba(150, 0, 0, 0.6),
     0 0 45px rgba(150, 0, 0, 0.6);
     color: white;
-    animation: glowAnimation 4s linear infinite;
+    animation: glowAnimationAtene 4s linear infinite;
    }
    
-   @keyframes glowAnimation {
+   @keyframes glowAnimationAtene {
     0%, 100% {
       text-shadow: 
       0 0 5px rgba(150, 0, 0), 
@@ -72,7 +77,8 @@
     transition: 0.3s;
     cursor: pointer;
   }
-  .btext{
+  .rtext{
+    font-size: 65%;
     text-shadow: 
     0 0 5px rgba(33, 150, 200, 0.4), 
     0 0 10px rgba(33, 150, 200, 0.4), 
@@ -83,10 +89,10 @@
     0 0 40px rgba(33, 150, 200, 0.4),
     0 0 45px rgba(33, 150, 200, 0.4);
     color: white;
-    animation: glowAnimationAtene 4s linear infinite;
+    animation: glowAnimation 4s linear infinite;
    }
    
-   @keyframes glowAnimationAtene {
+   @keyframes glowAnimation {
     0%, 100% {
       text-shadow: 
       0 0 5px rgb(0, 80, 200), 
