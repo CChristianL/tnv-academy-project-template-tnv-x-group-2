@@ -16,7 +16,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
   
 //}
 @Injectable()
-export class PunteggioComponent {
+export class PunteggioComponent  {
   
   punteggio_fazione = 0;
 
