@@ -5,6 +5,12 @@
   height: 600px; 
 }
 
+.form-control:focus {
+  border-color: #f0c86a;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #f0c86a;
+  outline: 0 none;
+}
+
 .img {
   background-image: url("/assets/images/giffix.gif");
   background-size: contain;
@@ -45,7 +51,16 @@
       }
     }
     @media screen and (min-width: 320px) and (max-width: 768px){
-  
+      #description {
+        text-align: center;
+        font-size: 18px;
+      }
+
+      h3.mb-2 {
+        text-align: center;
+        font-size: 35px;
+      }
+     
       .login-card {
         width: 300;
       }
@@ -55,6 +70,7 @@
           margin-left: auto;
         }
       }
+
 #button-register {
   background-color: #d9a03e;     
   color: black;  
@@ -62,16 +78,17 @@
   display: inline-block; 
   font-size: 22px; 
   transition-duration: 0.4s; 
+  border: 1px solid white; 
   cursor: pointer;      
 }
 #button-register:hover { 
   letter-spacing: 0.15em;
-  box-shadow: 0 0 40px white;
+  box-shadow: 0 0 40px #d9a03e;
   color: white;
 }
 .form-control{
   color: white;
-    background: transparent;
+  background: transparent;
 }
 ::placeholder{ /* Chrome */
   color: white;
@@ -84,21 +101,29 @@
   color: white;
 }
 select option {
-  background: #030406;
+  //background: #030406;
+  background: transparent;
   color: white;
 }
 select option {
   background: #030406;
   color: white;
 }
-h3 {
+
+h3{
+  text-align: left;
+  font-size: 52px;
+  text-shadow: #f0c86a 0 0 25px;
   
-  text-align: center;
 }
+
+h3.m-2 {
+  margin: 0px !important; 
+}
+
 #description {
-  text-align: center;
-  
-  font-size: 18px;
+  text-align: justify;
+  font-size: 22px;
 }
 a {
   color: #e9b231;
