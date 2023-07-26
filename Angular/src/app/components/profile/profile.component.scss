@@ -21,9 +21,102 @@ a{
 p{
     color: white;
 }
-.register-card {
+.profile-card {
     color: white;
-    width: 1500px;
+    width: 1000px;
     background: transparent;
     height: 600px; 
   }
+
+  .img {
+    background-image: url("/assets/images/giffix.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative; 
+    width: 500px;
+    height: 600px;
+    margin: auto;
+  }
+  
+  
+  
+  @media screen and (min-width: 992px) and (max-width: 1200px){
+    
+    .profile-card {
+      width: auto;
+    }
+      .img {
+        height: 500px;
+        width: 500px;
+        margin-left: 0px;
+      }
+    }
+    @media screen and (min-width: 768px) and (max-width: 992px){
+    
+      .profile-card {
+        width: auto;
+      }
+        .img {
+          height: 300px;
+          width: 400px;
+          margin-left: auto;
+        }
+      }
+      @media screen and (min-width: 320px) and (max-width: 768px){
+    
+        .profile-card {
+          width: 300;
+        }
+          .img {
+            height: 300px;
+            width: 300px;
+            margin-left: auto;
+          }
+        }
+        
+  .btn {
+    background-color: #d9a03e;     
+    color: black;  
+    text-align: center; 
+    display: inline-block; 
+    font-size: 22px; 
+    transition-duration: 0.4s; 
+    cursor: pointer;      
+  }
+  .btn:hover { 
+    letter-spacing: 0.15em;
+    box-shadow: 0 0 40px white;
+    color: white;
+  }
+  .form-control{
+    color: white;
+      background: transparent;
+  }
+  ::placeholder{ /* Chrome */
+    color: white;
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
+  }
+  
+  h3 {
+    
+    text-align: center;
+  }
+  #description {
+    text-align: center;
+    
+    font-size: 18px;
+  }
+  a {
+    color: #e9b231;
+  }
+  a:hover {
+    color: #d6b80fab;  
+  }
+  
