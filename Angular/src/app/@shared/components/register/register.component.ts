@@ -19,6 +19,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.getTeam();
+
     if (this.authService.isAuthenticated()) {
       this.router.navigateByUrl("/");
     }
@@ -30,17 +31,9 @@ export class RegisterComponent implements OnInit {
          this.bEnabled = response.bEnabled;
          this.rEnabled = response.rEnabled;
       },
-      error: () => alert("Login Errato"),
+      error: () => alert("Errato"),
     })
   };
-
-  /*
-    register(form: NgForm) {
-      form.control.markAllAsTouched();
-      if (form.valid) {
-        this.authService.register(form.value);
-      }
-    }*/
 
   register(form: NgForm) {
     form.control.markAllAsTouched();

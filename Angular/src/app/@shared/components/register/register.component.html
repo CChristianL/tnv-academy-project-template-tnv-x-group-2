@@ -5,6 +5,7 @@
         <div class="d-flex">
 
           <div class="w-100">
+<<<<<<< HEAD
             <h3 class="mb-2">Registrati</h3>
             <p id="description">Scegli i tuoi colori, unisciti alla lotta!<br>
               Unisciti alla saggia <span id="atene">Polis Ateniese</span>
@@ -12,6 +13,13 @@
               Lotta per la vittoria. Raggiungi la gloria!</p>
           </div>
 
+=======
+            <h3 class="mb-2">Unisciti alla battaglia!</h3>
+            <p id="description">Voterai la tua causa alla filosofia della <span id="atene">Polis Ateniese</span>
+              <br> o sarai un fiero guerriero della <span id="sparta">Diarchia di Sparta</span>?<br>                       
+              Lotta per la vittoria. Raggiungi la gloria!</p>
+          </div>
+>>>>>>> 8c1e1780d562eb0aa6eedf45000d12ecd56904e1
         </div>
         <form #f="ngForm" (ngSubmit)="register(f)">
           <div class="form-group">
@@ -43,34 +51,20 @@
               <option value="Sparta" *ngIf="rEnabled"><span id="sparta"> Sparta </span></option>
             </select>
             <div>
+<<<<<<< HEAD
               <div>
                 <div *ngIf="bEnabled && !rEnabled">Atene ha bisogno di te!</div>
                 <div *ngIf="rEnabled && !bEnabled ">Sparta ha bisogno di te!</div>
               </div>
 
+=======
+              <div *ngIf="bEnabled && !rEnabled" >Atene ha bisogno di te!</div>
+              <div *ngIf="rEnabled && !bEnabled ">Sparta ha bisogno di te!</div>
+            </div>              
+>>>>>>> 8c1e1780d562eb0aa6eedf45000d12ecd56904e1
             </div>
-          </div>
+          
 
-
-
-
-          <!--
-
-  <div ngbDropdownMenu aria-labelledby="dropdownBasic1" >
-				<button ngbDropdownItem
-        *ngFor="let city of cities">{{ city }}</button>
-      </div>
-
-          <div class="form-group"> innestare component per la logica del 10%, farò poi una select
-            <label class="label" for="team">Team</label>
-            <input [ngModel] name="team" type="select" class="form-control" placeholder="team" required id="username"
-              #username="ngModel" />
-            <small [style.visibility]="
-      username.invalid && (username.dirty || username.touched)
-        ? 'visible'
-        : 'hidden'
-    " class="form-text text-danger">Campo obbligatorio</small>
-          </div> -->
           <div class="form-group">
             <label class="label" for="password">Password</label>
             <input [ngModel] required name="password" type="password" class="form-control" id="password"
@@ -99,4 +93,3 @@
       </div>
     </div>
   </div>
-</div>
