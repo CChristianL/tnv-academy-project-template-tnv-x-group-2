@@ -1,10 +1,12 @@
 <div class="glow">
  <div id="scudo1" class="image col-6 p-5 ">
-    <div class="counter" (click)="onClickR()" routeLink="/preferiti"> {{ rCounter }} </div>
+    <div class="counter" (click)="onClickR()" routeLink="/preferiti"> <span class="rtext">{{ rCounter }}</span>
+      
+    </div>
 
  </div>
  <div id="scudo2" class="image col-6 p-5 ">
-    <div class="counter" (click)="onClickB()" routeLink="/preferiti"> {{ bCounter }} </div>
+    <div class="counter" (click)="onClickB()" routeLink="/preferiti"> <span class="btext">{{ bCounter}}</span></div>
                   
  </div> 
 </div>
