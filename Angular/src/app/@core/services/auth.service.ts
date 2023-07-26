@@ -8,8 +8,7 @@ import { DistributionDTO, LoginDTO, RegisterDTO, UpdateDTO, User } from "src/app
   providedIn: "root",
 })
 export class AuthService {
-  springBootUrl = //'http://localhost:3306/users'; 
-  'http://localhost:8080/users';
+  springBootUrl = 'http://localhost:8080/users';
 
   constructor(private router: Router, private http: HttpClient) {}
 

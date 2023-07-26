@@ -15,6 +15,7 @@ export class GameItemComponent {
    @Input() movies: Movie [] = [];
    @Input() rating: Rating | undefined;
    @Input() ratings: Rating [] = [];
+   mostraTesto = true;
 
    /*
    Allora, qui dobbiamo fare: un componente che spara il commento, lo emette. 
@@ -26,7 +27,17 @@ export class GameItemComponent {
    Serve un metodo che quando salvi il commento, si assicuri che movieId del rating prenda il valore di movie.id.
    Bisogna implementare un metodo di controllo migliore per quanto riguarda il controllo. Poiché si deve considerare anche
    se l'utente ha commentato. Quindi se user.id corrente è uguale a userId dentro rating.
-   */
 
-}
+   Aggiungere un if per quanto riguarda il fatto che, arrivato alla fine del array, non debba più generare altre card
+   idealmente, dovrebbe avvisare che il gioco è finito
+   */
+   toggleVisibilita() {
+    this.mostraTesto = !this.mostraTesto;
+  }
+  
+  }
+
+  
+
+
 

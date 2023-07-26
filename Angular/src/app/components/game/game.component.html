@@ -1,21 +1,11 @@
-<div class="row mt-3">
-    <div class="col-12">
-      <h5>Come si gioca</h5>
-      <ol>
-        <li>Qui iniziamo il gioco</li>
-      </ol>
-     <!-- <tnv-game-item *ngFor="let movie of movies" [movie]="movie" class="col-12 col-sm-6 col-md-4 py-2"></tnv-game-item> --> 
-    
-     <div class="container">
-      <div class="row">
-        <div class="col-md-12 py-3">
-          <h2 class="pb-2">Film</h2>
-          <tnv-game-item [movies]="movies"></tnv-game-item>
-        </div>
-      </div>
-    </div>
+<div class="container">
 
+  <div class="row">
+    <div class="game col-12 col-md-6">
+      <tnv-game-item [movies]="movies"></tnv-game-item>
     </div>
-    
+      <div class=" img col-12 col-md-6">
+        <tnv-contatore-scudo></tnv-contatore-scudo>
+      </div>    
   </div>
-  
+</div>

@@ -18,16 +18,18 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       { path: "game", component: GameComponent},
-      { path: "welcome", component: WelcomeComponent },
+      { path: "combatti", component: WelcomeComponent },
       { path: "profile", component: ProfileComponent },
       { path: "rankings", component: RankingsComponent },
-      { path: "", redirectTo: "welcome", pathMatch: 'full' },
+      { path: "", redirectTo: "combatti", pathMatch: 'full' },
     ],
   },
+
   {
-    path: "landing-page",
-    component: LandingPageComponent,
+  path: "landing-page",
+  component: LandingPageComponent, 
   },
+  
   {
     path: "login",
     component: LoginComponent,

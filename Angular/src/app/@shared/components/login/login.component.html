@@ -8,7 +8,7 @@
         <div class="d-flex">
           <div class="w-100">
             <h3 class="mb-4">Accedi</h3>
-            <p id="description">Combatti per la tua fazione!<br>
+            <p id="description"><span class="invite">Combatti per la tua fazione!</span><br>
                                
               Lotta per la vittoria. Raggiungi la gloria!</p>
           </div>
@@ -28,7 +28,7 @@
             />
             <div
               [style.visibility]="username.invalid && (username.dirty || username.touched) ? 'visible' : 'hidden'"
-              class="mt-1 small text-danger"
+              class="mt-1 small text-danger" 
             >
               Campo obbligatorio
             </div>

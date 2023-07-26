@@ -1,5 +1,11 @@
 <nav id="navbar" class="navbar navbar-expand-md fixed-top px-3">
-  <a class="navbar-brand" routerLink="/landing-page">War Rate Greek Edition</a>
+  <a class="navbar-brand" routerLink="/">War Rate Greek Edition</a> 
+  <!--
+    Questo aggira un po di deliri fatti con la auth.guard.ts Mauri
+    In sostanza ci permette di far si che se l'utente è sloggato possa andare sulla navbar
+    ed essere reindirizzato a landing-page se preme War Rate, e se è loggato, viene sparato
+    a combatti.
+  -->
   <button
     class="navbar-toggler hidden-sm-up"
     type="button"
@@ -18,14 +24,14 @@
   >
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" routerLink="/welcome" routerLinkActive="active"
-          >Welcome</a
+        <a class="nav-link" routerLink="/combatti" routerLinkActive="active"
+          >Combatti</a
         >
       </li>
       <li class="nav-item active">
         <a class="nav-link" routerLink="/game" routerLinkActive="active"
-          >Gioca</a
-        >
+          >Gioca</a 
+        > <!-- bisogna ricordarsi di disattivare questo -->
       </li>
       <li class="nav-item active">
         <a class="nav-link" routerLink="/rankings" routerLinkActive="active"
