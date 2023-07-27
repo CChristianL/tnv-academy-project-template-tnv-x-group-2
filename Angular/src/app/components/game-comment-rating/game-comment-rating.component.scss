@@ -1,4 +1,17 @@
 
+.container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0;
+  
+  .flex-row {
+    flex-direction: row;   
+  }
+  
+  .align-items .flex-row {
+    flex-direction: row;   
+  }
+ 
  .bottoneComment {
    background-color: transparent; 
    border: 1px solid white; 
@@ -16,19 +29,5 @@
    text-shadow: 1px 1px 2px #d9a03e; 
  
  }
- .container {
-   display: flex;
-   justify-content: flex-end;
-   padding: 0;
- }
- .d-flex {
-   display: flex;
- }
- 
- .flex-row {
-   flex-direction: row;   
- }
- 
- .align-items-flex-end {
-   justify-content: flex-end;
- }
+
+}
