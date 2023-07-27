@@ -1,11 +1,6 @@
 .d-flex {
   display: flex;
-  flex-wrap: wrap;
-
-
-} 
- 
- 
+  flex-wrap: wrap; 
  
  .register-card {
   color: white;
@@ -78,6 +73,14 @@
           width: 300px;
           margin-left: auto;
         }
+  @media screen and (min-width: 1024px){
+    .img {
+      height: 500px;
+      width: 500px;
+      margin-left: auto;
+    }
+  }
+
       
 
  #button-register {
@@ -198,8 +201,9 @@
     0 0 35px rgba(33, 150, 200),
     0 0 40px rgba(33, 150, 200),
     0 0 55px rgba(33, 150, 200);
-  }
-  50% {
+   }
+   50% {
     text-shadow: none;
+   }
   }
 }

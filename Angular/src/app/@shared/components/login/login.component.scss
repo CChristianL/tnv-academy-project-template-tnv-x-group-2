@@ -1,6 +1,7 @@
 .d-flex{ 
   display: flex;
   flex-wrap: wrap;
+ 
 
 
  .login-card {
@@ -21,9 +22,10 @@
   background-repeat: no-repeat;
   background-position: center center;
   position: relative;
-  width: 500px;
-  height: 600px;
+  width: 300px;
+  height: 400px;
   margin: auto;
+  
  }
 
  .wrap {
@@ -33,42 +35,36 @@
  }
 
 
-  
-  .login-card {
-    width: auto;
-  }
+ @media screen and (min-width: 1024px){  
   
   .img {
     height: 500px;
-    width: 500px;
-    margin-left: 0px;
+    width: 450px;
+    margin-left: none;
+    
   }
-
-
-
+  h3{
+    text-align: left !important;
+    font-size: 52px !important;
+    text-shadow: #f0c86a 0 0 25px;
+    margin-bottom: 8px !important;
+   }
   
-  .login-card {
-    width: auto;
-  }
+   .invite {
+    text-align: left !important;
+    font-size: 30px !important;
+   }
   
-  .img {
-    height: 300px;
-    width: 400px;
-    margin-left: auto;
-  }
-
-
-
+   h3.m-2 {
+    margin: 0px !important; 
+   }
   
-  .login-card {
-    width: 300;
-  }
-  
-  .img {
-    height: 300px;
-    width: 300px;
-    margin-left: auto;
-  }
+   #description {
+    text-align: left !important;
+    font-size: 22px !important;
+   }
+
+ }
  
 
  #button-login {
