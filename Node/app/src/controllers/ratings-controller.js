@@ -20,6 +20,24 @@ export const getRating = async (req, res) => {
     }
 }
 
+export const getRatings = async (req, res) => {
+    try {
+        const ratings = await Rating.findAll({
+
+        });
+        if (ratings) {
+            res.send(ratings);
+        } else {
+            console.log("Sono il tuo peggiore incubo 404 non 500")
+            res.sendStatus(404);
+        }
+    } catch (err) {
+        console.log("Sono il tuo peggiore incubo")
+        console.log(err);
+        res.sendStatus(500);
+    }
+}
+
 export const createRating = async (req, res) => {
     try {
         const rating = await Rating.create(req.body);
