@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, SimpleChanges } from '@angular/core';
 import { RatingService } from 'src/app/@shared/services/rating.service';
 import { Rating } from 'src/app/models/rating';
 
@@ -9,18 +9,16 @@ import { Rating } from 'src/app/models/rating';
 })
 export class ContatoreScudoComponent {
 
-  @Input() countedRatings: [] = [];
+  @Input() ratings: Rating [] = [];
   counter: number = 0;
   
   constructor(public ratingService: RatingService) {
       
   }
-
-  ngOnInit(): void {
-    this.counter = this.countedRatings.length;
+  ngOnChanges (): void {
   }
 
-  ngOnChanges (): void {
-    this.counter = this.countedRatings.length
+  updateCounter(ratings: Rating[]) {
+    this.counter = ratings.length;
   }
 }

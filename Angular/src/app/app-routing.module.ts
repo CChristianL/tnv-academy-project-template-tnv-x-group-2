@@ -9,7 +9,6 @@ import { ProfileComponent } from "./components/profile/profile.component";
 import { RankingsComponent } from "./components/rankings/rankings.component";
 import { LandingPageComponent } from "./@shared/components/landing-page/landing-page.component";
 import { GameComponent } from "./components/game/game.component";
-import { FavoritesComponent } from "./components/favorites/favorites.component";
 import { PageRatingsmoviesComponent } from "./components/page-ratingsmovies/page-ratingsmovies.component";
 
 const routes: Routes = [
@@ -23,7 +22,6 @@ const routes: Routes = [
       { path: "combatti", component: WelcomeComponent },
       { path: "profile", component: ProfileComponent },
       { path: "rankings", component: RankingsComponent },
-      { path: "favourites", component: FavoritesComponent },
       { path: "", redirectTo: "combatti", pathMatch: 'full' },
       
     ],
