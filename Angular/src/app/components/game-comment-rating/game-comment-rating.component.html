@@ -1,8 +1,8 @@
 <form>
     <div class="form-group" *ngIf="!rating.movieId">
       <label for="title">Commento</label>
-      <input type="text" class="form-control" id="commento" name="commento" [(ngModel)]="commentTemp"
-        (ngModelChange)="checkWordCount()">
+      <textarea type="text" class="form-control" id="commento" name="commento" rows="5" [(ngModel)]="commentTemp"
+        (ngModelChange)="checkWordCount()"></textarea>
     </div>
     <ngb-rating [(rate)]="value" [max]="10" (rateChange)="onRatingChange($event)"></ngb-rating>
     <div *ngIf="outOfBound" class="mt-1 small text-danger">

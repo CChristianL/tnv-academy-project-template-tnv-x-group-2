@@ -3,15 +3,13 @@ import { RatingService } from 'src/app/@shared/services/rating.service';
 import { Movie } from 'src/app/models/movie';
 import { Rating } from 'src/app/models/rating';
 import { MovieService } from 'src/app/services/movie.service';
-import { ContatoreScudoComponent } from '../contatore-scudo/contatore-scudo.component';
 
 @Component({
-  selector: 'tnv-game',
-  templateUrl: './game.component.html',
-  styleUrls: ['./game.component.scss']
+  selector: 'tnv-favourites',
+  templateUrl: './favourites.component.html',
+  styleUrls: ['./favourites.component.scss']
 })
-export class GameComponent implements OnInit {
-
+export class FavouritesComponent {
   @Input() movies: Movie [] = [];
   @Input() ratings: Rating [] = [];
   rating: Rating = {}
@@ -23,6 +21,10 @@ export class GameComponent implements OnInit {
 
   constructor(public movieService: MovieService, public ratingService: RatingService) {}
 
+  ngOnInit(): void{
+    //this.filteredMovies = [...this.movies];
+  }
+  /*
   ngOnInit(): void {
     
       console.log("Movies nel componente genitore:", this.movies);
@@ -92,4 +94,5 @@ export class GameComponent implements OnInit {
   hasUserSkippedMovie(movieId: number): boolean {
     return this.movies.some((movie) => movie.id === movieId);
   }
+  */
 }
