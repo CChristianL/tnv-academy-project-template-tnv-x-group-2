@@ -4,4 +4,21 @@
     //background-repeat: no-repeat;
     //overflow: hidden; 
     background-color: #030406;
+    color: white;
 }
+button{
+    background-color: white;
+    border: 1px solid white;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 22px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+  
+button:hover {
+    letter-spacing: 0.15em;
+    box-shadow: 0 0 40px #d9a03e;
+    text-shadow: 1px 1px 2px #d9a03e;
+  }

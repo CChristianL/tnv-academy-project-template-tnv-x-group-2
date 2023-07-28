@@ -1,0 +1,36 @@
+<div class="d-flex justify-content-center" style="height: 100vh;">     
+    <div class="wrap d-md-flex">
+      <div class="col-12 col-md-6 ">
+        
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+          <div class="row">
+            <h2 class="col-6 mb-3">Film</h2>
+            <div class="col-6 mb-3 bottoneHiddenText">
+              <button class="btn" id="button" (click)="toggleVisibilita()">REGOLE DEL GIOCO</button>
+            </div>              
+          </div>
+          <ngb-carousel *ngIf="movies" [interval]="0">
+            <ng-template ngbSlide *ngFor="let movie of movies">
+              
+              <div class="card shadow">
+                <img [src]="'https://image.tmdb.org/t/p/original' + movie?.poster_path" alt="{{ movie.title }}">
+                
+              </div>
+              <h3>{{ movie.title }}</h3>
+              <p>{{ movie.overview }}</p>
+              <div *ngIf="!rating?.movieId">
+                <tnv-favourites-preloaded-comment></tnv-favourites-preloaded-comment>
+              </div>
+            </ng-template>
+          </ngb-carousel>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  
+</div>

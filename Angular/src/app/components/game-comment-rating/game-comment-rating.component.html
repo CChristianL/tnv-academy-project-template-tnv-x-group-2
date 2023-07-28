@@ -1,22 +1,3 @@
-<!-- Bisogna ancora lavorarci, per far si che il movie id di Rating e di Movie vadano a combaciare -->
-<!-- Andrebbe rimodellato come componente il text area qui sotto -->
-<!--
-<form>
-    <div class="form-group" *ngIf="!rating.movieId">
-        <label for="title">Commento</label>
-        <input type="text" class="form-control" id="commento" name="commento"  [(ngModel)]="postsNew.post.description" (ngModelChange)="checkWordCount()">
-    </div>
-    <ngb-rating [rate]="value" [max]="10" (rateChange)="onRatingChange($event)"></ngb-rating>
-    <div *ngIf="outOfBound" class="mt-1 small text-danger">
-        Il commento deve contenere massimo {{ wordLimit }} parole.
-      </div>
-    <div class="col-12 mt-3 mb-3" *ngIf="!rating.movieId">
-        <button class="btn bottoneComment" (click)="onSubmit()"> Vota! </button>
-    </div>
-    
-</form>
--->
-
 <form>
     <div class="form-group" *ngIf="!rating.movieId">
       <label for="title">Commento</label>
@@ -36,21 +17,5 @@
 </form>
   
 
-<!--
-
--------------------------------------------------------------------------------
-<textarea (ngModel)="rating?.comment" class="form-control" rows="3"></textarea>
-<div class="container">
-<div class="d-flex flex-row align-items-flex-end">
-    
-    <div class="col-12 mt-3 mb-3">
-        <button class="btn bottoneComment" (click)="onSubmit()"> Vota! </button>
-    </div>
-</div>
-</div>
 
 
-Integrare filtro: se l'utente ha già commentato in passato un film, non mostrarlo
-di nuovo.
---------------------------------------------------------------------------------
--->
