@@ -59,13 +59,16 @@ h5 {
   }
 }
 
+
 @media screen and (min-width: 320px) and (max-width: 769px) {  
+  
+
   .container{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    
   }
+
   .img {     
     height: 300px;  
     width: 300px;
