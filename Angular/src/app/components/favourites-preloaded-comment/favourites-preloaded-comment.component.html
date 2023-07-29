@@ -1,32 +1,20 @@
 <div class="form-outline">
-    <textarea readonly="true" class="form-control" id="textAreaExample1" rows="20">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum necessitatibus qui ipsa atque voluptate porro, 
-        aut odio hic magnam aperiam culpa sint ipsam iure ea ab suscipit nostrum commodi! Enim nihil modi pariatur laborum 
-        soluta? Labore, nostrum fugiat architecto tempore deleniti rerum a necessitatibus officia ea at, tenetur adipisci maiores.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum necessitatibus qui ipsa atque voluptate porro, 
-        aut odio hic magnam aperiam culpa sint ipsam iure ea ab suscipit nostrum commodi! Enim nihil modi pariatur laborum 
-        soluta? Labore, nostrum fugiat architecto tempore deleniti rerum a necessitatibus officia ea at, tenetur adipisci maiores.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum necessitatibus qui ipsa atque voluptate porro, 
-        aut odio hic magnam aperiam culpa sint ipsam iure ea ab suscipit nostrum commodi! Enim nihil modi pariatur laborum 
-        soluta? Labore, nostrum fugiat architecto tempore deleniti rerum a necessitatibus officia ea at, tenetur adipisci maiores.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum necessitatibus qui ipsa atque voluptate porro, 
-        aut odio hic magnam aperiam culpa sint ipsam iure ea ab suscipit nostrum commodi! Enim nihil modi pariatur laborum 
-        soluta? Labore, nostrum fugiat architecto tempore deleniti rerum a necessitatibus officia ea at, tenetur adipisci maiores.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum necessitatibus qui ipsa atque voluptate porro, 
-        aut odio hic magnam aperiam culpa sint ipsam iure ea ab suscipit nostrum commodi! Enim nihil modi pariatur laborum 
-        soluta? Labore, nostrum fugiat architecto tempore deleniti rerum a necessitatibus officia ea at, tenetur adipisci maiores.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum necessitatibus qui ipsa atque voluptate porro, 
-        aut odio hic magnam aperiam culpa sint ipsam iure ea ab suscipit nostrum commodi! Enim nihil modi pariatur laborum 
-        soluta? Labore, nostrum fugiat architecto tempore deleniti rerum a necessitatibus officia ea at, tenetur adipisci maiores.</textarea>
-    <label class="form-label" for="textAreaExample">Message</label>
-</div>  
-<div class="container">
-<div class="d-flex">    
-    <div class="col-12"> 
-        
+    <label class="form-label" for="textAreaExample">Recensioni</label>
+    <div readonly="true" class="form-control" id="textAreaExample1" rows="20">
+        <ul>
+            <li *ngFor="let rating of ratings">
+        <h3>{{ rating?.username }}</h3>
+        <h5>{{ rating?.comment }}</h5>
+        <span>{{ rating?.rating }}</span>
+            </li>
+        </ul>
     </div>
 </div>
+<div class="container">
+    <div class="d-flex">
+        <div class="col-12">
+
+        </div>
+    </div>
 </div>
 <!--dobbiamo fare qui un componente che generi automaticamente tante recensioni quante ce ne servono, con il rating stellinato collegato-->
-
-
