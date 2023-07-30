@@ -25,7 +25,8 @@ export class ContatoreScudoComponent {
   }
   //questo oninit ripete la chiamata al DB facendo si che i punteggi si aggiornino
   //implementare con observable e onChanges?
-  ngOnInit() {
+  
+ ngOnInit() {
     this.subscription = timer(0, 1000).pipe(
       switchMap(async () => this.ratingService.teamAteneRating())
     ).subscribe(result => 
@@ -44,13 +45,4 @@ export class ContatoreScudoComponent {
       //}
   }
 
-  //updateCounter(ratings: Rating[]) {
-    //this.counter = ratings.length;
-    //this.arrayCounter = this.ratings.filter(x => x.comment);//filtra in array counter per commenti
-    //this.counter = this.arrayCounter.length //da a counter la grandezza dell'arrayCounter
-  //}
-
-  updateCounter (){
-    
-  }
 }
