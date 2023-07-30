@@ -9,6 +9,7 @@ import { ProfileComponent } from "./components/profile/profile.component";
 import { RankingsComponent } from "./components/rankings/rankings.component";
 import { LandingPageComponent } from "./@shared/components/landing-page/landing-page.component";
 import { GameComponent } from "./components/game/game.component";
+import { PageRatingsmoviesComponent } from "./components/page-ratingsmovies/page-ratingsmovies.component";
 
 const routes: Routes = [
   
@@ -17,11 +18,12 @@ const routes: Routes = [
     component: MainPageComponent,
     canActivate: [AuthGuard],
     children: [
-      { path: "game", component: GameComponent},
+      { path: "game", component: PageRatingsmoviesComponent},
       { path: "combatti", component: WelcomeComponent },
       { path: "profile", component: ProfileComponent },
       { path: "rankings", component: RankingsComponent },
       { path: "", redirectTo: "combatti", pathMatch: 'full' },
+      
     ],
   },
 
@@ -29,7 +31,7 @@ const routes: Routes = [
   path: "landing-page",
   component: LandingPageComponent, 
   },
-  
+
   {
     path: "login",
     component: LoginComponent,

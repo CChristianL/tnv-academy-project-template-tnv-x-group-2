@@ -6,7 +6,8 @@ h2 {
     color: white;
 }
 h3 {
-    color: white;
+  text-align: left;
+  color: white;
 }
 
 span {
@@ -21,9 +22,54 @@ a{
 p{
     color: white;
 }
-.register-card {
+.profile-card {
     color: white;
-    width: 1500px;
+    width: 1000px;
     background: transparent;
     height: 600px; 
   }
+
+  .btn {   
+    font-size: 22px; 
+    transition-duration: 0.4s; 
+    cursor: pointer;      
+  }
+  .btn:hover { 
+    letter-spacing: 0.15em;
+    box-shadow: 0 0 40px white;
+    color: white;
+  }
+  .form-control:focus {
+    border-color: #f0c86a;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #f0c86a;
+    outline: 0 none;
+  }
+  .form-control{
+      color: white;
+      background: transparent;
+  }
+  ::placeholder{ /* Chrome */
+    color: white;
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
+  }
+  
+  h3 {    
+    text-align: center;
+  }
+  #description {
+    text-align: center;    
+    font-size: 18px;
+  }
+  a {
+    color: #e9b231;
+  }
+  a:hover {
+    color: #d6b80fab;  
+  }
+  

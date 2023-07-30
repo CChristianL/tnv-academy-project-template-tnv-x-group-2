@@ -1,19 +1,18 @@
-.d-flex {
-  display: flex;
-  flex-wrap: wrap;
 
- .carousel-control-prev {
+.carousel-control-prev {
     display: none;
- }    
 }
 
+.carousel-indicators {
+    display: none;
+}
 .carousel{
     width: 500px;
     height: 600px;
     margin: auto;
- }
+}
 
- #button{
+#button{
     background-color: transparent; 
     border: 1px solid white; 
     color: white;  
@@ -35,7 +34,7 @@
     align-items: center;
   }
   
- .instruction {
+.instruction {
     color: white;    
     font-size: large;
   }
@@ -52,6 +51,8 @@
     border-radius: 10px 10px 10px 10px;
   }
 
-}
- 
+ .wrap{
+    scale: 90%;
+ }
 
+ 

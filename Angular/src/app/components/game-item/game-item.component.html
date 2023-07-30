@@ -6,15 +6,15 @@
           <div class="row">
             <h2 class="col-6 mb-3">Film</h2>
             <div class="col-6 mb-3 bottoneHiddenText">
-              <button class="btn" id="button" (click)="toggleVisibilita()">REGOLE DEL GIOCO</button>
+              <button class="btn" id="button" (click)="toggleVisibility()">REGOLE DEL GIOCO</button>
             </div>              
           </div>
           <ngb-carousel *ngIf="movies" [interval]="0">
             <ng-template ngbSlide *ngFor="let movie of movies">
-              
+              <div class="condizione" *ngIf="!rating?.movieId">
               <div class="card shadow">
                 <img [src]="'https://image.tmdb.org/t/p/original' + movie?.poster_path" alt="{{ movie.title }}">
-                <div class="carousel-caption" [hidden]="mostraTesto">
+                <div class="carousel-caption" [hidden]="showText">
                   <div class="instruction" >
                     <h5>Come si Gioca</h5>
                     <p>Come Giocare:
@@ -33,13 +33,15 @@
               </div>
               <h3>{{ movie.title }}</h3>
               <p>{{ movie.overview }}</p>
-              <div *ngIf="!rating?.movieId">
-                <tnv-game-comment-rating></tnv-game-comment-rating>
+              <div *ngIf="!rating?.movieId && !rating?.userId">
+                <tnv-game-comment-rating (skipMovie)="onSkipped($event)" (submit)="onSubmited($event)" [movie]="movie" [ratings]="ratings" [movies]="movies"
+                ></tnv-game-comment-rating>
               </div>
+            </div>
             </ng-template>
           </ngb-carousel>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-            data-bs-slide="prev">
+            data-bs-slide="prev" tabindex="-1">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>

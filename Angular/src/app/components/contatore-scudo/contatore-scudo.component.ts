@@ -1,5 +1,9 @@
 import { Component, Directive } from '@angular/core';
 import { PunteggioComponent } from './punteggio/punteggio.component';
+import { Component, Input, SimpleChanges } from '@angular/core';
+import { RatingService } from 'src/app/@shared/services/rating.service';
+import { Rating } from 'src/app/models/rating';
+
 
 @Component({
   selector: 'tnv-contatore-scudo',
@@ -7,6 +11,7 @@ import { PunteggioComponent } from './punteggio/punteggio.component';
   styleUrls: ['./contatore-scudo.component.scss']
 })
 export class ContatoreScudoComponent {
+
 
 //@Directive({ selector: '[punteggio]'})
 //class punteggioDirective {
@@ -18,7 +23,7 @@ export class ContatoreScudoComponent {
 
 
 
-
+/*
 rCounter: number = 0;
 bCounter: number = 0;
 
@@ -37,4 +42,19 @@ ngOnInit () {
   this.bCounter;
 }
 
+=======
+  @Input() ratings: Rating [] = [];
+  counter: number = 0;
+  
+  constructor(public ratingService: RatingService) {
+      
+  }
+  ngOnChanges (): void {
+  }
+
+  updateCounter(ratings: Rating[]) {
+    this.counter = ratings.length;
+  }
+
+*/
 }

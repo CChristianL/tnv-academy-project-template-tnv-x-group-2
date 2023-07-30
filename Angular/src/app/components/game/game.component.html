@@ -1,11 +1,11 @@
 <div class="container">
-
   <div class="row">
     <div class="game col-12 col-md-6">
-      <tnv-game-item [movies]="movies"></tnv-game-item>
+      <tnv-game-item (skipped)="onMovieSkipped($event)" (submited)="onRatingSubmited($event)" [ratings]="ratings" [movies]="filteredMovies"></tnv-game-item>
     </div>
       <div class=" img col-12 col-md-6">
         <tnv-contatore-scudo></tnv-contatore-scudo>
       </div>    
   </div>
 </div>
+<div style="font-size: 100px;"> {{ counter }} </div>

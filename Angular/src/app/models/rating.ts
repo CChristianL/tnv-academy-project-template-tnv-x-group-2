@@ -1,8 +1,9 @@
 export interface Rating {
-    id?: string, //forse diventerà number
-    userId: string,
-    //team: string, fare di riflessione
-    movieId: string, //probabilmente diventerà number
-    rating: number,
-    comment: string
+    id?: number, //forse diventerà number
+    userId?: number,
+    username?: string,
+    team?: string, 
+    movieId?: number, //probabilmente diventerà number
+    rating?: number,
+    comment?: string //il partial generale è per il test
 }
