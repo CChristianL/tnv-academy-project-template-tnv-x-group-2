@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-center" style="height: 100vh;">     
+ <div class="d-flex" style="height: 100vh;">     
     <div class="wrap d-md-flex">
       <div class="col-12 col-md-6 ">
         
@@ -12,7 +12,7 @@
           <ngb-carousel *ngIf="movies" [interval]="0">
             <ng-template ngbSlide *ngFor="let movie of movies">
               <div class="condizione" *ngIf="!rating?.movieId">
-              <div class="card shadow">
+              <div class="card-shadow">
                 <img [src]="'https://image.tmdb.org/t/p/original' + movie?.poster_path" alt="{{ movie.title }}">
                 <div class="carousel-caption" [hidden]="showText">
                   <div class="instruction" >
