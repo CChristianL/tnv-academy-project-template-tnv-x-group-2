@@ -16,6 +16,23 @@
   <tnv-logout class="mt-3"></tnv-logout>
 </div>
 -->
+
+<div class="d-flex align-items-center justify-content-center" style="height: 100vh">
+<div class="row">
+  <h2>Profilo Utente</h2>
+  <div>
+    <span>Username</span>: <span class="profile-data">{{ currentUser.username }}</span
+    ><br />
+    <span>eMail</span>:
+    <span class="profile-data">{{ currentUser.email }}</span
+    ><br />
+  
+    </div>
+    <tnv-logout class="mt-3">
+     <button type="button" class="btn btn-success btn-circle button1" routerLink="/welcome">Log-Out</button>
+    </tnv-logout>
+  </div>
+
 <div id="container" class="d-flex justify-content-center" style="height: 100vh">
   <div class="row">
     <div class="profile-card">
@@ -35,50 +52,74 @@
 
           <tnv-logout class="mt-3"></tnv-logout>
 
-
           <div class="w-100">
             <h3 class="mb-3">Modifica</h3>
           </div>
 
-          <form #f="ngForm" (ngSubmit)="update(f)">
+         <form #f="ngForm" (ngSubmit)="update(f)">
             <div class="form-group">
               <label class="label" for="email">eMail</label>
-              <input [ngModel] name="email" type="text" class="form-control" placeholder="eMail" required id="surname"
-                #surname="ngModel" />
-              <small [style.visibility]="
-                surname.invalid && (surname.dirty || surname.touched)
-                  ? 'visible'
-                  : 'hidden'
-              " class="form-text text-danger">Campo obbligatorio</small>
+              <input
+                [ngModel]
+                name="email"
+                type="text"
+                class="form-control"
+                placeholder="eMail"
+                required
+                id="surname"
+                #surname="ngModel"
+              />
+             <small
+               [style.visibility]="surname.invalid && (surname.dirty || surname.touched) ? 'visible': 'hidden'"
+               class="form-text text-danger"
+               >Campo obbligatorio</small
+              >
             </div>
-            <div class="form-group">
-              <label class="label" for="password">Password</label>
-              <input [ngModel] required name="password" type="password" class="form-control" id="password"
-                placeholder="Password" #password="ngModel" />
-              <small [style.visibility]="
+           <div class="form-group">
+             <label class="label" for="password">Password</label>
+             <input
+               [ngModel]
+               required
+               name="password"
+               type="password"
+               class="form-control"
+               id="password"
+               placeholder="Password"
+               #password="ngModel"
+             />
+             <small
+               [style.visibility]="
                 password.invalid && (password.dirty || password.touched)
                   ? 'visible'
-                  : 'hidden'
-              " class="form-text text-danger">Campo obbligatorio</small>
+                  : 'hidden'"
+               class="form-text text-danger"
+               >Campo obbligatorio
+              </small>
             </div>
-            <div class="form-group">
-              <button type="submit" class="form-control btn btn-primary rounded submit px-3 mt-2">
-                Update <!--manca un onClick emitter-->
-              </button>
-            </div>
-          </form>
+           <div class="form-group">
+             <button type="submit" class="form-control btn btn-primary rounded submit px-3 mt-2">
+               Update <!--manca un onClick emitter-->
+             </button>
+           </div>
+         </form>
           <p class="text-center mt-3">
-            Homepage
-            <a data-toggle="tab" routerLink="/">Vai</a>
+            <a data-toggle="tab" routerLink="/welcome">Home</a>
           </p>
-
-        </div>
-        <div class="img d-flex col-12 col-md-6">
-          <div class="row">
-            <tnv-contatore-scudo></tnv-contatore-scudo>
+          <div class="p-2">
+            <img src="/Angular/src/assets/images/2warrior.png" alt="Warrate" width="550rem">
           </div>
+          <div class="d-flex align-items-center justify-content-center p-2">
+           <div class="card card1">
+             <img src="/Angular/src/assets/images/scudoNoSfondo.png" width="150px">
+             <div class="text">11</div>
+            </div>
+           <div class="card card2">
+             <img src="/Angular/src/assets/images/scudoNoSfondo.png" width="150px">
+             <div class="text">10</div>
+           </div>
+
         </div>
       </div>
     </div>
   </div>
-</div>
+

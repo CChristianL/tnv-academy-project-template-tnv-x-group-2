@@ -1,3 +1,140 @@
-.row {
-color: white;    
-}
+body {
+    background-color:black;
+    color: white;
+    padding-bottom: 10%;
+ }
+ 
+ .welcome-main{
+    margin-left: 10%;
+    margin-right: 10%;
+ }
+ .background {
+    background-image: url('/Angular/src/assets/images/Background-oro.gif');
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+ 
+ }
+ 
+ .titlediv{
+    margin-bottom: 5rem;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 30%;
+ }
+ h1 {
+     height: 150px;  
+     width: 70%;
+     text-align: center;
+     margin-top: 5%; 
+     font-size: 75px;  
+ }
+ 
+    
+ .text1 {
+    line-break: loose;
+    text-align: center;
+    line-height: 2;
+    padding: 8%;
+    margin-top: 5%;
+    border: 1%;
+   
+ 
+ }
+ 
+ .flex-container {
+   margin-right: 30%;
+   margin-left: 5%;
+   border-style: groove;
+   border-color: black;
+   display: flex;
+   text-align: left;
+ 
+ }
+ .img{
+     vertical-align: text-bottom;
+     width: 180px;
+     position: relative;
+ }
+ 
+ .button1{
+ 
+    background-color: white;
+    border: 2px solid #f5d000;
+    color: black; 
+    text-align: center;
+    display: inline-block;
+    font-size: 14px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+ 
+ }
+ 
+ .button1:hover {
+     background-color: #f5d000;
+     color: white;
+ 
+ }
+ 
+ .button2{
+     background-color: #f5d000;
+     border: 2px solid white;
+     color: black;
+     text-align: center;
+     display: inline-block;
+     font-size: 14px;
+     transition-duration: 0.4s;
+     cursor: pointer;
+ }
+  
+  .button2:hover {
+      background-color: white;
+      color: #a3990e;
+  
+  }
+  .card1{
+     box-shadow: 0 4px 8px #151515;
+     transition: 0.3s;
+     size: 100%;
+     position: absolute;
+     bottom: 5%;
+     left: 45%;
+     transform: translateX(-50%);    
+     justify-content: right;
+     display: block;
+     width: 17%;
+     height: 1%;
+     background-color: transparent;
+     margin-left: 20%;
+  
+ 
+  }
+   
+  .card1:hover {
+     box-shadow: 0 16px 32px #00188f;
+     
+ 
+  }
+ 
+  .card2{
+     box-shadow: 0 4px 8px #151515;
+     transition: 0.3s;
+     size: 100%;
+     position: absolute;
+     bottom: 5%;
+     left: 85%;
+     transform: translateX(-50%);    
+     justify-content: center;
+     display: block;
+     width: 16%;
+     height: 1%;
+     background-color: transparent;
+  }
+  .card2:hover {
+     box-shadow: 0 16px 32px #aa180e;
+ 
+  }
+  .text{
+    text-align: center; 
+    
+  }

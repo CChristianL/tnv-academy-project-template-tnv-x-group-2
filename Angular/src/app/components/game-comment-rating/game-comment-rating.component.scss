@@ -1,4 +1,17 @@
 
+.container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0;
+  
+  .flex-row {
+    flex-direction: row;   
+  }
+  
+  .align-items .flex-row {
+    flex-direction: row;   
+  }
+ 
  .bottoneComment {
    background-color: transparent; 
    border: 1px solid white; 
@@ -16,11 +29,4 @@
    text-shadow: 1px 1px 2px #d9a03e; 
  
  }
- .container {   
-   padding: 0;
- }
 
-ngb-rating {
-  color: #d9a03e;
-  font-size: 36px; /* Imposta la dimensione desiderata */  
-}
