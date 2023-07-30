@@ -1,9 +1,8 @@
-import { Component, Directive } from '@angular/core';
-import { PunteggioComponent } from './punteggio/punteggio.component';
-import { Component, Input, SimpleChanges } from '@angular/core';
+import { Component, Input, SimpleChanges, OnInit } from '@angular/core';
 import { RatingService } from 'src/app/@shared/services/rating.service';
 import { Rating } from 'src/app/models/rating';
-
+import { Subscription, timer } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'tnv-contatore-scudo',
@@ -12,49 +11,38 @@ import { Rating } from 'src/app/models/rating';
 })
 export class ContatoreScudoComponent {
 
-
-//@Directive({ selector: '[punteggio]'})
-//class punteggioDirective {
-//  constructor(public PunteggioComponent: PunteggioComponent) {
-//    PunteggioComponent.getPunteggio_fazione();
-//  }
-//}
-
-
-
-
-/*
-rCounter: number = 0;
-bCounter: number = 0;
-
-onClickB () {
-  this.bCounter++;
-  //localStorage.setItem("Contatore Punti", JSON.stringify(this.counter)); //DA FIXARE TUTTO BETA
-}
-
-onClickR () {
-  this.rCounter++;
-  //localStorage.setItem("Contatore Punti", JSON.stringify(this.counter)); //DA FIXARE TUTTO BETA
-}
-
-ngOnInit () {
-  this.rCounter;
-  this.bCounter;
-}
-
-=======
   @Input() ratings: Rating [] = [];
-  counter: number = 0;
-  
+  //counter: number = 0;
+  //arrayCounter: Rating [] = [];
+  //counterSparta: Number = 0
+  //counterAtene: Number = 0
+
+  posts:any;
+  subscription !: Subscription;
+
   constructor(public ratingService: RatingService) {
       
   }
-  ngOnChanges (): void {
+  //questo oninit ripete la chiamata al DB facendo si che i punteggi si aggiornino
+  //implementare con observable e onChanges?
+  
+ ngOnInit() {
+    this.subscription = timer(0, 1000).pipe(
+      switchMap(async () => this.ratingService.teamAteneRating())
+    ).subscribe(result => 
+      console.log("ho fatto la chiamata di aggiornamento atene")
+    );
+    this.subscription = timer(0, 1000).pipe(
+      switchMap(async () => this.ratingService.teamSpartaRating())
+    ).subscribe(result => 
+      console.log("ho fatto la chiamata di aggiornamento sparta")
+    );
+}
+  ngOnChanges (changes : SimpleChanges): void {    
+      //this.updateCounter(this.ratings); //aggiorna ai cambiamenti
+      //if (changes['ratings']) {
+      //  this.updateCounter(changes['ratings'].currentValue);
+      //}
   }
 
-  updateCounter(ratings: Rating[]) {
-    this.counter = ratings.length;
-  }
-
-*/
 }

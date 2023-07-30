@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, OnChanges } from '@angular/core';
 import { Observable, switchMap } from 'rxjs';
 import { Rating } from 'src/app/models/rating';
 
@@ -9,11 +9,19 @@ import { Rating } from 'src/app/models/rating';
 export class RatingService {
   API_ROOT = 'http://localhost:1234/api';
   
-  ratings: Rating[] = []
+  ratings: Rating[] = [];
+  counterAtene: Number = 0;
+  counterSparta: Number = 0;
+  squadraSparta : String = "Sparta";
+  squadraAtene : String = "Atene";
 
   constructor(private httpClient: HttpClient) {
      this.getRatings();
+     this.teamAteneRating();
+     this.teamSpartaRating();
   }
+  
+  
 
   getRatings() {
    this.httpClient.get<Rating[]>(`${this.API_ROOT}/ratings`).subscribe({
@@ -40,4 +48,20 @@ export class RatingService {
   deleteRating(id: number) {
     return this.httpClient.delete(`${this.API_ROOT}/rating/${id}`);
   }
+
+  teamAteneRating (){
+    return this.httpClient.get<any>(`${this.API_ROOT}/ratings`).subscribe({
+      next: (response) => {this.counterAtene = response.filter((response: { team: String; }) =>
+         response.team === this.squadraAtene).length;
+        }
+      })
+    }
+    teamSpartaRating (){
+      return this.httpClient.get<any>(`${this.API_ROOT}/ratings`).subscribe({
+        next: (response) => {this.counterSparta = response.filter((response: { team: String; }) =>
+           response.team === this.squadraSparta).length;
+          }
+        })
+      }
+  
 }

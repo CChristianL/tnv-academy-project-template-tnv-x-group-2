@@ -4,8 +4,8 @@
       <tnv-game-item (skipped)="onMovieSkipped($event)" (submited)="onRatingSubmited($event)" [ratings]="ratings" [movies]="filteredMovies"></tnv-game-item>
     </div>
       <div class=" img col-12 col-md-6">
-        <tnv-contatore-scudo></tnv-contatore-scudo>
+        <tnv-contatore-scudo [ratings]="ratings"></tnv-contatore-scudo>
       </div>    
   </div>
 </div>
-<div style="font-size: 100px;"> {{ counter }} </div>
+<!--<div style="font-size: 100px;"> {{ counter }} </div>-->

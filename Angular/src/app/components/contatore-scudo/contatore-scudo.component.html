@@ -1,11 +1,11 @@
 
-<div class="glow">
-   <div id="scudo1" class="image col-6 p-5 ">
-    <div class="counter" (click)="onClickR()" routeLink="/preferiti">  <span class="rtext">{{ rCounter }}</span>
-   </div>
+<div id="scudo1" class="image col-6 p-5 ">
+    <div style="font-size: 50px;"> {{ratingService.counterAtene}} </div>
+</div>
+<div id="scudo2" class="image col-6 p-5 ">
+    <div style="font-size: 50px;"> {{ratingService.counterSparta}} </div>             
+</div> 
 
- </div>
-   <div id="scudo2" class="image col-6 p-5 ">
-    <div class="counter" (click)="onClickB()" routeLink="/preferiti"> <span class="btext" punteggio>{{ bCounter}}</span></div>
-   </div>  
-
+<!-- <div class="glow"> 
+Attenzione ai fontsize statici-->
+ 

@@ -1,7 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Movie } from 'src/app/models/movie';
 import { Rating } from 'src/app/models/rating';
 import { ViewEncapsulation } from '@angular/core'
+import { MovieService } from 'src/app/services/movie.service';
+import { RatingService } from 'src/app/@shared/services/rating.service';
 
 @Component({
   selector: 'tnv-favourites-item',
@@ -14,9 +16,32 @@ export class FavouritesItemComponent {
   @Input() rating: Rating | undefined;
   @Input() ratings: Rating [] = [];
   mostraTesto = true;
+  @Output() submited = new EventEmitter<Rating>();
+  @Output() skipped = new EventEmitter<number>();
 
-  toggleVisibilita() {
-    this.mostraTesto = !this.mostraTesto;
+  showText = true;
+
+  constructor (public movieService: MovieService, public ratingService:RatingService){}
+
+   ngOnInit(): void {
+    console.log("Movies:", this.movies);
+    console.log("Ratings:", this.ratings);
+    // Implementa la logica del carosello e dei dati associati qui
+  }
+   onSubmited(rating : Rating) {
+    this.submited.emit(rating);
+    console.log("Sono qui - Game-item-component.ts");
+   }
+
+   onSkipped(id : number) {
+    this.skipped.emit(id);
+    console.log("Sono qui - Game-item-component.ts");
+    console.log(id);
+   }
+   
+   toggleVisibility(): void {
+    this.showText = !this.showText;
   }
   
 }
+  

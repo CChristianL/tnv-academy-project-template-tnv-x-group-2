@@ -3,6 +3,7 @@ import { RatingService } from 'src/app/@shared/services/rating.service';
 import { Movie } from 'src/app/models/movie';
 import { Rating } from 'src/app/models/rating';
 import { MovieService } from 'src/app/services/movie.service';
+import { ContatoreScudoComponent } from '../contatore-scudo/contatore-scudo.component';
 
 @Component({
   selector: 'tnv-game',
@@ -32,6 +33,7 @@ export class GameComponent implements OnInit {
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['movies'] || changes['ratings']) {
       this.updateFilteredMovies();
+      
     }
   }
 
@@ -44,6 +46,7 @@ export class GameComponent implements OnInit {
         console.log(this.ratings);
         this.movies = this.movies.filter(movie => movie.id !== rating.movieId); // Rimuovi il film votato dall'array movies
         this.updateFilteredMovies(); // Aggiorna l'array filteredMovies dopo ogni rating
+        
       },
       error: (error) => {
         console.log('Errore nel salvataggio del rating:', error);

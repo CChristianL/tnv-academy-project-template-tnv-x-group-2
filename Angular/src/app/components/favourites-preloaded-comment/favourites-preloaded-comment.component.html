@@ -1,11 +1,20 @@
-<textarea [ngModel]="rating?.comment" class="form-control" rows="3"></textarea>
-<div class="container">
-<div class="d-flex flex-row align-items-flex-end">
-    
-    
-    <div class="col-12 mt-3 mb-3">
-        <ngb-rating [rate]="4" [max]="10"></ngb-rating>
+<div class="form-outline">
+    <label class="form-label" for="textAreaExample">Recensioni</label>
+    <div readonly="true" class="form-control" id="textAreaExample1" rows="20">
+        <ul>
+            <li *ngFor="let rating of ratings">
+        <h3>{{ rating?.username }}</h3>
+        <h5>{{ rating?.comment }}</h5>
+        <span>{{ rating?.rating }}</span>
+            </li>
+        </ul>
     </div>
 </div>
-</div>
+<div class="container">
+    <div class="d-flex">
+        <div class="col-12">
 
+        </div>
+    </div>
+</div>
+<!--dobbiamo fare qui un componente che generi automaticamente tante recensioni quante ce ne servono, con il rating stellinato collegato-->

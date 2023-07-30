@@ -25,6 +25,8 @@ import { FavouritesPreloadedCommentComponent } from './components/favourites-pre
 import { ModalFavouritesComponent } from './components/modal-favourites/modal-favourites.component';
 import { PageRatingsmoviesComponent } from './components/page-ratingsmovies/page-ratingsmovies.component';
 import { FavouritesItemComponent } from './components/favourites-item/favourites-item.component';
+import { FavouritesComponent } from './components/favourites/favourites.component';
+import { PageCommentComponent } from './components/page-comment/page-comment.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { FavouritesItemComponent } from './components/favourites-item/favourites
     FavouritesPreloadedCommentComponent,
     ModalFavouritesComponent,
     PageRatingsmoviesComponent,
-    FavouritesItemComponent
+    FavouritesItemComponent,
+    FavouritesComponent,
+    PageCommentComponent
   ],
   imports: [
     BrowserModule,
