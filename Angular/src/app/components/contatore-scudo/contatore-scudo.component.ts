@@ -14,8 +14,8 @@ export class ContatoreScudoComponent {
   @Input() ratings: Rating [] = [];
   //counter: number = 0;
   //arrayCounter: Rating [] = [];
-  //counterSparta: Number = 0
-  //counterAtene: Number = 0
+  counterSparta: Number = 0
+  counterAtene: Number = 0
 
   posts:any;
   subscription !: Subscription;
@@ -29,15 +29,16 @@ export class ContatoreScudoComponent {
  ngOnInit() {
     this.subscription = timer(0, 1000).pipe(
       switchMap(async () => this.ratingService.teamAteneRating())
-    ).subscribe(result => 
-      console.log("ho fatto la chiamata di aggiornamento atene")
+    ).subscribe(result => result
+      //console.log("ho fatto la chiamata di aggiornamento atene")
     );
     this.subscription = timer(0, 1000).pipe(
       switchMap(async () => this.ratingService.teamSpartaRating())
-    ).subscribe(result => 
-      console.log("ho fatto la chiamata di aggiornamento sparta")
+    ).subscribe(result => result
+     //console.log("ho fatto la chiamata di aggiornamento sparta")
     );
 }
+
   ngOnChanges (changes : SimpleChanges): void {    
       //this.updateCounter(this.ratings); //aggiorna ai cambiamenti
       //if (changes['ratings']) {
@@ -46,3 +47,19 @@ export class ContatoreScudoComponent {
   }
 
 }
+
+/* 
+  ngOnInit(): void {
+    
+      console.log("Movies nel componente genitore:", this.movies);
+      console.log("Ratings nel componente genitore:", this.ratings);
+      this.updateFilteredMovies();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['movies'] || changes['ratings']) {
+      this.updateFilteredMovies();
+      
+    }
+  }
+*/

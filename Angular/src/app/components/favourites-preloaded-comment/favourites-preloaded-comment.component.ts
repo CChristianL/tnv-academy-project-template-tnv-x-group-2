@@ -12,10 +12,12 @@ export class FavouritesPreloadedCommentComponent {
   @Input() ratings: Rating [] = [];
   @Input() rating: Rating | undefined;
   @Input() movies: Movie [] = [];
+  @Input() movie: Movie | undefined;
+
 
   arrayMovieCommented: Movie [] = [];
   arrayComment: Rating [] = [];
-  
+
   
   /*
   ngOnInit(): void{

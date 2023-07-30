@@ -21,7 +21,7 @@ const routes: Routes = [
     component: MainPageComponent,
     canActivate: [AuthGuard],
     children: [
-      { path: "game", component: PageRatingsmoviesComponent},
+      { path: "game", component: PageRatingsmoviesComponent },
       { path: "combatti", component: WelcomeComponent },
       { path: "profile", component: ProfileComponent },
       { path: "rankings", component: PageCommentComponent },

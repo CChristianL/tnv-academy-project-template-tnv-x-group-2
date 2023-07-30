@@ -21,7 +21,6 @@ export class RatingService {
      this.teamSpartaRating();
   }
   
-  
 
   getRatings() {
    this.httpClient.get<Rating[]>(`${this.API_ROOT}/ratings`).subscribe({

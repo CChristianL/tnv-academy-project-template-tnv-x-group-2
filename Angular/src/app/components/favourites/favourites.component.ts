@@ -9,6 +9,7 @@ import { MovieService } from 'src/app/services/movie.service';
   templateUrl: './favourites.component.html',
   styleUrls: ['./favourites.component.scss']
 })
+
 export class FavouritesComponent {
   @Input() movies: Movie [] = [];
   @Input() ratings: Rating [] = [];
@@ -23,30 +24,52 @@ export class FavouritesComponent {
 
   constructor(public movieService: MovieService, public ratingService: RatingService) {}
 
-  
   ngOnChanges(): void {
-    this.updateFilteredMovie();
     this.updateFilteredRating();
+    this.updateFilteredMovie();
   }
-  
+
+
+  recoverLocalUser() {
+    if (!localStorage.getItem('user')) {
+      this.recoveredUser = {} as any;
+    } else {
+      const userString = localStorage.getItem('user');
+      this.recoveredUser = JSON.parse(userString || '{}') as any;
+    }
+  }
+
  updateFilteredMovie (){
     this.filteredMovies = [...this.movies];
     this.filteredMovies = this.filteredMovies.filter((movie) => this.hasFilmCommented(movie.id));
- }
+    console.log(this.filteredMovies, "Film Commentati")
+    console.log("Voglio vedere se ora sono filtrati in base al team", this.filteredMovies)
+    this.filteredMovies = this.filteredMovies.filter((movie) => this.hasFilmTeam(movie.id));
+    console.log("Dovrebbero essere filtrati", this.filteredMovies)
+  }
+
  hasFilmCommented (movieId : number) : boolean{
   return this.ratings.some((rating) => rating.movieId === movieId);
  }
 
+ hasFilmTeam (movieId : number) : boolean{
+  return this.filteredRatings.some(rating => rating.movieId === movieId)
+ }
 
  updateFilteredRating (){
   this.filteredRatings = [...this.ratings];
-  //this.filteredRatings = this.filteredRatings.filter((rating) => this.hasFilmRating(rating.movieId)) //queste non stanno funzionando
+  this.filteredRatings = this.filteredRatings.filter((rating) => this.hasFilmRating(rating.movieId)) //queste non stanno funzionando
+  this.recoverLocalUser();
+  console.log(this.recoveredUser)
+  this.filteredRatings = this.filteredRatings.filter(rating => rating.team === this.recoveredUser.team)
   console.log(typeof(this.rating.movieId))
   console.log(this.filteredRatings)
   console.log(typeof(this.filteredRatings))
-  console.log("array di commenti")
+  console.log("array di commenti di un team", this.filteredRatings)
 }
-hasFilmRating (RatingId : number) : boolean{//queste non stanno funzionando
+
+hasFilmRating (RatingId : any) : boolean{//queste non stanno funzionando
 return this.movies.some((movie) => movie.id === RatingId);
 }
+
 }

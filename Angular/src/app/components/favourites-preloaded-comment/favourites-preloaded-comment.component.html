@@ -1,11 +1,13 @@
 <div class="form-outline">
     <label class="form-label" for="textAreaExample">Recensioni</label>
-    <div readonly="true" class="form-control" id="textAreaExample1" rows="20">
-        <ul>
-            <li *ngFor="let rating of ratings">
-        <h3>{{ rating?.username }}</h3>
+    <div readonly="true" class="form-control" id="textAreaExample1" rows="5">
+        <ul *ngFor="let rating of ratings">
+            <li *ngIf="rating.movieId === movie?.id" >
+        
+         <h3>{{ rating?.username }}</h3>
         <h5>{{ rating?.comment }}</h5>
         <span>{{ rating?.rating }}</span>
+       
             </li>
         </ul>
     </div>
