@@ -1,28 +1,20 @@
-.profile-data {
+.d-flex {
+  display: flex;
+  flex-wrap: wrap;
+
+  .profile-data {
     font-weight: bold;
     color: white;
-}
-h2 {
+ }
+ h2 {
     color: white;
-}
-h3 {
-  text-align: left;
+ }
+ h3 {
+  text-align: center;
   color: white;
-}
+ } 
 
-span {
-    color: white;
-}
-.form-group{
-    color: white;
-}
-a{
-    color: white;
-}
-p{
-    color: white;
-}
-.profile-card {
+ .profile-card {
     color: white;
     width: 1000px;
     background: transparent;
@@ -59,9 +51,6 @@ p{
     color: white;
   }
   
-  h3 {    
-    text-align: center;
-  }
   #description {
     text-align: center;    
     font-size: 18px;
@@ -72,4 +61,26 @@ p{
   a:hover {
     color: #d6b80fab;  
   }
-  
+  .p-2{
+    width: 300px;
+    height: 450px;
+    padding: 0% !important;
+  }
+
+  @media screen and (min-width: 1024px){
+    .p-2{
+      width: 450px;
+      height: 500px;
+      padding: 0% !important;
+    }
+    #description {
+      text-align: left !important;    
+      font-size: 30px;
+    }
+
+
+
+  }
+
+
+}  

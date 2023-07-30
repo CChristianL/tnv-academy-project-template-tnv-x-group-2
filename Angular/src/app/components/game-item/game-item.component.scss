@@ -1,14 +1,15 @@
 .d-flex {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 
-.carousel-indicators{
-  display: none;
-}
+ .carousel-indicators{
+  display: none; 
+ }
 
-.carousel{
-    width: 500px;
-    height: 600px;
+ .carousel{
+    width: 350px;
+    height: 400px;
     margin: auto;
  }
 
@@ -37,6 +38,7 @@
  .instruction {
     color: white;    
     font-size: large;
+    text-align: center !important;
   }
 
   .carousel-caption{
@@ -49,6 +51,21 @@
     opacity: 0.9;
     border:1px solid black;
     border-radius: 10px 10px 10px 10px;
+  }
+  @media screen and (min-width: 1024px){
+    .instruction {
+      color: white;    
+      font-size: large;
+      text-align: left !important;
+    }
+    .carousel{
+      width: 450px;
+      height: 500px;
+      margin: auto;
+   }
+
+
+
   }
 
 }

@@ -7,20 +7,13 @@
     
     
 }
-.counter{
- text-align: center;
+.p-5{
+ text-align: center !important;
  text-size-adjust: 300%;
  transition-duration: 0.4s;
  position: relative;
- padding-bottom: 10%;
-
+ padding: 0% !important;
 }
-
-.p-5{
-  padding: 0% !important;
-
-}
-
 
 #scudo1 {
     size: 100%;
@@ -33,8 +26,8 @@
     cursor: pointer;
   }
   .btext{
-    font-size: 65%;
-    padding-bottom: 50%;
+    font-size: 45% !important;
+    padding: 20%;
     text-shadow: 
     0 0 5px rgba(150, 0, 0, 0.6), 
     0 0 10px rgba(150, 0, 0, 0.6), 
@@ -78,7 +71,8 @@
     cursor: pointer;
   }
   .rtext{
-    font-size: 65%;
+    font-size: 45% !important;
+    padding: 20%;
     text-shadow: 
     0 0 5px rgba(33, 150, 200, 0.4), 
     0 0 10px rgba(33, 150, 200, 0.4), 
