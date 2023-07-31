@@ -87,18 +87,9 @@ public class UserController {
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build(); // Login fallito, restituisci 401 Unauthorized
         }
-       //return userService.registerUser(user);
     }
 
     //TODO: login(String username, String password) -> OK o KO
-
-    /*
-    @PostMapping("/login")
-    public Boolean loginUser(@RequestBody UserLogin user){ //public UserLogin
-        return userService.loginUser(user);
-    }
-
-    */
 
     @PostMapping("/login")
     public ResponseEntity<User> loginUser(@RequestBody UserLogin user) {
@@ -110,19 +101,4 @@ public class UserController {
         }
     }
 
-    /*
-    @PostMapping("/login")
-    public ResponseEntity<?> loginUser(@RequestBody UserLogin user) {
-        try {
-            User loggedInUser = userService.loginUser(user);
-            if (loggedInUser != null) {
-                return ResponseEntity.ok(loggedInUser); // Restituisce l'oggetto User se il login è avvenuto con successo
-            } else {
-                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Username o password non validi"); // Restituisce un messaggio di errore
-            }
-        } catch (IllegalArgumentException e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage()); // Restituisce un messaggio di errore
-        }
-    }
-     */
 }

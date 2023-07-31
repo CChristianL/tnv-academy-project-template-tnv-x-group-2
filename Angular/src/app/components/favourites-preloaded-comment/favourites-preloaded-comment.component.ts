@@ -8,25 +8,20 @@ import { Rating } from 'src/app/models/rating';
   styleUrls: ['./favourites-preloaded-comment.component.scss']
 })
 export class FavouritesPreloadedCommentComponent {
-  
-  @Input() ratings: Rating [] = [];
+
+  @Input() ratings: Rating[] = [];
   @Input() rating: Rating | undefined;
-  @Input() movies: Movie [] = [];
+  @Input() movies: Movie[] = [];
   @Input() movie: Movie | undefined;
 
 
-  arrayMovieCommented: Movie [] = [];
-  arrayComment: Rating [] = [];
-  
+  arrayMovieCommented: Movie[] = [];
+  arrayComment: Rating[] = [];
 
-  constructor(){
-   
+
+  constructor() {
+
   }
-
-  
- 
-   
- 
 
 }
 

@@ -1,56 +1,61 @@
-
 .container {
   display: flex;
   justify-content: flex-end;
   padding: 0;
 }
-  .flex-row {
-    flex-direction: row;   
-  }
-  .align-items .flex-row {
-    flex-direction: row;   
-  }
-  .form-control{
-    background: transparent;
-    color: white;
-    font-size: 18px;  
-  }
-  .form-control:focus {
-    border-color: #f0c86a;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #f0c86a;
-    outline: 0 none;
-   }
- 
- .bottoneComment {
-   background-color: transparent; 
-   border: 1px solid white; 
-   color: white;  
-   text-align: center; 
-   display: inline-block; 
-   font-size: 22px; 
-   transition-duration: 0.4s; 
-   cursor: pointer;
- }
- 
- .bottoneComment:hover { 
-   letter-spacing: 0.05em;
-   box-shadow: 0 0 40px #d9a03e;
-   text-shadow: 1px 1px 2px #d9a03e; 
- 
- }
- .button-skip {
-  margin: auto;
-  border: 1px solid white; 
-  background-color: #d9a03e;     
-  color: black;  
-  text-align: center; 
-  display: inline-block; 
-  font-size: 22px; 
-  transition-duration: 0.4s; 
-  cursor: pointer;
-  
+
+.flex-row {
+  flex-direction: row;
 }
-.button-skip:hover { 
+
+.align-items .flex-row {
+  flex-direction: row;
+}
+
+.form-control {
+  background: transparent;
+  color: white;
+  font-size: 18px;
+}
+
+.form-control:focus {
+  border-color: #f0c86a;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #f0c86a;
+  outline: 0 none;
+}
+
+.bottoneComment {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  font-size: 22px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.bottoneComment:hover {
+  letter-spacing: 0.05em;
+  box-shadow: 0 0 40px #d9a03e;
+  text-shadow: 1px 1px 2px #d9a03e;
+
+}
+
+.button-skip {
+  margin: auto;
+  border: 1px solid white;
+  background-color: #d9a03e;
+  color: black;
+  text-align: center;
+  display: inline-block;
+  font-size: 22px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+
+}
+
+.button-skip:hover {
   letter-spacing: 0.15em;
   box-shadow: 0 0 40px #d9a03e;
   color: white;
@@ -58,5 +63,5 @@
 
 ngb-rating {
   color: #d9a03e;
-  font-size: 30px; /* Imposta la dimensione desiderata */  
+  font-size: 30px;
 }

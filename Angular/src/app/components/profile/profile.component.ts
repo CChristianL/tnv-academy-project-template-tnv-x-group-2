@@ -25,15 +25,13 @@ export class ProfileComponent implements OnInit {
     if (form.valid) {
       this.authService.update(form.value).subscribe({
         next: (response) => {
-          //localStorage.setItem("user", JSON.stringify(response));
-          
           localStorage.removeItem("user");
           alert("Update Riuscito, verrai riportato al login");
           this.router.navigateByUrl("/login");
-      },
+        },
         error: () => alert("Update Fallito"),
-        })
-      };
-    }
+      })
+    };
+  }
 
 }

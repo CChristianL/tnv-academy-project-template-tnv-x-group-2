@@ -1,23 +1,20 @@
 <form>
-    <div class="form-group" *ngIf="!rating.movieId">
-      <label for="title">Commento</label>
-      <textarea type="text" class="form-control" id="commento" name="commento" rows="5" [(ngModel)]="commentTemp"
-        (ngModelChange)="checkWordCount()"></textarea>
-    </div>
-    <ngb-rating [(rate)]="value" [max]="10" (rateChange)="onRatingChange($event)"></ngb-rating>
-    <div *ngIf="outOfBound" class="mt-1 small text-danger">
-      Il commento deve contenere massimo {{ wordLimit + 1 }} parole.
-    </div>
-    <div class="row">
+  <div class="form-group" *ngIf="!rating.movieId">
+    <label for="title">Commento</label>
+    <textarea type="text" class="form-control" id="commento" name="commento" rows="5" [(ngModel)]="commentTemp"
+      (ngModelChange)="checkWordCount()"></textarea>
+  </div>
+  <ngb-rating [(rate)]="value" [max]="10" (rateChange)="onRatingChange($event)"></ngb-rating>
+  <div *ngIf="outOfBound" class="mt-1 small text-danger">
+    Il commento deve contenere massimo {{ wordLimit + 1 }} parole.
+  </div>
+  <div class="row">
     <div class="col-6 mt-3 mb-3 " *ngIf="!rating.movieId">
-        <button class="form-control btn bottoneComment" [disabled]="submitButtonDisabled" (click)="onSubmit()"> Vota! </button>
+      <button class="form-control btn bottoneComment" [disabled]="submitButtonDisabled" (click)="onSubmit()"> Vota!
+      </button>
     </div>
     <div class="col-6 mt-3 mb-3 ">
-    <button class="form-control btn button-skip" (click)="onSkip()">Salta</button>
+      <button class="form-control btn button-skip" (click)="onSkip()">Salta</button>
     </div>
   </div>
 </form>
-  
-
-
-

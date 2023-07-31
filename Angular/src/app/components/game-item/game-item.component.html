@@ -9,37 +9,37 @@
             <button class="btn" id="button" (click)="toggleVisibility()">REGOLE DEL GIOCO</button>
           </div>
         </div>
-          <ngb-carousel *ngIf="movies" [interval]="0">
-            <ng-template ngbSlide *ngFor="let movie of movies">
-              <div class="condizione col-12 mb-3" *ngIf="!rating?.movieId">
-                <div class="card shadow">
-                  <img [src]="'https://image.tmdb.org/t/p/original' + movie?.poster_path" alt="{{ movie.title }}">
-                  <div class="carousel-caption" [hidden]="showText">
-                    <div class="instruction">
-                      <h5>Come si Gioca</h5>
-                      <p>Come Giocare:
-                        Combatti nella battaglia del mondo del cinema!
-                        Osserva la locandina del film e lasciati trascinare
-                        dai ricordi. Dopo averla vista, scrivi una recensione concisa
-                        di massimo 50 parole e vota il film con gli scudi del rating per
-                        supportare i tuoi colori!
+        <ngb-carousel *ngIf="movies" [interval]="0">
+          <ng-template ngbSlide *ngFor="let movie of movies">
+            <div class="condizione col-12 mb-3" *ngIf="!rating?.movieId">
+              <div class="card shadow">
+                <img [src]="'https://image.tmdb.org/t/p/original' + movie?.poster_path" alt="{{ movie.title }}">
+                <div class="carousel-caption" [hidden]="showText">
+                  <div class="instruction">
+                    <h5>Come si Gioca</h5>
+                    <p>Come Giocare:
+                      Combatti nella battaglia del mondo del cinema!
+                      Osserva la locandina del film e lasciati trascinare
+                      dai ricordi. Dopo averla vista, scrivi una recensione concisa
+                      di massimo 50 parole e vota il film con gli scudi del rating per
+                      supportare i tuoi colori!
 
-                        Ricorda, sul campo di battaglia la tua scelta è definitiva.
-                        Una volta saltato un film, non potrai tornare indietro per recensirlo.
-                        Quando sarai certo del tuo voto e del commento, premi lo scudo dorato
-                        per confermarli e guidare la tua fazione verso la vittoria!</p>
-                    </div>
+                      Ricorda, sul campo di battaglia la tua scelta è definitiva.
+                      Una volta saltato un film, non potrai tornare indietro per recensirlo.
+                      Quando sarai certo del tuo voto e del commento, premi lo scudo dorato
+                      per confermarli e guidare la tua fazione verso la vittoria!</p>
                   </div>
                 </div>
-                <h3>{{ movie.title }}</h3>
-                <p>{{ movie.overview }}</p>
-                <div *ngIf="!rating?.movieId && !rating?.userId">
-                  <tnv-game-comment-rating (skipMovie)="onSkipped($event)" (submit)="onSubmited($event)" [movie]="movie"
-                    [ratings]="ratings" [movies]="movies"></tnv-game-comment-rating>
-                </div>
               </div>
-            </ng-template>
-          </ngb-carousel>
+              <h3>{{ movie.title }}</h3>
+              <p>{{ movie.overview }}</p>
+              <div *ngIf="!rating?.movieId && !rating?.userId">
+                <tnv-game-comment-rating (skipMovie)="onSkipped($event)" (submit)="onSubmited($event)" [movie]="movie"
+                  [ratings]="ratings" [movies]="movies"></tnv-game-comment-rating>
+              </div>
+            </div>
+          </ng-template>
+        </ngb-carousel>
       </div>
     </div>
   </div>

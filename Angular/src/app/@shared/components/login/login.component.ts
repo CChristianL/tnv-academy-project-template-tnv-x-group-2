@@ -9,7 +9,7 @@ import { AuthService } from "src/app/@core/services/auth.service";
   styleUrls: ["./login.component.scss"],
 })
 export class LoginComponent implements OnInit {
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
     if (this.authService.isAuthenticated()) {
@@ -25,10 +25,10 @@ export class LoginComponent implements OnInit {
         next: (response) => {
           localStorage.setItem("user", JSON.stringify(response));
           this.router.navigateByUrl("/combatti"); //cambiare per mandare l'utente appena loggato nella pagina di benvenuto con la descrizione
-                                              //e i button per giocare
-      },
+          //e i button per giocare
+        },
         error: () => alert("Login Errato"),
-        })
-      };
-    }
+      })
+    };
+  }
 }

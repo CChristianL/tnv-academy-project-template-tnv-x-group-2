@@ -5,81 +5,86 @@
 h5 {
   font-size: 36px;
 }
+
 .img {
   background-image: url("/assets/images/giffix2.gif");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
   position: relative;
-  background-color: transparent;  
+  background-color: transparent;
   height: 600px;
   margin: auto;
   margin-top: 220px;
 }
 
-.container{
+.container {
   margin: 0;
 }
+
 @media screen and (min-width: 991px) and (max-width: 1200px) {
-  .container{
+  .container {
     display: flex;
     flex-direction: column;
   }
-  
-  .img {    
+
+  .img {
     margin-left: auto;
     margin-top: auto;
   }
-  .game{
+
+  .game {
     display: flex;
     justify-content: center;
     margin: auto;
-    
+
   }
 }
 
 @media screen and (min-width: 769px) and (max-width: 991px) {
-  .container{
+  .container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    
-  }  
-  
+
+  }
+
   .img {
     height: 300px;
     width: 400px;
     margin-top: 185px;
     margin-left: auto;
   }
-  .game{
+
+  .game {
     display: flex;
     justify-content: center;
-    margin: auto;    
+    margin: auto;
   }
 }
 
 
-@media screen and (min-width: 320px) and (max-width: 769px) {  
-  
+@media screen and (min-width: 320px) and (max-width: 769px) {
 
-  .container{
+
+  .container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
   }
 
-  .img {     
-    height: 300px;  
+  .img {
+    height: 300px;
     width: 300px;
     margin-left: auto;
-  } 
-  .game{
-  display: flex-start;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin: auto;
-  scale: 70%;
-} 
+  }
+
+  .game {
+    display: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: auto;
+    scale: 70%;
+  }
 
 }

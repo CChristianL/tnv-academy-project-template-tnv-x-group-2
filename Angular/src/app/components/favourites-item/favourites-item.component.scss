@@ -1,21 +1,23 @@
 .d-flex {
   display: flex;
   flex-wrap: wrap;
- 
- .carousel-indicators{
-  display: none !important; 
- }
- 
-.carousel{
+
+  .carousel-indicators {
+    display: none !important;
+  }
+
+  .carousel {
     width: 450px;
     height: 500px;
     margin: auto;
- }
-  .carousel-caption{
-    p{
-        text-align: justify;
-        margin: 10px;
-    }    
+  }
+
+  .carousel-caption {
+    p {
+      text-align: justify;
+      margin: 10px;
+    }
+
     margin-bottom: 250px;
     background-color: gray;
     opacity: 0.9;
@@ -23,5 +25,4 @@
     border-radius: 10px 10px 10px 10px;
   }
 
-
-  }
+}

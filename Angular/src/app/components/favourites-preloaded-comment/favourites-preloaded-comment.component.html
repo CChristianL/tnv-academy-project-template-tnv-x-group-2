@@ -1,18 +1,17 @@
 <div class="form-outline">
     <label class="form-label" for="textAreaExample">Recensioni</label>
-    <div readonly="true" class="form-control" id="textAreaExample1" rows="5" >
+    <div readonly="true" class="form-control" id="textAreaExample1" rows="5">
         <div id="tabella" *ngFor="let rating of ratings">
-            
-            <div *ngIf="rating.movieId === movie?.id" >
-    <div class="row">        
-        <h3 class="col-6">{{ rating?.username }}</h3>
-        <span class="valutazione col-6">Valutazione: <span class="numValutazione">{{ rating?.rating }}/10 </span></span>
-    </div>      
-        <h5>{{ rating?.comment }}</h5>
-        
+
+            <div *ngIf="rating.movieId === movie?.id">
+                <div class="row">
+                    <h3 class="col-6">{{ rating?.username }}</h3>
+                    <span class="valutazione col-6">Valutazione: <span class="numValutazione">{{ rating?.rating }}/10
+                        </span></span>
+                </div>
+                <h5>{{ rating?.comment }}</h5>
+
             </div>
         </div>
     </div>
 </div>
-
-<!--dobbiamo fare qui un componente che generi automaticamente tante recensioni quante ce ne servono, con il rating stellinato collegato-->

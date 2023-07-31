@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Movie } from '../models/movie';
-import { HttpClient, HttpResponse } from '@angular/common/http';
-import { switchMap } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 
 @Injectable({
@@ -19,8 +18,7 @@ export class MovieService {
 
   getMovies(){
       this.http.get<any>(`${this.API_ROOT}`).subscribe({
-      next: (response) => {this.movies = response.results
-        console.log("Dati dei film recuperati:", this.movies);}
+      next: (response) => {this.movies = response.results}
       })
     };
   }

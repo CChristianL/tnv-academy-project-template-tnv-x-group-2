@@ -40,7 +40,7 @@ export class GameCommentRatingComponent {
 
   //la regex come in c, se mettono più spazi consecutivi lo becchiamo senza drammi
   checkWordCount() {
-    const wordCount = this.commentTemp.trim().split(/\s+/).length; 
+    const wordCount = this.commentTemp.trim().split(/\s+/).length;
     this.outOfBound = wordCount > this.wordLimit;
     this.checkSubmitValidity();
   }
@@ -49,14 +49,12 @@ export class GameCommentRatingComponent {
     const isRatingValid = this.rating.rating !== undefined;
     const isCommentValid = !this.outOfBound && this.commentTemp.trim().length > 0;
     this.submitButtonDisabled = !(isRatingValid && //se il Rating NON è valido, non abilita il pulsante
-                                  isCommentValid && //se il Comment NON è valido, same
-                                  this.movie); //se il Movie non è presente, l'operazione non è possibile
+      isCommentValid && //se il Comment NON è valido, same
+      this.movie); //se il Movie non è presente, l'operazione non è possibile
   }
 
   onSubmit() {
-    console.log("Parto da qui - Game-comment-rating.component.ts")
     if (this.submitButtonDisabled) {
-      console.log("Rating e/o commento non validi.");
       return;
     }
 
@@ -65,20 +63,18 @@ export class GameCommentRatingComponent {
     const ratingCopy: Rating = { //Ho creato una copia del rating perché mi pushava due oggetti
       rating: this.rating.rating,//Vorrei capire come mai, quindi lo cercherò.
       comment: this.commentTemp,
-    
-      userId: this.recoveredUser.id, //Non è stato usato ngForm per ottenere dati di tipo form
-      movieId: this.movie?.id, //Poiché nel form non abbiamo questi 3 dati sotto this.commentTemp
-      team: this.recoveredUser.team, //Potrebbe essere una soluzione lavorare il dato con doppio binding
+      userId: this.recoveredUser.id,
+      movieId: this.movie?.id,
+      team: this.recoveredUser.team,
       username: this.recoveredUser.username,
     };
 
     this.submit.emit(ratingCopy);
-    
+
     this.clearRating();
   }
 
   onSkip() {
-    console.log("Parto da qui per lo skip - GameCommentRatingComponent")
     this.skipMovie.emit(this.movie?.id);
     console.log(this.movie?.id);
   }
@@ -92,8 +88,7 @@ export class GameCommentRatingComponent {
     }
   }
 
-  clearRating(){
-    console.log("Ho clearato il rating")
+  clearRating() {
     this.rating.rating = undefined;  // Resetta il rating e il commento dopo l'invio
     this.commentTemp = ''; // Questo l'ho scritto come se fosse uno svuota buffer del rating
     this.checkSubmitValidity(); // Ricontrolla la validità del pulsante

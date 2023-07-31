@@ -11,9 +11,9 @@ import { MovieService } from 'src/app/services/movie.service';
 })
 
 export class FavouritesComponent {
-  @Input() movies: Movie [] = [];
-  @Input() ratings: Rating [] = [];
-  
+  @Input() movies: Movie[] = [];
+  @Input() ratings: Rating[] = [];
+
   rating: Rating = {}
 
   counter: number = 0;
@@ -22,7 +22,7 @@ export class FavouritesComponent {
   filteredRatings: Rating[] = [];
   recoveredUser: any;
 
-  constructor(public movieService: MovieService, public ratingService: RatingService) {}
+  constructor(public movieService: MovieService, public ratingService: RatingService) { }
 
   ngOnChanges(): void {
     this.updateFilteredRating();
@@ -39,7 +39,7 @@ export class FavouritesComponent {
     }
   }
 
- updateFilteredMovie (){
+  updateFilteredMovie() {
     this.filteredMovies = [...this.movies];
     this.filteredMovies = this.filteredMovies.filter((movie) => this.hasFilmCommented(movie.id));
     console.log(this.filteredMovies, "Film Commentati")
@@ -48,28 +48,28 @@ export class FavouritesComponent {
     console.log("Dovrebbero essere filtrati", this.filteredMovies)
   }
 
- hasFilmCommented (movieId : number) : boolean{
-  return this.ratings.some((rating) => rating.movieId === movieId);
- }
+  hasFilmCommented(movieId: number): boolean {
+    return this.ratings.some((rating) => rating.movieId === movieId);
+  }
 
- hasFilmTeam (movieId : number) : boolean{
-  return this.filteredRatings.some(rating => rating.movieId === movieId)
- }
+  hasFilmTeam(movieId: number): boolean {
+    return this.filteredRatings.some(rating => rating.movieId === movieId)
+  }
 
- updateFilteredRating (){
-  this.filteredRatings = [...this.ratings];
-  this.filteredRatings = this.filteredRatings.filter((rating) => this.hasFilmRating(rating.movieId)) //queste non stanno funzionando
-  this.recoverLocalUser();
-  console.log(this.recoveredUser)
-  this.filteredRatings = this.filteredRatings.filter(rating => rating.team === this.recoveredUser.team)
-  console.log(typeof(this.rating.movieId))
-  console.log(this.filteredRatings)
-  console.log(typeof(this.filteredRatings))
-  console.log("array di commenti di un team", this.filteredRatings)
-}
+  updateFilteredRating() {
+    this.filteredRatings = [...this.ratings];
+    this.filteredRatings = this.filteredRatings.filter((rating) => this.hasFilmRating(rating.movieId)) //queste non stanno funzionando
+    this.recoverLocalUser();
+    console.log(this.recoveredUser)
+    this.filteredRatings = this.filteredRatings.filter(rating => rating.team === this.recoveredUser.team)
+    console.log(typeof (this.rating.movieId))
+    console.log(this.filteredRatings)
+    console.log(typeof (this.filteredRatings))
+    console.log("array di commenti di un team", this.filteredRatings)
+  }
 
-hasFilmRating (RatingId : any) : boolean{//queste non stanno funzionando
-return this.movies.some((movie) => movie.id === RatingId);
-}
+  hasFilmRating(RatingId: any): boolean {
+    return this.movies.some((movie) => movie.id === RatingId);
+  }
 
 }

@@ -2,21 +2,9 @@ package com.tnvgrouptwo.demo.model;
 
 public class UserUpdate {
 
-    //NEL CASO PENSARE DI INSERIRE QUI L'UPDATE DEL AVATAR
-
     private String email;
     private String password;
 
-    //private int id;
-
-    /*public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-*/
     public String getEmail() {
         return email;
     }

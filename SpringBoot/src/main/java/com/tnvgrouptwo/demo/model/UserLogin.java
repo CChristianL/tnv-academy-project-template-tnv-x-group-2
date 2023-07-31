@@ -3,16 +3,7 @@ package com.tnvgrouptwo.demo.model;
 public class UserLogin {
     private String username;
     private String password;
-   // private String isLogged;
-/*
-    public String getIsLogged() {
-        return isLogged;
-    }
 
-    public void setIsLogged(String isLogged) {
-        this.isLogged = isLogged;
-    }
-*/
     public String getUsername() {
         return username;
     }

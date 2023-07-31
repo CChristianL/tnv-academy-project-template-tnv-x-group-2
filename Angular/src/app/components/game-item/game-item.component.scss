@@ -1,54 +1,52 @@
 .d-flex {
   display: flex;
   flex-wrap: wrap;
- 
- .carousel-indicators{
-  display: none; 
- }
- 
-.carousel{
+
+  .carousel-indicators {
+    display: none;
+  }
+
+  .carousel {
     width: 450px;
     height: 500px;
     margin: auto;
- }
-
- #button{
-    background-color: transparent; 
-    border: 1px solid white; 
-    color: white;  
-    text-align: center; 
-    display: inline-block; 
-    font-size: 19px; 
-    transition-duration: 0.4s; 
-    cursor: pointer;      
   }
 
-  #button:hover {   
+  #button {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 19px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+
+  #button:hover {
     box-shadow: 0 0 40px #d9a03e;
-    text-shadow: 1px 1px 2px #d9a03e; 
+    text-shadow: 1px 1px 2px #d9a03e;
   }
-  
+
   .bottoneHiddenText {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  
- .instruction {
-    color: white;    
+
+  .instruction {
+    color: white;
     font-size: large;
     text-align: center !important;
   }
 
-  .carousel-caption{
-    p{
-        text-align: justify;
-        margin: 10px;
-        
-        
-    }    
+  .carousel-caption {
+    p {
+      text-align: justify;
+      margin: 10px;
+    }
+
     margin-bottom: 100px;
-    //background-color: rg""b(44, 44, 44);
     background-image: url("../../../assets/images/sfondogeneraleApp.gif");
     background-size: contain;
     opacity: 0.8;
@@ -56,5 +54,4 @@
     border-radius: 10px 10px 10px 10px;
   }
 
-
-  }
+}
