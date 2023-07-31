@@ -1,15 +1,14 @@
 .d-flex {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-
+ 
  .carousel-indicators{
   display: none; 
  }
-
- .carousel{
-    width: 350px;
-    height: 400px;
+ 
+.carousel{
+    width: 450px;
+    height: 500px;
     margin: auto;
  }
 
@@ -19,7 +18,7 @@
     color: white;  
     text-align: center; 
     display: inline-block; 
-    font-size: 22px; 
+    font-size: 19px; 
     transition-duration: 0.4s; 
     cursor: pointer;      
   }
@@ -45,29 +44,17 @@
     p{
         text-align: justify;
         margin: 10px;
+        
+        
     }    
-    margin-bottom: 250px;
-    background-color: gray;
-    opacity: 0.9;
+    margin-bottom: 100px;
+    //background-color: rg""b(44, 44, 44);
+    background-image: url("../../../assets/images/sfondogeneraleApp.gif");
+    background-size: contain;
+    opacity: 0.8;
     border:1px solid black;
     border-radius: 10px 10px 10px 10px;
   }
-  @media screen and (min-width: 1024px){
-    .instruction {
-      color: white;    
-      font-size: large;
-      text-align: left !important;
-    }
-    .carousel{
-      width: 450px;
-      height: 500px;
-      margin: auto;
-   }
-
 
 
   }
-
-}
- 
-

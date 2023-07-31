@@ -6,7 +6,7 @@
     font-size: 36px;
   }
   .img {
-    background-image: url("/assets/images/giffix.gif");
+    background-image: url("/assets/images/giffix2.gif");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
@@ -14,11 +14,10 @@
     background-color: transparent;  
     height: 600px;
     margin: auto;
+    margin-top: 100px;
   }
   
-  .container{
-    margin: 0;
-  }
+  
   @media screen and (min-width: 991px) and (max-width: 1200px) {
     .container{
       display: flex;

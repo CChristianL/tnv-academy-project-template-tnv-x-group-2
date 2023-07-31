@@ -21,10 +21,10 @@ const routes: Routes = [
     component: MainPageComponent,
     canActivate: [AuthGuard],
     children: [
-      { path: "game", component: PageRatingsmoviesComponent },
       { path: "combatti", component: WelcomeComponent },
+      { path: "game", component: PageRatingsmoviesComponent },      
       { path: "profile", component: ProfileComponent },
-      { path: "rankings", component: PageCommentComponent },
+      { path: "preferiti", component: PageCommentComponent },
       { path: "", redirectTo: "combatti", pathMatch: 'full' },
       
     ],

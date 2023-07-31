@@ -3,7 +3,7 @@ import { RatingService } from 'src/app/@shared/services/rating.service';
 import { Movie } from 'src/app/models/movie';
 import { Rating } from 'src/app/models/rating';
 import { MovieService } from 'src/app/services/movie.service';
-import { ContatoreScudoComponent } from '../contatore-scudo/contatore-scudo.component';
+
 
 @Component({
   selector: 'tnv-game',
@@ -16,15 +16,12 @@ export class GameComponent implements OnInit {
   @Input() ratings: Rating [] = [];
   rating: Rating = {}
 
-  counter: number = 0;
-
   filteredMovies: Movie[] = [];
   recoveredUser: any;
 
   constructor(public movieService: MovieService, public ratingService: RatingService) {}
 
-  ngOnInit(): void {
-    
+  ngOnInit(): void {    
       console.log("Movies nel componente genitore:", this.movies);
       console.log("Ratings nel componente genitore:", this.ratings);
       this.updateFilteredMovies();
@@ -40,8 +37,7 @@ export class GameComponent implements OnInit {
   onRatingSubmited(rating: Rating) {
     this.ratingService.createRating(rating).subscribe({
       next: (newRating) => {
-        this.ratings.push(newRating);
-        this.counter++;
+        this.ratings.push(newRating);       
         console.log("Sono arrivato al penultimo step - Game.component.ts");
         console.log(this.ratings);
         this.movies = this.movies.filter(movie => movie.id !== rating.movieId); // Rimuovi il film votato dall'array movies
@@ -73,8 +69,14 @@ export class GameComponent implements OnInit {
     // Filtra i film che non hanno un rating
     this.filteredMovies = this.filteredMovies.filter((movie) => !this.hasUserCommentedMovie(movie.id));
 
+    this.filteredMovies = this.shuffleArray(this.filteredMovies);
+
     console.log("Filtered Movies:", this.filteredMovies);
-   }
+   } 
+
+shuffleArray(array: any[]) {
+    return array.sort(() => Math.random() - 0.5);
+  }
 
    recoverLocalUser() {
     if (!localStorage.getItem('user')) {

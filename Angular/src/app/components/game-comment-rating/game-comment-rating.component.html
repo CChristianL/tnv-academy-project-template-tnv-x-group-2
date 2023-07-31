@@ -8,12 +8,14 @@
     <div *ngIf="outOfBound" class="mt-1 small text-danger">
       Il commento deve contenere massimo {{ wordLimit + 1 }} parole.
     </div>
-    <div class="col-12 mt-3 mb-3" *ngIf="!rating.movieId">
-        <button class="btn bottoneComment" [disabled]="submitButtonDisabled" (click)="onSubmit()"> Vota! </button>
+    <div class="row">
+    <div class="col-6 mt-3 mb-3 " *ngIf="!rating.movieId">
+        <button class="form-control btn bottoneComment" [disabled]="submitButtonDisabled" (click)="onSubmit()"> Vota! </button>
     </div>
-    <div class="col-12 mt-3 mb-3">
-    <button class="btn btn-danger" (click)="onSkip()">Salta</button>
+    <div class="col-6 mt-3 mb-3 ">
+    <button class="form-control btn button-skip" (click)="onSkip()">Salta</button>
     </div>
+  </div>
 </form>
   
 

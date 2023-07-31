@@ -1,5 +1,5 @@
-<nav id="navbar" class="navbar navbar-expand-md fixed-top px-3">
-  <a class="navbar-brand" routerLink="/">War Rate Greek Edition</a> 
+<nav id="navbar" class="navbar navbar-dark bg-dark navbar-expand-md fixed-top px-3">
+  <img src="../../../../assets/images/logo.png" class="navbar-brand" routerLink="/">
   <!--
     Questo aggira un po di deliri fatti con la auth.guard.ts Mauri
     In sostanza ci permette di far si che se l'utente è sloggato possa andare sulla navbar
@@ -22,24 +22,14 @@
     class="collapse navbar-collapse"
     id="navbarsDefault"
   >
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav mr-auto">      
       <li class="nav-item active">
-        <a class="nav-link" routerLink="/welcome" routerLinkActive="active"
-          >Combatti</a
-        >
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" routerLink="/game" routerLinkActive="active"
+        <a class="nav-link" routerLink="/combatti" routerLinkActive="active"
           >Gioca</a 
         > <!-- bisogna ricordarsi di disattivare questo -->
-      </li>
+      </li>      
       <li class="nav-item active">
-        <a class="nav-link" routerLink="/rankings" routerLinkActive="active"
-          >Classifica</a
-        >
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" routerLink="/favourites" routerLinkActive="active"
+        <a class="nav-link" routerLink="/preferiti" routerLinkActive="active"
           >Preferiti</a
         >
       </li>

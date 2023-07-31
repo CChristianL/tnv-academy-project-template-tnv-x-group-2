@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
       this.authService.login(form.value).subscribe({
         next: (response) => {
           localStorage.setItem("user", JSON.stringify(response));
-          this.router.navigateByUrl("/game"); //cambiare per mandare l'utente appena loggato nella pagina di benvenuto con la descrizione
+          this.router.navigateByUrl("/combatti"); //cambiare per mandare l'utente appena loggato nella pagina di benvenuto con la descrizione
                                               //e i button per giocare
       },
         error: () => alert("Login Errato"),

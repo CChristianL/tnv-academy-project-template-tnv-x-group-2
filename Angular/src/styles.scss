@@ -47,9 +47,9 @@ label {
 
 html, body { 
 
-background-image: url(assets/images/sfondogeneraleApp.gif);
-background-size:auto;
-background-repeat: repeat;
+background-image: url(assets/images/sfondogeneraleAppFIXED.gif);
+background-size:contain;
+
 
 
 }
@@ -61,5 +61,9 @@ body {
  }
 #navbar a {
   color: white;
+}
+
+p{
+  font-family: Ysabeau Office, sans-serif;
 }
 
