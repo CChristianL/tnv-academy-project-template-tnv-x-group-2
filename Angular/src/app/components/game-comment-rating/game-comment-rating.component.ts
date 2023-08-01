@@ -61,7 +61,7 @@ export class GameCommentRatingComponent {
     this.recoverLocalUser(); //Recupero i dati da Local User, per inserirli nella copia del rating
 
     const ratingCopy: Rating = { //Ho creato una copia del rating perché mi pushava due oggetti
-      rating: this.rating.rating,//Vorrei capire come mai, quindi lo cercherò.
+      rating: this.rating.rating,//Vorremo delle delucidazioni sui possibili perché.
       comment: this.commentTemp,
       userId: this.recoveredUser.id,
       movieId: this.movie?.id,

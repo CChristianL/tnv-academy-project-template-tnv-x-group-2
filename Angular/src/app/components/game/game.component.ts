@@ -35,9 +35,8 @@ export class GameComponent implements OnInit {
     this.ratingService.createRating(rating).subscribe({
       next: (newRating) => {
         this.ratings.push(newRating);
-        this.movies = this.movies.filter(movie => movie.id !== rating.movieId); // Rimuovi il film votato dall'array movies
+        this.movies = this.movies.filter(movie => movie.id !== rating.movieId); // Rimuove il film votato dall'array movies
         this.updateFilteredMovies(); // Aggiorna l'array filteredMovies dopo ogni rating
-
       },
       error: (error) => {
         console.log('Errore nel salvataggio del rating:', error);
