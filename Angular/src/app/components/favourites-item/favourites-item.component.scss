@@ -1,50 +1,23 @@
-.d-flex{
+.d-flex {
   display: flex;
   flex-wrap: wrap;
 
+  .carousel-indicators {
+    display: none !important;
+  }
 
- .carousel-indicators {
-    display: none;
- }
-
- .carousel{
-    width: 500px;
-    height: 600px;
+  .carousel {
+    width: 450px;
+    height: 500px;
     margin: auto;
- }
-
- #button{
-    background-color: transparent; 
-    border: 1px solid white; 
-    color: white;  
-    text-align: center; 
-    display: inline-block; 
-    font-size: 22px; 
-    transition-duration: 0.4s; 
-    cursor: pointer;      
   }
 
-  #button:hover {   
-    box-shadow: 0 0 40px #d9a03e;
-    text-shadow: 1px 1px 2px #d9a03e; 
-  }
-  
-  .bottoneHiddenText {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
- .instruction {
-    color: white;    
-    font-size: large;
-  }
+  .carousel-caption {
+    p {
+      text-align: justify;
+      margin: 10px;
+    }
 
-  .carousel-caption{
-    p{
-        text-align: justify;
-        margin: 10px;
-    }    
     margin-bottom: 250px;
     background-color: gray;
     opacity: 0.9;
@@ -52,10 +25,4 @@
     border-radius: 10px 10px 10px 10px;
   }
 
- .wrap{
-    scale: 90%;
- }
- 
-
 }
- 

@@ -9,18 +9,16 @@ import { Rating } from 'src/app/models/rating';
 })
 export class FavouritesItemComponent {
   @Input() movie: Movie | undefined;
-  @Input() movies: Movie [] = [];
+  @Input() movies: Movie[] = [];
   @Input() rating: Rating | undefined;
-  @Input() ratings: Rating [] = [];
-  
+  @Input() ratings: Rating[] = [];
+
   recoveredUser: any;
 
-  constructor (){}
+  constructor() { }
 
-   ngOnInit(): void {
-    console.log("Movies:", this.movies);
-    console.log("Ratings:", this.ratings);
-    // Implementa la logica del carosello e dei dati associati qui
+  ngOnInit(): void {
+
   }
 
   recoverLocalUser() {
@@ -31,6 +29,5 @@ export class FavouritesItemComponent {
       this.recoveredUser = JSON.parse(userString || '{}') as any;
     }
   }
-  
+
 }
-  

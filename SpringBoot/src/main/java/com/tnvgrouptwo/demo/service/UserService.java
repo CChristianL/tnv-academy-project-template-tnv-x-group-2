@@ -4,11 +4,8 @@ import com.tnvgrouptwo.demo.dao.UserRepositoryDAO;
 import com.tnvgrouptwo.demo.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
 
 import java.util.Collections;
 import java.util.List;
@@ -37,39 +34,6 @@ public class UserService {
             return "Errore nel salvataggio dell'utente";
         }
     }
-/*
-    public String registerUser(UserRegister user) {
-
-            if (userDAO.existsByUsername(user.getUsername())){
-                return "Errore, utente già registrato";
-            }
-
-            User userStillNotRegistred = new User(); //User da costruire per la registrazione.
-
-            userStillNotRegistred.setTeam(user.getTeam());
-            userStillNotRegistred.setUsername(user.getUsername());
-            //Setting del nuovo User basato sui dati in ingresso
-            userStillNotRegistred.setEmail(user.getEmail());
-            userStillNotRegistred.setPassword(passwordEncoder.encode(user.getPassword()));
-            userStillNotRegistred.setEnabled(true);
-
-            Authority userStillNotRegistereAuthorities = new Authority();
-            //Autorizzazioni da costruire per lo user da registrare
-
-            userStillNotRegistereAuthorities.setUser(userStillNotRegistred);
-            //Setting delle autorizzazioni del nuovo user
-            userStillNotRegistereAuthorities.setUsername(user.getUsername());
-            userStillNotRegistereAuthorities.setAuthority("ROLE_USER");
-
-            userStillNotRegistred.setAuthorities(Collections.singleton(userStillNotRegistereAuthorities));
-            //inserimento delle autorizzazioni nel nuovo user
-            //Ho usato Collections.singleton perché mi permette di creare un set con un unico oggetto.
-            //Considerato che raramente la registrazione consente immediati ruoli da admin ho optato per questa soluzione.
-
-            userDAO.save(userStillNotRegistred);
-            return "Utente registrato correttamente";
-        }
-*/
 
     public User registerUser(UserRegister user) {
 
@@ -103,7 +67,6 @@ public class UserService {
         return userStillNotRegistred;
     }
 
-
     public Optional<User> getUser(int id) {
         return userDAO.findById(id);
     }
@@ -112,21 +75,20 @@ public class UserService {
         return userDAO.findAll();
     }
 
-    public User updateUser(int id, UserUpdate user) { //FARE CLASSE USER UPDATE
-
+    public User updateUser(int id, UserUpdate user) {
 
         user.setPassword(passwordEncoder.encode(user.getPassword()));
 
         Optional<User> userId = userDAO.findById(id);
-        User user1 = userId.get();
+        User userToUpdate = userId.get();
 
-        user1.setEmail(user.getEmail());
-        user1.setPassword(user.getPassword());
+        userToUpdate.setEmail(user.getEmail());
+        userToUpdate.setPassword(user.getPassword());
 
-        userDAO.save(user1);
+        userDAO.save(userToUpdate);
 
         if (user != null) { //CONTROLLO DA RENDERE PIU PERFORMANTE
-            return user1;
+            return userToUpdate;
         } else {
             return null;
         }
@@ -153,27 +115,7 @@ public class UserService {
     public List<User> searchUserByUsernameAndEmail(String partialUsername, String partialMail) {
         return userDAO.findByUsernameContainsAndEmailContains(partialUsername, partialMail);
     }
-/*
-    public String loginUser(UserLogin user) {
-        User temp = userDAO.findByUsername(user.getUsername());
-        if (temp != null && passwordEncoder.matches(user.getPassword(), temp.getPassword())){
-          //  System.out.println("Login Completato");
-            return "Login Completato";
-        }
-        //System.out.println("Login Errato");
-        return "Login Errato";
-    }
-*/
-/*
-    public UserLogin loginUser(UserLogin user) {
-        User temp = userDAO.findByUsername(user.getUsername());
-        if (temp != null && passwordEncoder.matches(user.getPassword(), temp.getPassword())){
-          //  return new LoginResponse(user.getUsername(), user.getPassword());
-            return user;
-        }
-        return null;
-    }
-    */
+
 public User loginUser(UserLogin user) {
     User temp = userDAO.findByUsername(user.getUsername());
     if (temp != null && passwordEncoder.matches(user.getPassword(), temp.getPassword())) {
@@ -183,17 +125,18 @@ public User loginUser(UserLogin user) {
 }
 
 public Team teamMembersPercentage() {
-    int red = 0;
-    int blu = 0;
-    Team output = new Team();
+    float red = 0;
+    float blu = 0;
+
+    Team output = new Team(); //Viene creato un oggetto Team seguendo il suo model
 
     Iterable<User> userIterable = userDAO.findAll();
 
     for (User user : userIterable) {
         String team = user.getTeam();
         if(team != null) {
-            if (team.equalsIgnoreCase("atene")) {
-                blu++;
+            if (team.equalsIgnoreCase("atene")) { //ignore case nel caso ci siano errori
+                blu++; //conta gli utenti del team
             } else if (team.equalsIgnoreCase("sparta")) {
                 red++;
             }
@@ -202,49 +145,22 @@ public Team teamMembersPercentage() {
     output.setBlu(blu);
     output.setRed(red);
 
-    int total = blu+red;
-    int tenPercent = total/10;
+    float total = blu + red;
+    float tenPercent = total / 10; //Per il calcolo percentile, non so se è definibile magic number
 
-    if(blu > red ){
-        int dif = blu - red;
+    if (blu > red ){
+        float dif = blu - red;
         if(dif > tenPercent){
-            output.setbEnabled(false);
+            output.setBEnabled(false);
         }
     } else{
-        int dif = red -blu;
+        float dif = red - blu;
         if(dif > tenPercent){
-            output.setrEnabled(false);
+            output.setREnabled(false);
         }
     }
 
     return output;
 }
 
-
-
-/*
-   public ResponseEntity<String> loginUser(UserLogin user) {
-        User temp = userDAO.findByUsername(user.getUsername());
-        if (temp != null && passwordEncoder.matches(user.getPassword(), temp.getPassword())) {
-            return ResponseEntity.ok("Login Completato");
-        }
-
-        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Login errato");
-    }
-*/
-
-/*
-    public String logoutUser(User user) {
-        User temp = userDAO.findByUsername(user.getUsername());
-        temp.setPassword(passwordEncoder.encode(user.getPassword()));
-        if (passwordEncoder.matches(user.getPassword(), temp.getPassword())){
-            temp.setEnabled(false);
-            // user.setEnabled(true);
-            //updateUser(temp.getId(), temp);
-            return "Logout Completato";
-        }
-        //user.setEnabled(true);
-        return "Logout errato";
-    }
-*/
 }

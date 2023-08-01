@@ -1,0 +1,56 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red193\green193\blue193;}
+{\*\expandedcolortbl;;\cssrgb\c80000\c80000\c80000;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww20980\viewh14460\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 README\
+\
+Ciao Michele, ti scrivo qui per informarti di alcuni potenziali errori e per chiederti delucidazioni\
+su alcuni aspetti che ci hanno fatto dannare.\
+\
+Ci siamo resi conto che la race a volte non contribuisce ai nostri processi. In particolare durante \
+lo sviluppo del componente relativo al preload dei rating.\
+\
+La parte pi\'f9 ostica che abbiamo dovuto risolvere con una barbarie, \'e8 quella del update in tempo \
+reale dei punti. Per cui siamo finiti a temporizzatore delle chiamate per restituire il valore\
+in formato number.\
+\
+Abbiamo tentato per giorni di renderla come il componente game, che appare responsivo secondo il tuo\
+\'93giro del fumo\'94 e i metodi ngOnChanges. Nell\'92usarli, il compilatore stesso ci ha suggerito alcune\
+soluzioni, come l\'92uso di changes.[\'91nomevariabile\'92].\
+\
+Detto questo, abbiamo tentato un approccio diverso dal vostro template, e credo che questo ci abbia\
+reso pi\'f9 complesso il lavoro, ma abbiamo scelto di non rinunciare a molti componenti utili da voi \
+creati.\
+\
+Come bug conosciuti c\'92\'e8 la visualizzazione su dispositivi diversi:\
+Sul pc di Maurizio e con il suo monitor (siamo su base windows), non abbiamo avuto problemi e anche\
+esaminando gli strumenti sviluppatore per le dimensioni dei dispositivi mobile e altri tipi di \
+desktop il sito appare responsivo.\
+Sul mio MacBook invece nelle risoluzioni minori c\'92\'e8 un problema di margin dell\'92immagine con gli\
+scudi. Risolvibile aumentando il margin, tuttavia non siamo certi di volerlo fare poich\'e9 non sappiamo\
+come rapportarci riguardo questo comportamento molto inatteso. Altro bug, il varchar 255 troppo piccolo per i commenti.\
+\
+Altro bug grafico, non abbiamo idea del perch\'e9 ci sia una barra bianca in alcune pagine, che quasi\
+spezza in due la gif dello sfondo. Ci siamo depressi per questo, considerato che io ho realizzato\
+tutte le immagini (logo, sfondo, scudiCounter, guerrieri, gif etc) con photoshop e le mie mani. \
+Vorremo sapere da cosa deriva. \
+\
+Ci rendiamo conto di aver tentato una strada diversa, la scelta \'e8 stata influenzata anche dal mio \
+intento di distinguere il nostro progetto fin da subito, cercando di fare ricerca sul lato UX/UI\
+e le landing page di diversi giochi. Pertanto, se questo ha reso il progetto meno buono di quanto\
+poteva essere, la responsabilit\'e0 \'e8 pi\'f9 mia che del team, anche dato il ruolo di TL.\
+\
+Detto questo, buon proseguo e grazie per le lezioni, non vediamo l\'92ora di avere dei chiarimenti!\
+\
+Chris, Maurizio, Fabio: Team 2.\
+\
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 \
+}

@@ -1,6 +1,5 @@
 package com.tnvgrouptwo.demo.security;
 
-import org.apache.catalina.filters.CorsFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -12,9 +11,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.CorsConfigurationSource;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
 
 import javax.sql.DataSource;
 import java.util.Arrays;
@@ -24,7 +21,8 @@ import java.util.Arrays;
 public class SecurityConfiguration {
     PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
-    /*@Bean
+    /*
+    @Bean
     public InMemoryUserDetailsManager userDetailsService() {
         UserDetails user = User
                 .withUsername("user")
@@ -64,12 +62,10 @@ public class SecurityConfiguration {
     }
 
     /**
-     * Qui ho riscontrato un potenziale bug di cui vorrei parlarti, nel lanciare il programma così com'è
-     * senza gli step by step fatti durante le lezioni, è impossibile avere degli admin e user preimpostati
-     * ragion per cui per ovviare al problema ho scelto di dare permitAll alle chiamate per inserire un primo admin
-     * con cui poi ragionare sul resto.
-     * In alternativa ho pensato ad una register che se il db è vuoto registra il primo utente come admin.
-     * Hai suggerimenti in merito?
+     * I permessi sono stati impostati in questo modo per via di un potenziale errore di Spring.
+     * L'errore si presenta all'avvio di un nuovo progetto, con il DB vuoto, all'avvio di questo
+     * codice non viene generato un utente ADMIN abilitato ad ogni post, ragion per cui dopo averlo
+     * creato nei nostri db di test, abbiamo chiuso i permessi.
      */
 
 

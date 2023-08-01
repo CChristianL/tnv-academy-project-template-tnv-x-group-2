@@ -28,8 +28,8 @@ export class RegisterComponent implements OnInit {
   getTeam() {
     this.authService.getDistribution().subscribe({
       next: (response) => {
-         this.bEnabled = response.bEnabled;
-         this.rEnabled = response.rEnabled;
+        this.bEnabled = response.bEnabled;
+        this.rEnabled = response.rEnabled;
       },
       error: () => alert("Errato"),
     })

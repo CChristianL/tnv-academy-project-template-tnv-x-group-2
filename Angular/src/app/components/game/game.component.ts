@@ -3,7 +3,7 @@ import { RatingService } from 'src/app/@shared/services/rating.service';
 import { Movie } from 'src/app/models/movie';
 import { Rating } from 'src/app/models/rating';
 import { MovieService } from 'src/app/services/movie.service';
-import { ContatoreScudoComponent } from '../contatore-scudo/contatore-scudo.component';
+
 
 @Component({
   selector: 'tnv-game',
@@ -12,28 +12,22 @@ import { ContatoreScudoComponent } from '../contatore-scudo/contatore-scudo.comp
 })
 export class GameComponent implements OnInit {
 
-  @Input() movies: Movie [] = [];
-  @Input() ratings: Rating [] = [];
+  @Input() movies: Movie[] = [];
+  @Input() ratings: Rating[] = [];
   rating: Rating = {}
-
-  counter: number = 0;
 
   filteredMovies: Movie[] = [];
   recoveredUser: any;
 
-  constructor(public movieService: MovieService, public ratingService: RatingService) {}
+  constructor(public movieService: MovieService, public ratingService: RatingService) { }
 
   ngOnInit(): void {
-    
-      console.log("Movies nel componente genitore:", this.movies);
-      console.log("Ratings nel componente genitore:", this.ratings);
-      this.updateFilteredMovies();
+    this.updateFilteredMovies();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['movies'] || changes['ratings']) {
       this.updateFilteredMovies();
-      
     }
   }
 
@@ -41,12 +35,9 @@ export class GameComponent implements OnInit {
     this.ratingService.createRating(rating).subscribe({
       next: (newRating) => {
         this.ratings.push(newRating);
-        this.counter++;
-        console.log("Sono arrivato al penultimo step - Game.component.ts");
-        console.log(this.ratings);
         this.movies = this.movies.filter(movie => movie.id !== rating.movieId); // Rimuovi il film votato dall'array movies
         this.updateFilteredMovies(); // Aggiorna l'array filteredMovies dopo ogni rating
-        
+
       },
       error: (error) => {
         console.log('Errore nel salvataggio del rating:', error);
@@ -56,27 +47,33 @@ export class GameComponent implements OnInit {
 
   onMovieSkipped(id: number) {
     this.movies = this.movies.filter(x => x.id !== id);
-    console.log("Sono arrivato al penultimo step - Game.component.ts");
-    console.log(this.movies);
     this.updateFilteredMovies();
   }
 
   updateFilteredMovies() {
-    
-    // Recupera l'utente corrente
+
+    // Recupera l'utente corrente. Dubbio: avremmo dovuto inietare il service per usare
+    // la vostra funzione in auth.service?
     this.recoverLocalUser();
     console.log(this.recoveredUser)
-    
-    // Copia locale dell'array movies
+
+    // Spread Operator per decostruire e costruiremo filteredMovies
     this.filteredMovies = [...this.movies];
 
     // Filtra i film che non hanno un rating
     this.filteredMovies = this.filteredMovies.filter((movie) => !this.hasUserCommentedMovie(movie.id));
 
-    console.log("Filtered Movies:", this.filteredMovies);
-   }
+    // Shuffle dei film in arrivo dalla chiamata
+    this.filteredMovies = this.shuffleArray(this.filteredMovies);
 
-   recoverLocalUser() {
+    console.log("Filtered Movies:", this.filteredMovies);
+  }
+
+  shuffleArray(array: any[]) {
+    return array.sort(() => Math.random() - 0.5);
+  }
+
+  recoverLocalUser() {
     if (!localStorage.getItem('user')) {
       this.recoveredUser = {} as any;
     } else {

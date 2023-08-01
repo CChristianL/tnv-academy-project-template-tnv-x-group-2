@@ -3,8 +3,8 @@ package com.tnvgrouptwo.demo.model;
 import java.io.Serializable;
 
 public class Team implements Serializable {
-    private int red = 0;
-    private int blu = 0;
+    private float red = 0;
+    private float blu = 0;
     private boolean rEnabled = true;
     private boolean bEnabled = true;
 
@@ -15,7 +15,7 @@ public class Team implements Serializable {
         return rEnabled;
     }
 
-    public void setrEnabled(boolean rEnabled) {
+    public void setREnabled(boolean rEnabled) {
         this.rEnabled = rEnabled;
     }
 
@@ -23,20 +23,20 @@ public class Team implements Serializable {
         return bEnabled;
     }
 
-    public void setbEnabled(boolean bEnabled) {
+    public void setBEnabled(boolean bEnabled) {
         this.bEnabled = bEnabled;
     }
 
-    public int getRed() {
+    public float getRed() {
         return red;
     }
-    public void setRed(int red) {
+    public void setRed(float red) {
         this.red = red;
     }
-    public int getBlu() {
+    public float getBlu() {
         return blu;
     }
-    public void setBlu(int blu) {
+    public void setBlu(float blu) {
         this.blu = blu;
     }
 }

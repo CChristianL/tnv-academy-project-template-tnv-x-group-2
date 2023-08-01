@@ -1,108 +1,112 @@
 .image {
-    background-image: url("/assets/images/scudoNoSfondo.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-    font-size: 450% ;   
-    
-    
+  background-image: url("/assets/images/scudoNoSfondo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  font-size: 450%;
 }
-.p-5{
- text-align: center !important;
- text-size-adjust: 300%;
- transition-duration: 0.4s;
- position: relative;
- padding: 0% !important;
+
+.p-5 {
+  text-align: center !important;
+  text-size-adjust: 300%;
+  transition-duration: 0.4s;
+  position: relative;
+  padding: 0% !important;
 }
 
 #scudo1 {
-    size: 100%;
-    position: absolute;
-    bottom: 5%;
-    left: 20%;
-    transform: translateX(-50%);    
-    justify-content: center;
-    transition: 0.3s;
-    cursor: pointer;
-  }
-  .btext{
-    font-size: 45% !important;
-    padding: 20%;
-    text-shadow: 
-    0 0 5px rgba(150, 0, 0, 0.6), 
-    0 0 10px rgba(150, 0, 0, 0.6), 
+  size: 100%;
+  position: absolute;
+  bottom: 5%;
+  left: 20%;
+  transform: translateX(-50%);
+  justify-content: center;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.rtext {
+  font-size: 45% !important;
+  padding: 20%;
+  text-shadow:
+    0 0 5px rgba(150, 0, 0, 0.6),
+    0 0 10px rgba(150, 0, 0, 0.6),
     0 0 15px rgba(150, 0, 0, 0.6),
-    0 0 20px rgba(150, 0, 0, 0.6), 
+    0 0 20px rgba(150, 0, 0, 0.6),
     0 0 25px rgba(150, 0, 0, 0.6),
     0 0 35px rgba(150, 0, 0, 0.6),
     0 0 40px rgba(150, 0, 0, 0.6),
     0 0 45px rgba(150, 0, 0, 0.6);
-    color: white;
-    animation: glowAnimationAtene 4s linear infinite;
-   }
-   
-   @keyframes glowAnimationAtene {
-    0%, 100% {
-      text-shadow: 
-      0 0 5px rgba(150, 0, 0), 
-      0 0 10px rgba(150, 0, 0), 
+  color: white;
+  animation: glowAnimationAtene 4s linear infinite;
+}
+
+@keyframes glowAnimationAtene {
+
+  0%,
+  100% {
+    text-shadow:
+      0 0 5px rgba(150, 0, 0),
+      0 0 10px rgba(150, 0, 0),
       0 0 15px rgba(150, 0, 0),
-      0 0 20px rgba(150, 0, 0), 
+      0 0 20px rgba(150, 0, 0),
       0 0 25px rgba(150, 0, 0),
       0 0 35px rgba(150, 0, 0),
       0 0 40px rgba(150, 0, 0),
       0 0 45px rgba(150, 0, 0);
-    }
-    50% {
-      text-shadow: none;
-    }
-  
   }
 
-  
-  #scudo2 {
-    size: 100%;
-    position: absolute;
-    bottom: 5%;
-    left: 80%;
-    transform: translateX(-50%);    
-    justify-content: center;
-    transition: 0.3s;
-    cursor: pointer;
+  50% {
+    text-shadow: none;
   }
-  .rtext{
-    font-size: 45% !important;
-    padding: 20%;
-    text-shadow: 
-    0 0 5px rgba(33, 150, 200, 0.4), 
-    0 0 10px rgba(33, 150, 200, 0.4), 
+
+}
+
+
+#scudo2 {
+  size: 100%;
+  position: absolute;
+  bottom: 5%;
+  left: 80%;
+  transform: translateX(-50%);
+  justify-content: center;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.btext {
+  font-size: 45% !important;
+  padding: 20%;
+  text-shadow:
+    0 0 5px rgba(33, 150, 200, 0.4),
+    0 0 10px rgba(33, 150, 200, 0.4),
     0 0 15px rgba(33, 150, 200, 0.4),
-    0 0 20px rgba(33, 150, 200, 0.4), 
+    0 0 20px rgba(33, 150, 200, 0.4),
     0 0 25px rgba(33, 150, 200, 0.4),
     0 0 35px rgba(33, 150, 200, 0.4),
     0 0 40px rgba(33, 150, 200, 0.4),
     0 0 45px rgba(33, 150, 200, 0.4);
-    color: white;
-    animation: glowAnimation 4s linear infinite;
-   }
-   
-   @keyframes glowAnimation {
-    0%, 100% {
-      text-shadow: 
-      0 0 5px rgb(0, 80, 200), 
-      0 0 10px rgba(0, 80, 200), 
+  color: white;
+  animation: glowAnimation 4s linear infinite;
+}
+
+@keyframes glowAnimation {
+
+  0%,
+  100% {
+    text-shadow:
+      0 0 5px rgb(0, 80, 200),
+      0 0 10px rgba(0, 80, 200),
       0 0 15px rgba(0, 80, 200),
-      0 0 20px rgba(0, 80, 200), 
+      0 0 20px rgba(0, 80, 200),
       0 0 25px rgba(0, 80, 200),
       0 0 35px rgba(0, 80, 200),
       0 0 40px rgba(0, 80, 200),
       0 0 45px rgba(0, 80, 200);
-    }
-    50% {
-      text-shadow: none;
-    }
-  
   }
 
-  
-  //aggiungere componente testo nel counter//
+  50% {
+    text-shadow: none;
+  }
+
+}

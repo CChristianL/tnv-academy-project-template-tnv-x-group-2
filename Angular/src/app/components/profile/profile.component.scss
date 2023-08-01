@@ -1,86 +1,147 @@
-.d-flex {
-  display: flex;
-  flex-wrap: wrap;
+.img {
+  background-image: url("/assets/images/giffix2.gif");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+  background-color: transparent;
+  width: 300px;
+  height: 350px;
+  margin: auto;
+}
 
-  .profile-data {
-    font-weight: bold;
-    color: white;
- }
- h2 {
-    color: white;
- }
- h3 {
+#button-modifica {
+  background-color: #d9a03e;
+  color: black;
+  text-align: center;
+  display: inline-block;
+  font-size: 22px;
+  transition-duration: 0.4s;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+#button-modifica:hover {
+  letter-spacing: 0.15em;
+  box-shadow: 0 0 40px #d9a03e;
+  color: white;
+}
+
+.profile-data {
+  font-weight: bold;
+  color: white;
+}
+
+h2 {
+  color: white;
+  text-align: center;
+}
+
+h3 {
   text-align: center;
   color: white;
- } 
+}
 
- .profile-card {
-    color: white;
-    width: 1000px;
-    background: transparent;
-    height: 600px; 
-  }
+.profile-data {
+  color: white;
+  width: fit;
+  background: transparent;
+  height: auto;
+}
 
-  .btn {   
-    font-size: 22px; 
-    transition-duration: 0.4s; 
-    cursor: pointer;      
-  }
-  .btn:hover { 
-    letter-spacing: 0.15em;
-    box-shadow: 0 0 40px white;
-    color: white;
-  }
-  .form-control:focus {
-    border-color: #f0c86a;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #f0c86a;
-    outline: 0 none;
-  }
-  .form-control{
-      color: white;
-      background: transparent;
-  }
-  ::placeholder{ /* Chrome */
-    color: white;
-  }
-  :-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: white;
-  }
-  
-  ::-ms-input-placeholder { /* Microsoft Edge */
-    color: white;
-  }
-  
-  #description {
-    text-align: center;    
-    font-size: 18px;
-  }
-  a {
-    color: #e9b231;
-  }
-  a:hover {
-    color: #d6b80fab;  
-  }
-  .p-2{
-    width: 300px;
-    height: 450px;
-    padding: 0% !important;
-  }
+.btn {
+  font-size: 22px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
 
-  @media screen and (min-width: 1024px){
-    .p-2{
-      width: 450px;
-      height: 500px;
-      padding: 0% !important;
-    }
-    #description {
-      text-align: left !important;    
-      font-size: 30px;
-    }
+.btn:hover {
+  letter-spacing: 0.15em;
+  box-shadow: 0 0 40px white;
+  color: white;
+}
+
+.form-control:focus {
+  border-color: #f0c86a;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #f0c86a;
+  outline: 0 none;
+}
+
+.form-control {
+  color: white;
+  background: transparent;
+}
+
+::placeholder {
+  /* Chrome */
+  color: white;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: white;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: white;
+}
+
+a {
+  color: #e9b231;
+}
+
+a:hover {
+  color: #d6b80fab;
+}
+
+.wrap {
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+}
 
 
+.immagine-utente {
+  background-image: url("../../../assets/images/elmo\ icon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+}
 
+span {
+  font-size: 18px;
+}
+
+#identificativo {
+  font-weight: bold;
+  display: block;
+}
+
+#dati-utente {
+  font-weight: normal;
+  display: block;
+}
+
+@media screen and (min-width: 1024px) {
+  #identificativo {
+    display: inline;
   }
 
+  #dati-utente {
+    display: inline;
+  }
 
-}  
+  .img {
+    background-image: url("/assets/images/giffix2.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    background-color: transparent;
+    width: 450px;
+    height: 500px;
+    margin: auto;
+  }
+
+}

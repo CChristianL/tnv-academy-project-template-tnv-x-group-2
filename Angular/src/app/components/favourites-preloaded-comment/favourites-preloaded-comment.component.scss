@@ -3,21 +3,50 @@
     justify-content: flex-start;
     padding: 0;
   }
+
   .d-flex {
     display: flex;
   }
-  
+
   .flex-row {
-    flex-direction: row;   
+    flex-direction: row;
   }
-  
+
   .align-items-flex-end {
     justify-content: flex-end;
   }
-  
-.form-control{
-  background-image: url(../../../assets/images/sfondogeneraleApp.gif);
-  color: white;
-  font-size: 18px;
-}
-  
+
+  .form-control {
+    background-image: url("../../../assets/images/sfondogeneraleApp.gif");
+    color: white;
+    font-size: 18px;
+
+    margin: 0 auto;
+
+  }
+
+  #textAreaExample1 {
+    width: auto;
+    height: 200px;
+    overflow: auto;
+  }
+
+  h3 {
+    text-align: left !important;
+    text-shadow: #f0c86a 0 0 25px;
+    margin-bottom: 8px !important;
+  }
+
+  .valutazione {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right !important;
+  }
+
+  .numValutazione {
+    font-size: 20px;
+    text-shadow: #f0c86a 0 0 25px;
+    text-align: right !important;
+    padding-left: 0%;
+    margin-left: 0% !important;
+  }

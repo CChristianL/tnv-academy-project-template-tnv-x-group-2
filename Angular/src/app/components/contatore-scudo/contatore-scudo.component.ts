@@ -11,55 +11,29 @@ import { switchMap } from 'rxjs/operators';
 })
 export class ContatoreScudoComponent {
 
-  @Input() ratings: Rating [] = [];
+  @Input() ratings: Rating[] = [];
   //counter: number = 0;
   //arrayCounter: Rating [] = [];
   counterSparta: Number = 0
   counterAtene: Number = 0
 
-  posts:any;
+  posts: any;
   subscription !: Subscription;
 
   constructor(public ratingService: RatingService) {
-      
+
   }
-  //questo oninit ripete la chiamata al DB facendo si che i punteggi si aggiornino
-  //implementare con observable e onChanges?
-  
- ngOnInit() {
+  //Questo oninit ripete la chiamata al DB facendo si che i punteggi si aggiornino.
+  //Abbiamo tentato diversi approci per onChanges, fallendo, vorremo una delucidazione.
+
+  ngOnInit() {
     this.subscription = timer(0, 1000).pipe(
       switchMap(async () => this.ratingService.teamAteneRating())
-    ).subscribe(result => result
-      //console.log("ho fatto la chiamata di aggiornamento atene")
-    );
+    ).subscribe(result => result);
     this.subscription = timer(0, 1000).pipe(
       switchMap(async () => this.ratingService.teamSpartaRating())
-    ).subscribe(result => result
-     //console.log("ho fatto la chiamata di aggiornamento sparta")
-    );
-}
-
-  ngOnChanges (changes : SimpleChanges): void {    
-      //this.updateCounter(this.ratings); //aggiorna ai cambiamenti
-      //if (changes['ratings']) {
-      //  this.updateCounter(changes['ratings'].currentValue);
-      //}
+    ).subscribe(result => result);
   }
 
 }
 
-/* 
-  ngOnInit(): void {
-    
-      console.log("Movies nel componente genitore:", this.movies);
-      console.log("Ratings nel componente genitore:", this.ratings);
-      this.updateFilteredMovies();
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes['movies'] || changes['ratings']) {
-      this.updateFilteredMovies();
-      
-    }
-  }
-*/

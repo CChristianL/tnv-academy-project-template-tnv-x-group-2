@@ -1,52 +1,20 @@
-<nav id="navbar" class="navbar navbar-expand-md fixed-top px-3">
-  <a class="navbar-brand" routerLink="/">War Rate Greek Edition</a> 
-  <!--
-    Questo aggira un po di deliri fatti con la auth.guard.ts Mauri
-    In sostanza ci permette di far si che se l'utente è sloggato possa andare sulla navbar
-    ed essere reindirizzato a landing-page se preme War Rate, e se è loggato, viene sparato
-    a combatti.
-  -->
-  <button
-    class="navbar-toggler hidden-sm-up"
-    type="button"
-    (click)="isNavbarCollapsed = !isNavbarCollapsed"
-    data-target="#navbarsDefault"
-    aria-controls="navbarsDefault"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-  >
+<nav id="navbar" class="navbar navbar-dark bg-dark navbar-expand-md fixed-top px-3">
+  <img src="../../../../assets/images/logo.png" class="navbar-brand" routerLink="/">
+
+  <button class="navbar-toggler hidden-sm-up" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed"
+    data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div
-    [ngbCollapse]="isNavbarCollapsed"
-    class="collapse navbar-collapse"
-    id="navbarsDefault"
-  >
+  <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="navbarsDefault">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" routerLink="/welcome" routerLinkActive="active"
-          >Combatti</a
-        >
+        <a class="nav-link" routerLink="/combatti" routerLinkActive="active">Gioca</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" routerLink="/game" routerLinkActive="active"
-          >Gioca</a 
-        > <!-- bisogna ricordarsi di disattivare questo -->
+        <a class="nav-link" routerLink="/preferiti" routerLinkActive="active">Preferiti</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" routerLink="/rankings" routerLinkActive="active"
-          >Classifica</a
-        >
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" routerLink="/favourites" routerLinkActive="active"
-          >Preferiti</a
-        >
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" routerLink="/profile" routerLinkActive="active"
-          >Profilo</a
-        >
+        <a class="nav-link" routerLink="/profile" routerLinkActive="active">Profilo</a>
       </li>
     </ul>
   </div>

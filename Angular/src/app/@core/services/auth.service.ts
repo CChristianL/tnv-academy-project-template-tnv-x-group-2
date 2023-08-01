@@ -10,12 +10,12 @@ import { DistributionDTO, LoginDTO, RegisterDTO, UpdateDTO, User } from "src/app
 export class AuthService {
   springBootUrl = 'http://localhost:8080/users';
 
-  constructor(private router: Router, private http: HttpClient) {}
+  constructor(private router: Router, private http: HttpClient) { }
 
   login(loginData: LoginDTO) {
     console.log('auth service.ts', loginData);
-    this.router.navigateByUrl("/login");  
- 
+    this.router.navigateByUrl("/login");
+
     return this.http.post<LoginDTO>(`${this.springBootUrl}/login`, loginData);
     /*
     const user: User = {
@@ -31,14 +31,14 @@ export class AuthService {
     //return of(user);
     // Fine stub
     */
-}
+  }
 
   register(registerData: RegisterDTO) {
-   return this.http.post<RegisterDTO>(`${this.springBootUrl}/register`, registerData);
+    return this.http.post<RegisterDTO>(`${this.springBootUrl}/register`, registerData);
   }
   //this.router.navigateByUrl("/register");
   // TODO Chiamare il servizio per la registrazione e redirigere l'utente alla root per il login
-   //this.router.navigateByUrl("/");
+  //this.router.navigateByUrl("/");
 
   update(updateData: UpdateDTO) {
     const user = JSON.parse(localStorage.getItem("user") || '') as User;
@@ -62,5 +62,5 @@ export class AuthService {
   getDistribution() {
     return this.http.get<DistributionDTO>(`${this.springBootUrl}/distribution/team/members`);
   }
- 
+
 }
