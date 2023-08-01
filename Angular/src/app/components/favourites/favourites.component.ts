@@ -14,10 +14,6 @@ export class FavouritesComponent {
   @Input() movies: Movie[] = [];
   @Input() ratings: Rating[] = [];
 
-  rating: Rating = {}
-
-  counter: number = 0;
-
   filteredMovies: Movie[] = [];
   filteredRatings: Rating[] = [];
   recoveredUser: any;
@@ -28,7 +24,6 @@ export class FavouritesComponent {
     this.updateFilteredRating();
     this.updateFilteredMovie();
   }
-
 
   recoverLocalUser() {
     if (!localStorage.getItem('user')) {
@@ -42,10 +37,7 @@ export class FavouritesComponent {
   updateFilteredMovie() {
     this.filteredMovies = [...this.movies];
     this.filteredMovies = this.filteredMovies.filter((movie) => this.hasFilmCommented(movie.id));
-    console.log(this.filteredMovies, "Film Commentati")
-    console.log("Voglio vedere se ora sono filtrati in base al team", this.filteredMovies)
     this.filteredMovies = this.filteredMovies.filter((movie) => this.hasFilmTeam(movie.id));
-    console.log("Dovrebbero essere filtrati", this.filteredMovies)
   }
 
   hasFilmCommented(movieId: number): boolean {
@@ -58,14 +50,9 @@ export class FavouritesComponent {
 
   updateFilteredRating() {
     this.filteredRatings = [...this.ratings];
-    this.filteredRatings = this.filteredRatings.filter((rating) => this.hasFilmRating(rating.movieId)) //queste non stanno funzionando
+    this.filteredRatings = this.filteredRatings.filter((rating) => this.hasFilmRating(rating.movieId)) 
     this.recoverLocalUser();
-    console.log(this.recoveredUser)
     this.filteredRatings = this.filteredRatings.filter(rating => rating.team === this.recoveredUser.team)
-    console.log(typeof (this.rating.movieId))
-    console.log(this.filteredRatings)
-    console.log(typeof (this.filteredRatings))
-    console.log("array di commenti di un team", this.filteredRatings)
   }
 
   hasFilmRating(RatingId: any): boolean {

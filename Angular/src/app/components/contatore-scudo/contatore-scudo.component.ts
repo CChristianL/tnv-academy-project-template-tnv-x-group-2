@@ -12,8 +12,7 @@ import { switchMap } from 'rxjs/operators';
 export class ContatoreScudoComponent {
 
   @Input() ratings: Rating[] = [];
-  //counter: number = 0;
-  //arrayCounter: Rating [] = [];
+
   counterSparta: Number = 0
   counterAtene: Number = 0
 

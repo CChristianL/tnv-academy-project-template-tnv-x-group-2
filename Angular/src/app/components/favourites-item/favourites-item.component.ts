@@ -13,21 +13,10 @@ export class FavouritesItemComponent {
   @Input() rating: Rating | undefined;
   @Input() ratings: Rating[] = [];
 
-  recoveredUser: any;
-
   constructor() { }
 
   ngOnInit(): void {
 
-  }
-
-  recoverLocalUser() {
-    if (!localStorage.getItem('user')) {
-      this.recoveredUser = {} as any;
-    } else {
-      const userString = localStorage.getItem('user');
-      this.recoveredUser = JSON.parse(userString || '{}') as any;
-    }
   }
 
 }
