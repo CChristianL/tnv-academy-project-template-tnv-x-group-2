@@ -10,6 +10,7 @@ import { MovieService } from 'src/app/services/movie.service';
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.scss']
 })
+
 export class GameComponent implements OnInit {
 
   @Input() movies: Movie[] = [];
@@ -32,17 +33,18 @@ export class GameComponent implements OnInit {
   }
 
   onRatingSubmited(rating: Rating) {
-    this.ratingService.createRating(rating).subscribe({
-      next: (newRating) => {
-        this.ratings.push(newRating);
+    //this.ratingService.createRating(rating).subscribe({
+      //next: (newRating) => {
+        //this.ratings.push(newRating);
+        this.ratingService.createRating(rating);
         this.movies = this.movies.filter(movie => movie.id !== rating.movieId); // Rimuove il film votato dall'array movies
         this.updateFilteredMovies(); // Aggiorna l'array filteredMovies dopo ogni rating
-      },
-      error: (error) => {
-        console.log('Errore nel salvataggio del rating:', error);
+      //},
+      //error: (error) => {
+        //console.log('Errore nel salvataggio del rating:', error);
       }
-    });
-  }
+    //});
+  //}
 
   onMovieSkipped(id: number) {
     this.movies = this.movies.filter(x => x.id !== id);
@@ -85,7 +87,4 @@ export class GameComponent implements OnInit {
     return this.ratings.some((rating) => rating.movieId === movieId && rating.userId === this.recoveredUser.id);
   }
 
-  hasUserSkippedMovie(movieId: number): boolean {
-    return this.movies.some((movie) => movie.id === movieId);
-  }
 }

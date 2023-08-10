@@ -12,8 +12,10 @@ import { switchMap } from 'rxjs/operators';
 export class ContatoreScudoComponent {
 
   @Input() ratings: Rating[] = [];
-  counterSparta: Number = 0
-  counterAtene: Number = 0
+  counterSparta: Number = 0;
+  counterAtene: Number = 0;
+  //counterSparta: Number = 0
+  //counterAtene: Number = 0
 
   posts: any;
   subscription !: Subscription;
@@ -21,9 +23,19 @@ export class ContatoreScudoComponent {
   constructor(public ratingService: RatingService) {
 
   }
+
+  ngOnChanges(){
+  
+    this.ratings = [... this.ratings];
+    this.counterAtene = this.ratings.filter(rating => rating.team === "Atene").length;
+    this.counterSparta = this.ratings.filter(rating => rating.team === "Sparta").length;
+    console.log(this.counterAtene);
+    console.log(this.counterSparta);
+  }
+
   //Questo oninit ripete la chiamata al DB facendo si che i punteggi si aggiornino.
   //Abbiamo tentato diversi approci per onChanges, fallendo, vorremo una delucidazione.
-
+/*
   ngOnInit() {
     this.subscription = timer(0, 1000).pipe(
       switchMap(async () => this.ratingService.teamAteneRating())
@@ -32,6 +44,6 @@ export class ContatoreScudoComponent {
       switchMap(async () => this.ratingService.teamSpartaRating())
     ).subscribe(result => result);
   }
-
+*/
 }
 

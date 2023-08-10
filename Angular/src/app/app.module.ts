@@ -25,6 +25,7 @@ import { PageRatingsmoviesComponent } from './components/page-ratingsmovies/page
 import { FavouritesItemComponent } from './components/favourites-item/favourites-item.component';
 import { FavouritesComponent } from './components/favourites/favourites.component';
 import { PageCommentComponent } from './components/page-comment/page-comment.component';
+import { PageCounterComponent } from './components/page-counter/page-counter.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { PageCommentComponent } from './components/page-comment/page-comment.com
     PageRatingsmoviesComponent,
     FavouritesItemComponent,
     FavouritesComponent,
-    PageCommentComponent
+    PageCommentComponent,
+    PageCounterComponent
   ],
   imports: [
     BrowserModule,

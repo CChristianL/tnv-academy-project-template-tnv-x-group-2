@@ -13,7 +13,7 @@ import { DistributionDTO, RegisterDTO } from "src/app/models/user";
 export class RegisterComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) { }
 
-  cities = ['Atene', 'Sparta'];
+//cities = ['Atene', 'Sparta'];
   bEnabled = false;
   rEnabled = false;
 

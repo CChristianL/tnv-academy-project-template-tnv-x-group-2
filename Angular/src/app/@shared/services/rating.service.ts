@@ -32,8 +32,21 @@ export class RatingService {
     return this.httpClient.get<Rating>(`${this.API_ROOT}/rating/${userId}/${movieId}`);
   }
 
-  createRating(rating: Rating): Observable<Rating> {
-    return this.httpClient.post<Rating>(`${this.API_ROOT}/rating`, rating)
+  createRating(rating: Rating) { //Metodo derivativo dal template
+    //return 
+    this.httpClient.post<Rating>(`${this.API_ROOT}/rating`, rating).subscribe({
+      next: (rating) => {
+        //this.ratings.push(rating);
+        //this.ratings = [... this.ratings, rating];
+        this.ratings.push(rating);
+        this.ratings = [... this.ratings];
+      },
+      error: (error) => {
+        console.log('Errore nel salvataggio del rating:', error);
+      }
+    });
+
+
   }
 
   editRating(rating: Rating) {
@@ -49,20 +62,32 @@ export class RatingService {
   }
 
   teamAteneRating() {
-    return this.httpClient.get<any>(`${this.API_ROOT}/ratings`).subscribe({
+    //return 
+    this.httpClient.get<any>(`${this.API_ROOT}/ratings`).subscribe({
       next: (response) => {
+        this.ratings = response;
+        this.ratings = [...this.ratings];
         this.counterAtene = response.filter((response: { team: String; }) =>
           response.team === this.squadraAtene).length;
-      }
-    })
-  }
-  teamSpartaRating() {
-    return this.httpClient.get<any>(`${this.API_ROOT}/ratings`).subscribe({
-      next: (response) => {
-        this.counterSparta = response.filter((response: { team: String; }) =>
-          response.team === this.squadraSparta).length;
+          console.log(this.counterAtene);
       }
     })
   }
 
-}
+  teamSpartaRating() {
+    //return 
+    this.httpClient.get<any>(`${this.API_ROOT}/ratings`).subscribe({
+      next: (response) => {
+        this.ratings = response;
+        this.ratings = [...this.ratings];
+        this.counterSparta = this.ratings.filter(rating => rating.team === this.squadraSparta).length;
+        console.log(this.counterSparta)
+      }})  
+        
+        //response.filter((response: { team: String; }) =>
+          //response.team === this.squadraSparta).length;
+          //console.log(this.counterSparta);
+          
+      }
+    //})
+  }
